@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catherine — Construtora Dallo</title>
+<meta name="description" content="Conceived based on the concept of one of the most recognized French artistic movements, Catherine emerges as an expression of the spirit of Impressionist paintings.">
+<link rel="alternate" hreflang="pt-BR" href="../../empreendimento/catherine.html">
+<link rel="alternate" hreflang="en" href="../../en/empreendimento/catherine.html">
+<link rel="alternate" hreflang="es" href="../../es/empreendimento/catherine.html">
+<link rel="alternate" hreflang="x-default" href="../../empreendimento/catherine.html">
+<link rel="icon" href="../../img/logo-dallo.svg">
+<link rel="preload" href="../../fontes/Manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fontes/PlayfairDisplay-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/estilo.css">
+<!-- A classe js no elemento html e o que liga a revelacao na rolagem.
+     Ela precisa valer em TODAS as paginas: enquanto so a home a tinha, o
+     .revela das outras nunca escondia nada e nunca animava, e o efeito
+     nao existia fora da home sem nenhum erro no console para avisar. A
+     classe js no body continua so na home, porque quem usa e o CSS da
+     abertura. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- As frases que o site.js escreve em tempo de execução (contagem da
+     busca, aviso de filtro) não podem ficar dentro do script: ele é um
+     arquivo só para as três línguas. Vêm por aqui. -->
+<script type="application/json" id="i18n">{"verTorre":"View {n} tower","verTorres":"View {n} towers","torre":"{n} tower","torres":"{n} towers","filtrandoPor":"Filtering by","limpar":"clear","ou":"or","suites":"suites","faixas":{"ate150":"Up to 150 m²","150-250":"150 to 250 m²","250-400":"250 to 400 m²","400+":"Over 400 m²"},"pronto":"ready to move in","obra":"under construction","emp":"{n} development","emps":"{n} developments"}</script>
+</head>
+<body>
+
+<header class="topo">
+  <div class="faixa topo-in">
+    <a class="topo-marca" href="../index.html" aria-label="Dallo Construction Company, home">
+      <img src="../../img/logo-dallo.svg" alt="Construtora Dallo" width="138" height="35">
+    </a>
+    <button class="topo-abrir" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu">
+      <a href="../empreendimentos.html">Developments</a>
+      <a href="../sobre.html">About Dallo</a>
+      <a href="../contato.html">Contact</a>
+      <a class="menu-botao" href="../contato.html">Talk to our team</a>
+    </nav>
+    <div class="idiomas">
+      <button class="idiomas-atual" type="button" aria-expanded="false" aria-controls="idiomas-lista" aria-label="Change language">
+        <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#fff"/><g fill="#b22234"><rect width="24" height="2.4" y="0"/><rect width="24" height="2.4" y="4.8"/><rect width="24" height="2.4" y="9.6"/><rect width="24" height="2.4" y="14.4"/><rect width="24" height="2.4" y="19.2"/></g><rect width="11" height="12" fill="#3c3b6e"/></svg></span>
+        <span class="idiomas-sigla">EN</span>
+        <svg class="idiomas-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="idiomas-lista" id="idiomas-lista" hidden>
+        <li><a href="../../empreendimento/catherine.html" lang="pt-BR">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>Português
+        </a></li>
+        <li><a href="../../en/empreendimento/catherine.html" lang="en" aria-current="true">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#fff"/><g fill="#b22234"><rect width="24" height="2.4" y="0"/><rect width="24" height="2.4" y="4.8"/><rect width="24" height="2.4" y="9.6"/><rect width="24" height="2.4" y="14.4"/><rect width="24" height="2.4" y="19.2"/></g><rect width="11" height="12" fill="#3c3b6e"/></svg></span>English
+        </a></li>
+        <li><a href="../../es/empreendimento/catherine.html" lang="es">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#aa151b"/><rect width="24" height="12" y="6" fill="#f1bf00"/></svg></span>Español
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ======================= ABERTURA DA TORRE ========================
+       Tela cheia, com o nome sobre a imagem e a ficha técnica na mesma
+       composição. Antes eram 558 px de altura com um recorte qualquer do
+       render, e a ficha vinha depois, numa seção à parte. -->
+  <section class="torre-abertura">
+    <img class="torre-fundo" src="../../midia/web/midia/uploads/enterprise/46/664f77b5ceaa83.74052583-1600.webp" srcset="../../midia/web/midia/uploads/enterprise/46/664f77b5ceaa83.74052583-820.webp 820w, ../../midia/web/midia/uploads/enterprise/46/664f77b5ceaa83.74052583-1600.webp 1600w" sizes="100vw" alt="Catherine, Bairro Country · Cascavel · Paraná" fetchpriority="high" decoding="async">
+    <div class="faixa torre-abertura-texto">
+      <span class="rotulo">Bairro Country · Cascavel · Paraná</span>
+      <h1>Catherine</h1>
+      <dl class="torre-chave">
+        <div><dt>Suites</dt><dd>4 suites</dd></div>
+        <div><dt>Floor area</dt><dd>200.4 m² private area</dd></div>
+        <div><dt>Parking</dt><dd>3 parking spaces</dd></div>
+        <div><dt>Floors</dt><dd>36</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao torre-prosa">
+    <div class="faixa">
+      <p class="frase-media revela">Conceived based on the concept of one of the most recognized French artistic movements, Catherine emerges as an expression of the spirit of Impressionist paintings.</p>
+      <div class="torre-corpo revela atraso-1"><p>Catherine emerges as an expression of the spirit of Impressionist paintings. Located in the Country neighborhood, Dallo Catherine is a 36-story tower with 66 luxury apartments. All units feature 4 suites and 3 parking spaces.</p></div>
+    </div>
+  </section>
+
+  <section class="secao torre-ficha-secao">
+    <div class="faixa">
+      <!-- só o que a abertura ainda não mostrou: repetir os quatro
+           primeiros a uma tela de distância não informa nada -->
+      <dl class="torre-chave torre-chave-larga revela">
+        <div><dt>Height</dt><dd>134 meters</dd></div>
+        <div><dt>Handover</dt><dd>2030</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>The tower</h2>
+          </div>
+          <p class="lead">Conceived based on the concept of one of the most recognized French artistic movements, Catherine emerges as an expression of the spirit of Impressionist paintings.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/46/default/original_893d87a8b6b87840f3bc0c1a34ee1806-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/46/default/original_893d87a8b6b87840f3bc0c1a34ee1806-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/46/default/original_893d87a8b6b87840f3bc0c1a34ee1806-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — The tower" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/46/default/original_e8aff0a3efbf1cb9446f6e087aadf6be-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/46/default/original_e8aff0a3efbf1cb9446f6e087aadf6be-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/46/default/original_e8aff0a3efbf1cb9446f6e087aadf6be-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Catherine — The tower" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/46/default/original_95ab1518ef5ebbee000dfdd6a51fee76-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/46/default/original_95ab1518ef5ebbee000dfdd6a51fee76-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/46/default/original_95ab1518ef5ebbee000dfdd6a51fee76-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — The tower" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/46/default/original_bc1136cba8acae6bd67f5b6921094e04-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/46/default/original_bc1136cba8acae6bd67f5b6921094e04-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/46/default/original_bc1136cba8acae6bd67f5b6921094e04-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Catherine — The tower" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao secao-escura">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Garden &amp; Ground Floor</h2>
+          </div>
+          <p class="lead">The distinctive features of 19th-century French paintings are reflected in the leisure spaces of Dallo Catherine.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/50/default/original_0d0ecfbdb0572ebf21884826225abaf4-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/50/default/original_0d0ecfbdb0572ebf21884826225abaf4-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/50/default/original_0d0ecfbdb0572ebf21884826225abaf4-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Garden &amp; Ground Floor" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/50/default/original_1781d1cb7d3f2e21e556fcb1031c0f88-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/50/default/original_1781d1cb7d3f2e21e556fcb1031c0f88-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/50/default/original_1781d1cb7d3f2e21e556fcb1031c0f88-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Catherine — Garden &amp; Ground Floor" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/50/default/original_770179b54b8968c61cd47de148b5c1c2-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/50/default/original_770179b54b8968c61cd47de148b5c1c2-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/50/default/original_770179b54b8968c61cd47de148b5c1c2-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Garden &amp; Ground Floor" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/50/default/original_ade5592efda4f1a9918150f6edb482d9-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/50/default/original_ade5592efda4f1a9918150f6edb482d9-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/50/default/original_ade5592efda4f1a9918150f6edb482d9-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Catherine — Garden &amp; Ground Floor" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/50/default/original_7cc3761b7701a09a82330a6dc5f368c3-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/50/default/original_7cc3761b7701a09a82330a6dc5f368c3-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/50/default/original_7cc3761b7701a09a82330a6dc5f368c3-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Garden &amp; Ground Floor" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/50/default/original_6e37b7b21f3245628e86a01c6dbb983b-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/50/default/original_6e37b7b21f3245628e86a01c6dbb983b-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/50/default/original_6e37b7b21f3245628e86a01c6dbb983b-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Garden &amp; Ground Floor" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-panoramica revela"><img src="../../midia/web/midia/uploads/enterprisegallery/50/default/original_ec92e68315e26f4e0ae26452ba049e10-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/50/default/original_ec92e68315e26f4e0ae26452ba049e10-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/50/default/original_ec92e68315e26f4e0ae26452ba049e10-1600.webp 1600w" sizes="(min-width: 900px) 92vw, 100vw" alt="Catherine — Garden &amp; Ground Floor" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Leisure</h2>
+          </div>
+          <p class="lead">Welcome to Dallo Catherine Leisure. 2,488.22 m² distributed across various integrated spaces, designed to provide well-being, health, and fun right at your doorstep.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/47/default/original_4d0d13b35fd6dedb27c5a6363d222b7b-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/47/default/original_4d0d13b35fd6dedb27c5a6363d222b7b-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/47/default/original_4d0d13b35fd6dedb27c5a6363d222b7b-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/47/default/original_087596a8ae6c6f33e1f462cc967f3dfa-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/47/default/original_087596a8ae6c6f33e1f462cc967f3dfa-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/47/default/original_087596a8ae6c6f33e1f462cc967f3dfa-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Catherine — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/47/default/original_24caafd3a4932c3e50a8d26828d6768d-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/47/default/original_24caafd3a4932c3e50a8d26828d6768d-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/47/default/original_24caafd3a4932c3e50a8d26828d6768d-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/47/default/original_0f18efccb2dd9f0ee3129021a4e26e01-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/47/default/original_0f18efccb2dd9f0ee3129021a4e26e01-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/47/default/original_0f18efccb2dd9f0ee3129021a4e26e01-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Catherine — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/47/default/original_0fc4cc6d743af5369023cea972294f19-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/47/default/original_0fc4cc6d743af5369023cea972294f19-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/47/default/original_0fc4cc6d743af5369023cea972294f19-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/47/default/original_1a55bde0bc5f277d1cbaee9d19e06c80-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/47/default/original_1a55bde0bc5f277d1cbaee9d19e06c80-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/47/default/original_1a55bde0bc5f277d1cbaee9d19e06c80-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-panoramica revela"><img src="../../midia/web/midia/uploads/enterprisegallery/47/default/original_8a081ca8ee3861099a8f0fb862af3c5d-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/47/default/original_8a081ca8ee3861099a8f0fb862af3c5d-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/47/default/original_8a081ca8ee3861099a8f0fb862af3c5d-1600.webp 1600w" sizes="(min-width: 900px) 92vw, 100vw" alt="Catherine — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/47/default/original_c07dcef977fbe50677021e027c42208b-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/47/default/original_c07dcef977fbe50677021e027c42208b-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/47/default/original_c07dcef977fbe50677021e027c42208b-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/47/default/original_05a0ef658ded35cbd085bc8fdb275442-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/47/default/original_05a0ef658ded35cbd085bc8fdb275442-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/47/default/original_05a0ef658ded35cbd085bc8fdb275442-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Catherine — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/47/default/original_5145261b07f1ef716f31ef64351c90f2-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/47/default/original_5145261b07f1ef716f31ef64351c90f2-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/47/default/original_5145261b07f1ef716f31ef64351c90f2-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Leisure" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao secao-escura">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Rooftop</h2>
+          </div>
+          <p class="lead">The 36th floor of the tower was designated for an extraordinary rooftop terrace that is over 130 meters high, providing Dallo Catherine residents with spectacular views of the horizon. The space includes a viewing terrace, a social club, a yoga room, an ecumenical chapel, a workspace, and a gourmet area.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/48/default/original_d5099bebe74cf743cf218fbfe33a47fb-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/48/default/original_d5099bebe74cf743cf218fbfe33a47fb-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/48/default/original_d5099bebe74cf743cf218fbfe33a47fb-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/48/default/original_426fc583ed9508d432ae5656949c9342-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/48/default/original_426fc583ed9508d432ae5656949c9342-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/48/default/original_426fc583ed9508d432ae5656949c9342-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Catherine — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/48/default/original_eaed52a4d253e08a2ef3f58d2579df27-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/48/default/original_eaed52a4d253e08a2ef3f58d2579df27-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/48/default/original_eaed52a4d253e08a2ef3f58d2579df27-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/48/default/original_d6df52be245091eca0f6730994a962fd-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/48/default/original_d6df52be245091eca0f6730994a962fd-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/48/default/original_d6df52be245091eca0f6730994a962fd-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Catherine — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/48/default/original_5ee0e804dcacc9d4558460587da60b0d-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/48/default/original_5ee0e804dcacc9d4558460587da60b0d-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/48/default/original_5ee0e804dcacc9d4558460587da60b0d-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/48/default/original_7c7111c75a407a155dc6c725dda7083c-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/48/default/original_7c7111c75a407a155dc6c725dda7083c-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/48/default/original_7c7111c75a407a155dc6c725dda7083c-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Rooftop" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Apartments</h2>
+          </div>
+          <p class="lead">Featuring only two residences per floor and a total area of 334 m², the apartments in the Dallo Catherine development are characterized by their exclusivity. Catherine boasts abundant natural light, resulting in dynamic interiors that transform throughout the day.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/49/default/original_d8ba7dc2961e1d533f77ce008186961e-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/49/default/original_d8ba7dc2961e1d533f77ce008186961e-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/49/default/original_d8ba7dc2961e1d533f77ce008186961e-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Apartments" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/49/default/original_26ae2612d6726ed41689eca39d1bb310-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/49/default/original_26ae2612d6726ed41689eca39d1bb310-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/49/default/original_26ae2612d6726ed41689eca39d1bb310-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Catherine — Apartments" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/49/default/original_95e65f5a7fd2474697210c77e8f29fc1-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/49/default/original_95e65f5a7fd2474697210c77e8f29fc1-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/49/default/original_95e65f5a7fd2474697210c77e8f29fc1-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Apartments" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/49/default/original_3f0a7371f0461c1e5320ce617d7a921e-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/49/default/original_3f0a7371f0461c1e5320ce617d7a921e-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/49/default/original_3f0a7371f0461c1e5320ce617d7a921e-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Catherine — Apartments" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/49/default/original_ba2eb4dab43c828e5c0c2a913d97e087-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/49/default/original_ba2eb4dab43c828e5c0c2a913d97e087-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/49/default/original_ba2eb4dab43c828e5c0c2a913d97e087-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Apartments" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/49/default/original_62bfc5e8cc60ae584951c3f08f15e311-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/49/default/original_62bfc5e8cc60ae584951c3f08f15e311-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/49/default/original_62bfc5e8cc60ae584951c3f08f15e311-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Catherine — Apartments" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-panoramica revela"><img src="../../midia/web/midia/uploads/enterprisegallery/49/default/original_89a3213fda431d2a78c079d7893ebfbe-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/49/default/original_89a3213fda431d2a78c079d7893ebfbe-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/49/default/original_89a3213fda431d2a78c079d7893ebfbe-1600.webp 1600w" sizes="(min-width: 900px) 92vw, 100vw" alt="Catherine — Apartments" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+
+  <section class="secao secao-clara">
+    <div class="faixa">
+      <div class="cabeca-dupla revela"><div><h2>Plants</h2></div></div>
+      <div class="plantas">
+        <figure class="planta revela">
+            <img src="../../midia/web/midia/uploads/plant/89/664f38f0317bf8.58788370-1600.webp" srcset="../../midia/web/midia/uploads/plant/89/664f38f0317bf8.58788370-820.webp 820w, ../../midia/web/midia/uploads/plant/89/664f38f0317bf8.58788370-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Floor plans Apartment type 1 and 2 — Catherine" loading="lazy" decoding="async">
+            <figcaption><strong>Apartment type 1 and 2</strong><br>4 suites, 3 parking spaces, 200.4 m² private area | 334 m² total area</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../../midia/web/midia/uploads/plant/92/664fa5636ffc07.66619377-1600.webp" srcset="../../midia/web/midia/uploads/plant/92/664fa5636ffc07.66619377-820.webp 820w, ../../midia/web/midia/uploads/plant/92/664fa5636ffc07.66619377-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Floor plans Garden — Catherine" loading="lazy" decoding="async">
+            <figcaption><strong>Garden</strong><br>1- Playground 2- Outdoor Area with Lounges 3- Vehicle Access 4- Guardhouse 5- Grill Garden Area 6- Lounge Garden 7- Pet Park</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../../midia/web/midia/uploads/plant/90/664fa50ed7fcd6.71894957-1600.webp" srcset="../../midia/web/midia/uploads/plant/90/664fa50ed7fcd6.71894957-820.webp 820w, ../../midia/web/midia/uploads/plant/90/664fa50ed7fcd6.71894957-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Floor plans Leisure — Catherine" loading="lazy" decoding="async">
+            <figcaption><strong>Leisure</strong><br>1- Party Room 2- Gourmet Room 3- Games Room 4- Poker Room 5- Children's Playroom 6- Gourmet Pool Area 7- Outdoor Lounge 8- Outdoor Spas 9- Adult Pool 10- Beach Area 11- Children's Pool 12- Outdoor Lounge with Fireplace 13- Gym 14- Baby Care 15- Personal Care 16- Massage Room 17- Ante-sauna 18- Sauna 19- Indoor Spa 20- Heated Indoor Pool</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../../midia/web/midia/uploads/plant/91/664f3950d91ba5.58632535-1600.webp" srcset="../../midia/web/midia/uploads/plant/91/664f3950d91ba5.58632535-820.webp 820w, ../../midia/web/midia/uploads/plant/91/664f3950d91ba5.58632535-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Floor plans Rooftop — Catherine" loading="lazy" decoding="async">
+            <figcaption><strong>Rooftop</strong><br>1- Confraternity 2- Yoga Room 3- Viewpoint Terrace 4- Ecumenical Chapel 5- Workspace 6- Gourmet</figcaption>
+          </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao-escura">
+    <div class="faixa">
+      <div class="cabeca-dupla revela">
+        <div><h2>Work</h2></div>
+        <p class="lead">Construction begins: May 2024 • Completion: August 2030</p>
+      </div>
+      <div class="obra revela">
+        <div class="obra-item">
+          <span class="obra-nome">Global Evolution</span>
+          <span class="obra-valor">31%</span>
+          <span class="obra-barra"><i style="width:31%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Foundations</span>
+          <span class="obra-valor">100%</span>
+          <span class="obra-barra"><i style="width:100%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Structure</span>
+          <span class="obra-valor">48%</span>
+          <span class="obra-barra"><i style="width:48%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Walls and Partitions</span>
+          <span class="obra-valor">17%</span>
+          <span class="obra-barra"><i style="width:17%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Electrical and Hydrosanitary Installations</span>
+          <span class="obra-valor">7%</span>
+          <span class="obra-barra"><i style="width:7%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Mortar Coatings</span>
+          <span class="obra-valor">4%</span>
+          <span class="obra-barra"><i style="width:4%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Finishes</span>
+          <span class="obra-valor">0%</span>
+          <span class="obra-barra"><i style="width:0%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Frames</span>
+          <span class="obra-valor">0%</span>
+          <span class="obra-barra"><i style="width:0%"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section class="secao torre-nota">
+    <div class="faixa">
+      <p>Incorporation registration - R-1/M-99.503.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="faixa">
+    <div class="rodape-chamada">
+      <p>Every address starts with a conversation.</p>
+      <a class="botao botao-vazado" href="../contato.html">Talk to our team</a>
+    </div>
+    <div class="rodape-grade">
+      <div class="rodape-marca">
+        <img src="../../img/logo-dallo.svg" alt="Construtora Dallo" width="128" style="filter:brightness(0) invert(1)">
+        <p class="rodape-assinatura">Builder and developer in Itapema, Porto Belo and Cascavel. 45 developments delivered and under way since 2008.</p>
+      </div>
+      <div>
+        <h4>Developments</h4>
+        <ul>
+          <li><a href="../empreendimentos.html?cidade=Itapema">Itapema</a></li>
+          <li><a href="../empreendimentos.html?cidade=Porto Belo">Porto Belo</a></li>
+          <li><a href="../empreendimentos.html?cidade=Cascavel">Cascavel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About Dallo</h4>
+        <ul>
+          <li><a href="../sobre.html">Our story</a></li>
+          <li><a href="../contato.html">Contact us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Dallo Itapema SC</h4>
+        <p>Av. Nereu Ramos, 4077, Meia Praia - Ed. Dallo Business Center | 15º e 16º andares</p>
+        <p><a href="tel:4732671111">(47) 3267-1111</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+      <div>
+        <h4>Dallo Cascavel PR</h4>
+        <p>Rua Visconde de Guarapuava, 2342</p>
+        <p><a href="tel:4522210670">(45) 2221-0670</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+    </div>
+    <div class="rodape-fim">
+      <span>Dallo Empreendimentos</span>
+      <span>All rights reserved</span>
+    </div>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/554732671111" aria-label="Message us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.15h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.18 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<script src="../../js/site.js"></script>
+</body>
+</html>

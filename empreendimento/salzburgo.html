@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salzburgo — Construtora Dallo</title>
+<meta name="description" content="Inspirado no estilo austríaco do período clássico, esta torre de 45 andares contempla 70 apartamentos de 213 m² a 352 m² de área privativa - todos 4 suítes e ao menos 3 vagas de ga">
+<link rel="alternate" hreflang="pt-BR" href="../empreendimento/salzburgo.html">
+<link rel="alternate" hreflang="en" href="../en/empreendimento/salzburgo.html">
+<link rel="alternate" hreflang="es" href="../es/empreendimento/salzburgo.html">
+<link rel="alternate" hreflang="x-default" href="../empreendimento/salzburgo.html">
+<link rel="icon" href="../img/logo-dallo.svg">
+<link rel="preload" href="../fontes/Manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fontes/PlayfairDisplay-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/estilo.css">
+<!-- A classe js no elemento html e o que liga a revelacao na rolagem.
+     Ela precisa valer em TODAS as paginas: enquanto so a home a tinha, o
+     .revela das outras nunca escondia nada e nunca animava, e o efeito
+     nao existia fora da home sem nenhum erro no console para avisar. A
+     classe js no body continua so na home, porque quem usa e o CSS da
+     abertura. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- As frases que o site.js escreve em tempo de execução (contagem da
+     busca, aviso de filtro) não podem ficar dentro do script: ele é um
+     arquivo só para as três línguas. Vêm por aqui. -->
+<script type="application/json" id="i18n">{"verTorre":"Ver {n} torre","verTorres":"Ver {n} torres","torre":"{n} torre","torres":"{n} torres","filtrandoPor":"Filtrando por","limpar":"limpar","ou":"ou","suites":"suítes","faixas":{"ate150":"Até 150 m²","150-250":"150 a 250 m²","250-400":"250 a 400 m²","400+":"Acima de 400 m²"},"pronto":"pronto para morar","obra":"em construção","emp":"{n} empreendimento","emps":"{n} empreendimentos"}</script>
+</head>
+<body>
+
+<header class="topo">
+  <div class="faixa topo-in">
+    <a class="topo-marca" href="../index.html" aria-label="Construtora Dallo, página inicial">
+      <img src="../img/logo-dallo.svg" alt="Construtora Dallo" width="138" height="35">
+    </a>
+    <button class="topo-abrir" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu">
+      <a href="../empreendimentos.html">Empreendimentos</a>
+      <a href="../sobre.html">A Dallo</a>
+      <a href="../contato.html">Contato</a>
+      <a class="menu-botao" href="../contato.html">Falar com a equipe</a>
+    </nav>
+    <div class="idiomas">
+      <button class="idiomas-atual" type="button" aria-expanded="false" aria-controls="idiomas-lista" aria-label="Trocar idioma">
+        <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>
+        <span class="idiomas-sigla">PT</span>
+        <svg class="idiomas-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="idiomas-lista" id="idiomas-lista" hidden>
+        <li><a href="../empreendimento/salzburgo.html" lang="pt-BR" aria-current="true">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>Português
+        </a></li>
+        <li><a href="../en/empreendimento/salzburgo.html" lang="en">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#fff"/><g fill="#b22234"><rect width="24" height="2.4" y="0"/><rect width="24" height="2.4" y="4.8"/><rect width="24" height="2.4" y="9.6"/><rect width="24" height="2.4" y="14.4"/><rect width="24" height="2.4" y="19.2"/></g><rect width="11" height="12" fill="#3c3b6e"/></svg></span>English
+        </a></li>
+        <li><a href="../es/empreendimento/salzburgo.html" lang="es">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#aa151b"/><rect width="24" height="12" y="6" fill="#f1bf00"/></svg></span>Español
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ======================= ABERTURA DA TORRE ========================
+       Tela cheia, com o nome sobre a imagem e a ficha técnica na mesma
+       composição. Antes eram 558 px de altura com um recorte qualquer do
+       render, e a ficha vinha depois, numa seção à parte. -->
+  <section class="torre-abertura">
+    <img class="torre-fundo" src="../midia/web/midia/uploads/enterprise/42/63e3f6f9234cf2.97230853-1600.webp" srcset="../midia/web/midia/uploads/enterprise/42/63e3f6f9234cf2.97230853-820.webp 820w, ../midia/web/midia/uploads/enterprise/42/63e3f6f9234cf2.97230853-1600.webp 1600w" sizes="100vw" alt="Salzburgo, Meia Praia · Itapema · Santa Catarina" fetchpriority="high" decoding="async">
+    <div class="faixa torre-abertura-texto">
+      <span class="rotulo">Meia Praia · Itapema · Santa Catarina</span>
+      <h1>Salzburgo</h1>
+      <dl class="torre-chave">
+        <div><dt>Suítes</dt><dd>4 suítes</dd></div>
+        <div><dt>Metragem</dt><dd>213 m² a 352 m²</dd></div>
+        <div><dt>Vagas</dt><dd>3 a 4 vagas de garagens</dd></div>
+        <div><dt>Andares</dt><dd>45</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao torre-prosa">
+    <div class="faixa">
+      <p class="frase-media revela">Inspirado no estilo austríaco do período clássico, esta torre de 45 andares contempla 70 apartamentos de 213 m² a 352 m² de área privativa - todos 4 suítes e ao menos 3 vagas de garagens.</p>
+      <div class="torre-corpo revela atraso-1"><p>Inspirado no estilo austríaco do período clássico, esta torre de 45 andares contempla 70 apartamentos de 213 m² a 352 m² de área privativa - todos 4 suítes e ao menos 3 vagas de garagens.</p>
+          <p>Localizado em Meia Praia - Itapema, muito próximo ao mar, Salzburgo é perfeitamente contextual ao seu estilo.</p></div>
+    </div>
+  </section>
+
+  <section class="secao torre-ficha-secao">
+    <div class="faixa">
+      <!-- só o que a abertura ainda não mostrou: repetir os quatro
+           primeiros a uma tela de distância não informa nada -->
+      <dl class="torre-chave torre-chave-larga revela">
+        <div><dt>Altura</dt><dd>150 metros de altura</dd></div>
+        <div><dt>Entrega</dt><dd>2028</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Rooftop</h2>
+          </div>
+          <p class="lead">São 344 m² no topo do Salzburgo, destinados inteiramente para um rooftop que contempla: terraço com fireplace, confraria, workspace e sala de yoga.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/32/default/original_67c9f74709151afdc189869669bd2514-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/32/default/original_67c9f74709151afdc189869669bd2514-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/32/default/original_67c9f74709151afdc189869669bd2514-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Salzburgo — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/32/default/original_3d531466f6f800b9282733036f55557b-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/32/default/original_3d531466f6f800b9282733036f55557b-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/32/default/original_3d531466f6f800b9282733036f55557b-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Salzburgo — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/32/default/original_8eb89323cc7fb6cc36c621a875894bd3-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/32/default/original_8eb89323cc7fb6cc36c621a875894bd3-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/32/default/original_8eb89323cc7fb6cc36c621a875894bd3-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Salzburgo — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/32/default/original_dd7efaf56dd973c72f3098c834150294-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/32/default/original_dd7efaf56dd973c72f3098c834150294-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/32/default/original_dd7efaf56dd973c72f3098c834150294-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Salzburgo — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/32/default/original_407661c75c9facbe9ec7d5d5380120c3-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/32/default/original_407661c75c9facbe9ec7d5d5380120c3-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/32/default/original_407661c75c9facbe9ec7d5d5380120c3-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Salzburgo — Rooftop" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao secao-escura">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Lazer</h2>
+          </div>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/33/default/original_2229a4bf62b708daf32dc5621ddbd65c-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/33/default/original_2229a4bf62b708daf32dc5621ddbd65c-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/33/default/original_2229a4bf62b708daf32dc5621ddbd65c-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Salzburgo — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/33/default/original_306dbb69ce9f7442c143aa389b3e0c44-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/33/default/original_306dbb69ce9f7442c143aa389b3e0c44-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/33/default/original_306dbb69ce9f7442c143aa389b3e0c44-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Salzburgo — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/33/default/original_291831335c613770525ceb7ba99a6abe-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/33/default/original_291831335c613770525ceb7ba99a6abe-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/33/default/original_291831335c613770525ceb7ba99a6abe-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Salzburgo — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/33/default/original_febe0f3a7ced79a3aad4c5219c060699-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/33/default/original_febe0f3a7ced79a3aad4c5219c060699-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/33/default/original_febe0f3a7ced79a3aad4c5219c060699-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Salzburgo — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/33/default/original_48010d91e095f57e13425ea6c70558b4-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/33/default/original_48010d91e095f57e13425ea6c70558b4-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/33/default/original_48010d91e095f57e13425ea6c70558b4-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Salzburgo — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/33/default/original_cda7a2facb66fe2978c0198968328cf7-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/33/default/original_cda7a2facb66fe2978c0198968328cf7-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/33/default/original_cda7a2facb66fe2978c0198968328cf7-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Salzburgo — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-panoramica revela"><img src="../midia/web/midia/uploads/enterprisegallery/33/default/original_bb3771b2890eaf8e1f0af560a0a43d7c-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/33/default/original_bb3771b2890eaf8e1f0af560a0a43d7c-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/33/default/original_bb3771b2890eaf8e1f0af560a0a43d7c-1600.webp 1600w" sizes="(min-width: 900px) 92vw, 100vw" alt="Salzburgo — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/33/default/original_ce2fe6f74066db41a021b2503ceaddd8-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/33/default/original_ce2fe6f74066db41a021b2503ceaddd8-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/33/default/original_ce2fe6f74066db41a021b2503ceaddd8-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Salzburgo — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/33/default/original_b88507161748aa03738625dbd11fd55a-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/33/default/original_b88507161748aa03738625dbd11fd55a-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/33/default/original_b88507161748aa03738625dbd11fd55a-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Salzburgo — Lazer" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Apartamentos</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section class="secao secao-clara">
+    <div class="faixa">
+      <div class="cabeca-dupla revela"><div><h2>Plantas</h2></div></div>
+      <div class="plantas">
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/74/63e52795eed1b8.88662023-1600.webp" srcset="../midia/web/midia/uploads/plant/74/63e52795eed1b8.88662023-820.webp 820w, ../midia/web/midia/uploads/plant/74/63e52795eed1b8.88662023-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Rooftop — Salzburgo" loading="lazy" decoding="async">
+            <figcaption><strong>Rooftop</strong><br>45º andar - 344 m² · 150 m de altura · 1) Confraria · 2) Terraço com fireplace · 3) Sala de yoga · 4) Workspace · 5) Sala de reuniões</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/76/63e52ab027f201.56833273-1600.webp" srcset="../midia/web/midia/uploads/plant/76/63e52ab027f201.56833273-820.webp 820w, ../midia/web/midia/uploads/plant/76/63e52ab027f201.56833273-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Lazer — Salzburgo" loading="lazy" decoding="async">
+            <figcaption><strong>Lazer</strong><br>Área de lazer com 1.233 m² · 1) Terraço · 2) Salão de festas · 3) Salão de jogos · 4) Poker room · 5) Banho de sol · 6) Piscina adulto com espelho d´agua e raia de 20m · 7) Gourmet externo · 8) Fitness center · 9) Spa · 10) Piscina infantil · 11) Pet play · 12) Fireplace · 13) Quadra recreativa · 14) Playgroung · 15) Personal care e sala de massagem · 16) Sauna Seca · 17) Sauna úmida · 18) Pet care · 19) Brinquedoteca</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/73/63e4ff63ba2894.91144102-1600.webp" srcset="../midia/web/midia/uploads/plant/73/63e4ff63ba2894.91144102-820.webp 820w, ../midia/web/midia/uploads/plant/73/63e4ff63ba2894.91144102-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Tipos 1 e 2 — Salzburgo" loading="lazy" decoding="async">
+            <figcaption><strong>Tipos 1 e 2</strong><br>07º ao 36º andar · 4 suítes • 3 vagas · 213 m² privativos · 325 m² área total</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/75/63e5286b63db56.66728504-1600.webp" srcset="../midia/web/midia/uploads/plant/75/63e5286b63db56.66728504-820.webp 820w, ../midia/web/midia/uploads/plant/75/63e5286b63db56.66728504-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Penthouse — Salzburgo" loading="lazy" decoding="async">
+            <figcaption><strong>Penthouse</strong><br>37º ao 44º andar · 4 suítes • 4 vagas · 352 m² privativos · 528 m² área total</figcaption>
+          </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao-escura">
+    <div class="faixa">
+      <div class="cabeca-dupla revela">
+        <div><h2>Obra</h2></div>
+        <p class="lead">Início de obra: Fevereiro de 2023 • Entrega em: Dezembro de 2028</p>
+      </div>
+      <div class="obra revela">
+        <div class="obra-item">
+          <span class="obra-nome">Evolução Global</span>
+          <span class="obra-valor">57%</span>
+          <span class="obra-barra"><i style="width:57%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Fundações</span>
+          <span class="obra-valor">100%</span>
+          <span class="obra-barra"><i style="width:100%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Estrutura</span>
+          <span class="obra-valor">94%</span>
+          <span class="obra-barra"><i style="width:94%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Paredes e Divisórias</span>
+          <span class="obra-valor">82%</span>
+          <span class="obra-barra"><i style="width:82%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Instalações Elétricas e Hidrossanitárias</span>
+          <span class="obra-valor">48%</span>
+          <span class="obra-barra"><i style="width:48%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Revestimentos de Argamassa</span>
+          <span class="obra-valor">52%</span>
+          <span class="obra-barra"><i style="width:52%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Acabamentos</span>
+          <span class="obra-valor">20%</span>
+          <span class="obra-barra"><i style="width:20%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Esquadrias</span>
+          <span class="obra-valor">11%</span>
+          <span class="obra-barra"><i style="width:11%"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="faixa">
+      <a class="botao" href="https://goo.gl/maps/5WFVb5bdE2K5YArS7" target="_blank" rel="noopener">Ver no mapa</a>
+    </div>
+  </section>
+
+  <section class="secao torre-nota">
+    <div class="faixa">
+      <p>Registro de Incorporação: R-4-75357.
+
+De acordo com a lei nº 4591/64, informamos que as ilustrações contidas neste material possuem apenas caráter de sugestão. Os móveis, assim como alguns materiais de acabamento representados nas ilustrações e plantas, não constituem parte integrante do contrato. O imóvel será entregue conforme especificado no memorial descritivo, podendo haver modificações do projeto sem aviso prévio.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="faixa">
+    <div class="rodape-chamada">
+      <p>Todo endereço começa com uma conversa.</p>
+      <a class="botao botao-vazado" href="../contato.html">Falar com a equipe</a>
+    </div>
+    <div class="rodape-grade">
+      <div class="rodape-marca">
+        <img src="../img/logo-dallo.svg" alt="Construtora Dallo" width="128" style="filter:brightness(0) invert(1)">
+        <p class="rodape-assinatura">Construtora e incorporadora em Itapema, Porto Belo e Cascavel. 45 empreendimentos entregues e em obra desde 2008.</p>
+      </div>
+      <div>
+        <h4>Empreendimentos</h4>
+        <ul>
+          <li><a href="../empreendimentos.html?cidade=Itapema">Itapema</a></li>
+          <li><a href="../empreendimentos.html?cidade=Porto Belo">Porto Belo</a></li>
+          <li><a href="../empreendimentos.html?cidade=Cascavel">Cascavel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>A Dallo</h4>
+        <ul>
+          <li><a href="../sobre.html">Nossa história</a></li>
+          <li><a href="../contato.html">Fale conosco</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Dallo Itapema SC</h4>
+        <p>Av. Nereu Ramos, 4077, Meia Praia - Ed. Dallo Business Center | 15º e 16º andares</p>
+        <p><a href="tel:4732671111">(47) 3267-1111</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+      <div>
+        <h4>Dallo Cascavel PR</h4>
+        <p>Rua Visconde de Guarapuava, 2342</p>
+        <p><a href="tel:4522210670">(45) 2221-0670</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+    </div>
+    <div class="rodape-fim">
+      <span>Dallo Empreendimentos</span>
+      <span>Todos os direitos reservados</span>
+    </div>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/554732671111" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.15h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.18 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<script src="../js/site.js"></script>
+</body>
+</html>

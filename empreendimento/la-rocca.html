@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Rocca — Construtora Dallo</title>
+<meta name="description" content="Entre as maiores torres do Brasil. 
+Subindo 54 andares ao céu, abriga 163 residências de luxo, todas com 4 suítes e ao menos 3 vagas de garagem, além de 38 unidades comerciais. Um ">
+<link rel="alternate" hreflang="pt-BR" href="../empreendimento/la-rocca.html">
+<link rel="alternate" hreflang="en" href="../en/empreendimento/la-rocca.html">
+<link rel="alternate" hreflang="es" href="../es/empreendimento/la-rocca.html">
+<link rel="alternate" hreflang="x-default" href="../empreendimento/la-rocca.html">
+<link rel="icon" href="../img/logo-dallo.svg">
+<link rel="preload" href="../fontes/Manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fontes/PlayfairDisplay-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/estilo.css">
+<!-- A classe js no elemento html e o que liga a revelacao na rolagem.
+     Ela precisa valer em TODAS as paginas: enquanto so a home a tinha, o
+     .revela das outras nunca escondia nada e nunca animava, e o efeito
+     nao existia fora da home sem nenhum erro no console para avisar. A
+     classe js no body continua so na home, porque quem usa e o CSS da
+     abertura. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- As frases que o site.js escreve em tempo de execução (contagem da
+     busca, aviso de filtro) não podem ficar dentro do script: ele é um
+     arquivo só para as três línguas. Vêm por aqui. -->
+<script type="application/json" id="i18n">{"verTorre":"Ver {n} torre","verTorres":"Ver {n} torres","torre":"{n} torre","torres":"{n} torres","filtrandoPor":"Filtrando por","limpar":"limpar","ou":"ou","suites":"suítes","faixas":{"ate150":"Até 150 m²","150-250":"150 a 250 m²","250-400":"250 a 400 m²","400+":"Acima de 400 m²"},"pronto":"pronto para morar","obra":"em construção","emp":"{n} empreendimento","emps":"{n} empreendimentos"}</script>
+</head>
+<body>
+
+<header class="topo">
+  <div class="faixa topo-in">
+    <a class="topo-marca" href="../index.html" aria-label="Construtora Dallo, página inicial">
+      <img src="../img/logo-dallo.svg" alt="Construtora Dallo" width="138" height="35">
+    </a>
+    <button class="topo-abrir" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu">
+      <a href="../empreendimentos.html">Empreendimentos</a>
+      <a href="../sobre.html">A Dallo</a>
+      <a href="../contato.html">Contato</a>
+      <a class="menu-botao" href="../contato.html">Falar com a equipe</a>
+    </nav>
+    <div class="idiomas">
+      <button class="idiomas-atual" type="button" aria-expanded="false" aria-controls="idiomas-lista" aria-label="Trocar idioma">
+        <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>
+        <span class="idiomas-sigla">PT</span>
+        <svg class="idiomas-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="idiomas-lista" id="idiomas-lista" hidden>
+        <li><a href="../empreendimento/la-rocca.html" lang="pt-BR" aria-current="true">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>Português
+        </a></li>
+        <li><a href="../en/empreendimento/la-rocca.html" lang="en">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#fff"/><g fill="#b22234"><rect width="24" height="2.4" y="0"/><rect width="24" height="2.4" y="4.8"/><rect width="24" height="2.4" y="9.6"/><rect width="24" height="2.4" y="14.4"/><rect width="24" height="2.4" y="19.2"/></g><rect width="11" height="12" fill="#3c3b6e"/></svg></span>English
+        </a></li>
+        <li><a href="../es/empreendimento/la-rocca.html" lang="es">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#aa151b"/><rect width="24" height="12" y="6" fill="#f1bf00"/></svg></span>Español
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ======================= ABERTURA DA TORRE ========================
+       Tela cheia, com o nome sobre a imagem e a ficha técnica na mesma
+       composição. Antes eram 558 px de altura com um recorte qualquer do
+       render, e a ficha vinha depois, numa seção à parte. -->
+  <section class="torre-abertura">
+    <img class="torre-fundo" src="../midia/web/midia/uploads/enterprise/1/61e9bef8b47514.13812033-1600.webp" srcset="../midia/web/midia/uploads/enterprise/1/61e9bef8b47514.13812033-820.webp 820w, ../midia/web/midia/uploads/enterprise/1/61e9bef8b47514.13812033-1600.webp 1600w" sizes="100vw" alt="La Rocca, Centro · Itapema · Santa Catarina" fetchpriority="high" decoding="async">
+    <div class="faixa torre-abertura-texto">
+      <span class="rotulo">Centro · Itapema · Santa Catarina</span>
+      <h1>La Rocca</h1>
+      <dl class="torre-chave">
+        <div><dt>Suítes</dt><dd>4 suítes</dd></div>
+        <div><dt>Metragem</dt><dd>de 165 a 505m² privativos</dd></div>
+        <div><dt>Vagas</dt><dd>3 a 4 vagas</dd></div>
+        <div><dt>Andares</dt><dd>54</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao torre-prosa">
+    <div class="faixa">
+      <p class="frase-media revela">Entre as maiores torres do Brasil. 
+Subindo 54 andares ao céu, abriga 163 residências de luxo, todas com 4 suítes e ao menos 3 vagas de garagem, além de 38 unidades comerciais. Um verdadeiro gigante com impressionantes 58.184,53m² de área total.</p>
+      <div class="torre-corpo revela atraso-1"><p>Com 54 andares na principal avenida de Itapema, o Dallo La Rocca abriga 163 apartamentos de luxo, todos com 4 suítes e aos menos 3 vagas de garagens, além de 38 unidades comerciais. </p>
+          <p>Os residentes do La Rocca serão proprietários de um mirante a quase 200 metros de altura, o que lhes proporcionará uma inigualável vista em 360º do horizonte de Itapema.</p></div>
+    </div>
+  </section>
+
+  <section class="secao torre-ficha-secao">
+    <div class="faixa">
+      <!-- só o que a abertura ainda não mostrou: repetir os quatro
+           primeiros a uma tela de distância não informa nada -->
+      <dl class="torre-chave torre-chave-larga revela">
+        <div><dt>Altura</dt><dd>201 metros de altura</dd></div>
+        <div><dt>Entrega</dt><dd>2028</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Por trás da arquitetura</h2>
+          </div>
+          <p class="lead">Se este marco arquitetônico estivesse pronto hoje, seria o 2° prédio mais alto do Brasil. Um verdadeiro gigante com impressionantes 58.184,53m² de área total.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/6/default/original_e58138d6e6dea166d57c998f6356ea1e-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/6/default/original_e58138d6e6dea166d57c998f6356ea1e-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/6/default/original_e58138d6e6dea166d57c998f6356ea1e-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — Por trás da arquitetura" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/6/default/original_e22bc70612ee172d5c4ad04b62bcc53c-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/6/default/original_e22bc70612ee172d5c4ad04b62bcc53c-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/6/default/original_e22bc70612ee172d5c4ad04b62bcc53c-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="La Rocca — Por trás da arquitetura" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/6/default/original_afbd0464903ab3ad3947d7eebe706eb5-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/6/default/original_afbd0464903ab3ad3947d7eebe706eb5-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/6/default/original_afbd0464903ab3ad3947d7eebe706eb5-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — Por trás da arquitetura" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/6/default/original_65cc694290f4f998d0cc25210e809582-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/6/default/original_65cc694290f4f998d0cc25210e809582-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/6/default/original_65cc694290f4f998d0cc25210e809582-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="La Rocca — Por trás da arquitetura" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/6/default/original_216117327f18f76ce5c8ba9decb501c6-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/6/default/original_216117327f18f76ce5c8ba9decb501c6-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/6/default/original_216117327f18f76ce5c8ba9decb501c6-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — Por trás da arquitetura" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/6/default/original_2008a53bb081391d06458a371de21a27-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/6/default/original_2008a53bb081391d06458a371de21a27-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/6/default/original_2008a53bb081391d06458a371de21a27-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — Por trás da arquitetura" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao secao-escura">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Sejam bem-vindos ao lazer do La Rocca</h2>
+          </div>
+          <p class="lead">Uma moderna “cidade junto ao mar” com 2.765m² que oferece um estilo de vida diferente de qualquer outro lugar, a 130 metros da praia.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/7/default/original_3b45f1199276013562fd1413652d4149-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/7/default/original_3b45f1199276013562fd1413652d4149-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/7/default/original_3b45f1199276013562fd1413652d4149-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — Sejam bem-vindos ao lazer do La Rocca" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/7/default/original_60a749c095e0350a33ee8e16e2d66974-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/7/default/original_60a749c095e0350a33ee8e16e2d66974-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/7/default/original_60a749c095e0350a33ee8e16e2d66974-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="La Rocca — Sejam bem-vindos ao lazer do La Rocca" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/7/default/original_758835f50de7eae3c8ce520d6535755c-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/7/default/original_758835f50de7eae3c8ce520d6535755c-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/7/default/original_758835f50de7eae3c8ce520d6535755c-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — Sejam bem-vindos ao lazer do La Rocca" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/7/default/original_876c4a3fdf2ec37fd8640b71a951c16e-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/7/default/original_876c4a3fdf2ec37fd8640b71a951c16e-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/7/default/original_876c4a3fdf2ec37fd8640b71a951c16e-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="La Rocca — Sejam bem-vindos ao lazer do La Rocca" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/7/default/original_87b9b05c12a24af98cdac96656b7f8a3-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/7/default/original_87b9b05c12a24af98cdac96656b7f8a3-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/7/default/original_87b9b05c12a24af98cdac96656b7f8a3-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — Sejam bem-vindos ao lazer do La Rocca" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/7/default/original_69ee719e473eee42bea3e222f3dc67df-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/7/default/original_69ee719e473eee42bea3e222f3dc67df-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/7/default/original_69ee719e473eee42bea3e222f3dc67df-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — Sejam bem-vindos ao lazer do La Rocca" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-panoramica revela"><img src="../midia/web/midia/uploads/enterprisegallery/7/default/original_a1c258561e384820f458401e46e72e45-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/7/default/original_a1c258561e384820f458401e46e72e45-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/7/default/original_a1c258561e384820f458401e46e72e45-1600.webp 1600w" sizes="(min-width: 900px) 92vw, 100vw" alt="La Rocca — Sejam bem-vindos ao lazer do La Rocca" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/7/default/original_21a5b7e21a0449151d9719e57e02123d-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/7/default/original_21a5b7e21a0449151d9719e57e02123d-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/7/default/original_21a5b7e21a0449151d9719e57e02123d-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — Sejam bem-vindos ao lazer do La Rocca" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/7/default/original_3982f6f1f27df975f8150fe61df11cb7-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/7/default/original_3982f6f1f27df975f8150fe61df11cb7-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/7/default/original_3982f6f1f27df975f8150fe61df11cb7-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="La Rocca — Sejam bem-vindos ao lazer do La Rocca" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/7/default/original_086177f2fe6f4f0490d2d6c38b46d8de-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/7/default/original_086177f2fe6f4f0490d2d6c38b46d8de-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/7/default/original_086177f2fe6f4f0490d2d6c38b46d8de-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — Sejam bem-vindos ao lazer do La Rocca" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/7/default/original_a019e28e374f45c341a47acded7a9e95-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/7/default/original_a019e28e374f45c341a47acded7a9e95-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/7/default/original_a019e28e374f45c341a47acded7a9e95-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="La Rocca — Sejam bem-vindos ao lazer do La Rocca" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/7/default/original_2b77e6f847a43f7f71a08b5d6af68e0e-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/7/default/original_2b77e6f847a43f7f71a08b5d6af68e0e-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/7/default/original_2b77e6f847a43f7f71a08b5d6af68e0e-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — Sejam bem-vindos ao lazer do La Rocca" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Com rooftop no 54° andar, os residentes serão proprietários de um mirante particular</h2>
+          </div>
+          <p class="lead">A quase 200 metros de altura e com 517m², proporcionará uma nova perspectiva de Itapema, além de uma inigualável vista em 360° do horizonte.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/10/default/original_b1eeb985eb0a1f47df1584fd46cca32c-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/10/default/original_b1eeb985eb0a1f47df1584fd46cca32c-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/10/default/original_b1eeb985eb0a1f47df1584fd46cca32c-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — Com rooftop no 54° andar, os residentes serão proprietários de um mirante particular" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/10/default/original_214dd433b97676e667b093f148cbed69-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/10/default/original_214dd433b97676e667b093f148cbed69-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/10/default/original_214dd433b97676e667b093f148cbed69-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="La Rocca — Com rooftop no 54° andar, os residentes serão proprietários de um mirante particular" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/10/default/original_029b9e88cf123c636ba1b773cbe47e26-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/10/default/original_029b9e88cf123c636ba1b773cbe47e26-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/10/default/original_029b9e88cf123c636ba1b773cbe47e26-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — Com rooftop no 54° andar, os residentes serão proprietários de um mirante particular" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/10/default/original_a6ca3e36bb3bd89e591cd224f19ec31e-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/10/default/original_a6ca3e36bb3bd89e591cd224f19ec31e-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/10/default/original_a6ca3e36bb3bd89e591cd224f19ec31e-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="La Rocca — Com rooftop no 54° andar, os residentes serão proprietários de um mirante particular" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao secao-escura">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>As Penthouses definem um novo padrão de vida de luxo</h2>
+          </div>
+          <p class="lead">Com paredes de vidro que destacam vistas inimagináveis, essas 11 exclusivas residências são as mais cobiçadas da torre.
+São apartamentos de 505 m² privativos, 731 a 742 m² de área total.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/8/default/original_d8170a44452d765de27a9372bd868ce5-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/8/default/original_d8170a44452d765de27a9372bd868ce5-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/8/default/original_d8170a44452d765de27a9372bd868ce5-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — As Penthouses definem um novo padrão de vida de luxo" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/8/default/original_04ebebe8bf278a765912a8d814d01023-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/8/default/original_04ebebe8bf278a765912a8d814d01023-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/8/default/original_04ebebe8bf278a765912a8d814d01023-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="La Rocca — As Penthouses definem um novo padrão de vida de luxo" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/8/default/original_03ff37bbfe1e82e39934d9c2c65e84b6-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/8/default/original_03ff37bbfe1e82e39934d9c2c65e84b6-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/8/default/original_03ff37bbfe1e82e39934d9c2c65e84b6-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — As Penthouses definem um novo padrão de vida de luxo" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/8/default/original_4940f4b28f88ebebded6e547942341e8-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/8/default/original_4940f4b28f88ebebded6e547942341e8-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/8/default/original_4940f4b28f88ebebded6e547942341e8-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="La Rocca — As Penthouses definem um novo padrão de vida de luxo" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/8/default/original_625c53314374b759fb84158ade660497-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/8/default/original_625c53314374b759fb84158ade660497-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/8/default/original_625c53314374b759fb84158ade660497-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — As Penthouses definem um novo padrão de vida de luxo" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/8/default/original_b4e06f6c6184c8109b9aa877eae636b3-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/8/default/original_b4e06f6c6184c8109b9aa877eae636b3-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/8/default/original_b4e06f6c6184c8109b9aa877eae636b3-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="La Rocca — As Penthouses definem um novo padrão de vida de luxo" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Uma verdadeira seleção de residências de luxo</h2>
+          </div>
+          <p class="lead">São 4 diferentes plantas bem pensadas pela equipe de arquitetura Dallo</p>
+        </div>
+      </div>
+    </section>
+
+  <section class="secao secao-clara">
+    <div class="faixa">
+      <div class="cabeca-dupla revela"><div><h2>Plantas</h2></div></div>
+      <div class="plantas">
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/3/61ef201e03f675.31284864-1600.webp" srcset="../midia/web/midia/uploads/plant/3/61ef201e03f675.31284864-820.webp 820w, ../midia/web/midia/uploads/plant/3/61ef201e03f675.31284864-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Tipos 1 e 2 — La Rocca" loading="lazy" decoding="async">
+            <figcaption><strong>Tipos 1 e 2</strong><br>4 suítes · 3 vagas de garagem · 206 m² privativos · 310 m² de área total</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/5/61ef203488e825.19162349-1600.webp" srcset="../midia/web/midia/uploads/plant/5/61ef203488e825.19162349-820.webp 820w, ../midia/web/midia/uploads/plant/5/61ef203488e825.19162349-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Tipos 3 e 4 — La Rocca" loading="lazy" decoding="async">
+            <figcaption><strong>Tipos 3 e 4</strong><br>4 suítes · 3 vagas de garagem · 164 m² privativos · 254 m² de área total</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/1/61ef20436cf7a7.64810455-1600.webp" srcset="../midia/web/midia/uploads/plant/1/61ef20436cf7a7.64810455-820.webp 820w, ../midia/web/midia/uploads/plant/1/61ef20436cf7a7.64810455-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Penthouses — La Rocca" loading="lazy" decoding="async">
+            <figcaption><strong>Penthouses</strong><br>4 suítes · 5 vagas de garagem · 505 m² privativos · 731 a 742 m² de área total</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/4/61ef205226c6f4.99685794-1600.webp" srcset="../midia/web/midia/uploads/plant/4/61ef205226c6f4.99685794-820.webp 820w, ../midia/web/midia/uploads/plant/4/61ef205226c6f4.99685794-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Rooftop — La Rocca" loading="lazy" decoding="async">
+            <figcaption><strong>Rooftop</strong><br>517 m² de área · 190 metros acima do nível do mar · 1) Confraria · 2) Workspace · 3) Estar para leitura · 4) Fire place · 5) Lounge · 6) Terraço mirante</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/2/61ef205cb67b86.00665280-1600.webp" srcset="../midia/web/midia/uploads/plant/2/61ef205cb67b86.00665280-820.webp 820w, ../midia/web/midia/uploads/plant/2/61ef205cb67b86.00665280-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Área de lazer — La Rocca" loading="lazy" decoding="async">
+            <figcaption><strong>Área de lazer</strong><br>Área total 2.765 m² · 1) Terraço externo · 2) Playground · 3) Pet play · 4) Pet care · 5) Baby care · 6) Brinquedoteca · 7) Salão de festas 1 · 8) Sala de jogos gourmet · 9) Salão de festas 2 · 10) Espaço teen · 11) Piscina aquecida coberta · 12) Espaço gourmet piscina · 13) Saunas seca e úmida · 14) Copa com área para funcionários · 15) Fitness center · 16) Sala de massagem · 17) Personal care · 18) Espaço cross · 19 Quadra recreativa · 20) Piscina infantil · 21) Acqua play · 22) Piscina adulto com spa e raia de 23 metros · 23) Churrasqueira piscina · 24) Terraço externo</figcaption>
+          </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao-escura">
+    <div class="faixa">
+      <div class="cabeca-dupla revela">
+        <div><h2>Obra</h2></div>
+        <p class="lead">Início de obra: Março de 2022 • Entrega em: Dezembro de 2028</p>
+      </div>
+      <div class="obra revela">
+        <div class="obra-item">
+          <span class="obra-nome">Evolução Global</span>
+          <span class="obra-valor">53%</span>
+          <span class="obra-barra"><i style="width:53%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Fundações</span>
+          <span class="obra-valor">100%</span>
+          <span class="obra-barra"><i style="width:100%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Estrutura</span>
+          <span class="obra-valor">98%</span>
+          <span class="obra-barra"><i style="width:98%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Paredes e Divisórias</span>
+          <span class="obra-valor">80%</span>
+          <span class="obra-barra"><i style="width:80%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Instalações Elétricas e Hidrossanitárias</span>
+          <span class="obra-valor">43%</span>
+          <span class="obra-barra"><i style="width:43%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Revestimentos de Argamassa</span>
+          <span class="obra-valor">56%</span>
+          <span class="obra-barra"><i style="width:56%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Acabamentos</span>
+          <span class="obra-valor">20%</span>
+          <span class="obra-barra"><i style="width:20%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Esquadrias</span>
+          <span class="obra-valor">1%</span>
+          <span class="obra-barra"><i style="width:1%"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="faixa">
+      <a class="botao" href="https://www.google.com/maps/dir//Dallo+La+Rocca+-+Av.+Nereu+Ramos,+518+-+Centro,+Itapema+-+SC,+88220-000/@-27.0991911,-48.6180105,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x94d8b130a9494d31:0x84590e7dd134d18!2m2!1d-48.6158204!2d-27.099185!3e0" target="_blank" rel="noopener">Ver no mapa</a>
+    </div>
+  </section>
+
+  <section class="secao torre-nota">
+    <div class="faixa">
+      <p>Registro de incorporação imobiliária: R-4-72514. Imagens meramente ilustrativas</p>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="faixa">
+    <div class="rodape-chamada">
+      <p>Todo endereço começa com uma conversa.</p>
+      <a class="botao botao-vazado" href="../contato.html">Falar com a equipe</a>
+    </div>
+    <div class="rodape-grade">
+      <div class="rodape-marca">
+        <img src="../img/logo-dallo.svg" alt="Construtora Dallo" width="128" style="filter:brightness(0) invert(1)">
+        <p class="rodape-assinatura">Construtora e incorporadora em Itapema, Porto Belo e Cascavel. 45 empreendimentos entregues e em obra desde 2008.</p>
+      </div>
+      <div>
+        <h4>Empreendimentos</h4>
+        <ul>
+          <li><a href="../empreendimentos.html?cidade=Itapema">Itapema</a></li>
+          <li><a href="../empreendimentos.html?cidade=Porto Belo">Porto Belo</a></li>
+          <li><a href="../empreendimentos.html?cidade=Cascavel">Cascavel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>A Dallo</h4>
+        <ul>
+          <li><a href="../sobre.html">Nossa história</a></li>
+          <li><a href="../contato.html">Fale conosco</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Dallo Itapema SC</h4>
+        <p>Av. Nereu Ramos, 4077, Meia Praia - Ed. Dallo Business Center | 15º e 16º andares</p>
+        <p><a href="tel:4732671111">(47) 3267-1111</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+      <div>
+        <h4>Dallo Cascavel PR</h4>
+        <p>Rua Visconde de Guarapuava, 2342</p>
+        <p><a href="tel:4522210670">(45) 2221-0670</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+    </div>
+    <div class="rodape-fim">
+      <span>Dallo Empreendimentos</span>
+      <span>Todos os direitos reservados</span>
+    </div>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/554732671111" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.15h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.18 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<script src="../js/site.js"></script>
+</body>
+</html>

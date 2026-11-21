@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sweden — Construtora Dallo</title>
+<meta name="description" content="Dallo Sweden foi inspirado em uma das criações mais elegantes do universo, a aurora boreal. Os ambientes recriam a atmosfera do céu noturno de forma delicada, mantendo as caracterí">
+<link rel="alternate" hreflang="pt-BR" href="../empreendimento/sweden.html">
+<link rel="alternate" hreflang="en" href="../en/empreendimento/sweden.html">
+<link rel="alternate" hreflang="es" href="../es/empreendimento/sweden.html">
+<link rel="alternate" hreflang="x-default" href="../empreendimento/sweden.html">
+<link rel="icon" href="../img/logo-dallo.svg">
+<link rel="preload" href="../fontes/Manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fontes/PlayfairDisplay-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/estilo.css">
+<!-- A classe js no elemento html e o que liga a revelacao na rolagem.
+     Ela precisa valer em TODAS as paginas: enquanto so a home a tinha, o
+     .revela das outras nunca escondia nada e nunca animava, e o efeito
+     nao existia fora da home sem nenhum erro no console para avisar. A
+     classe js no body continua so na home, porque quem usa e o CSS da
+     abertura. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- As frases que o site.js escreve em tempo de execução (contagem da
+     busca, aviso de filtro) não podem ficar dentro do script: ele é um
+     arquivo só para as três línguas. Vêm por aqui. -->
+<script type="application/json" id="i18n">{"verTorre":"Ver {n} torre","verTorres":"Ver {n} torres","torre":"{n} torre","torres":"{n} torres","filtrandoPor":"Filtrando por","limpar":"limpar","ou":"ou","suites":"suítes","faixas":{"ate150":"Até 150 m²","150-250":"150 a 250 m²","250-400":"250 a 400 m²","400+":"Acima de 400 m²"},"pronto":"pronto para morar","obra":"em construção","emp":"{n} empreendimento","emps":"{n} empreendimentos"}</script>
+</head>
+<body>
+
+<header class="topo">
+  <div class="faixa topo-in">
+    <a class="topo-marca" href="../index.html" aria-label="Construtora Dallo, página inicial">
+      <img src="../img/logo-dallo.svg" alt="Construtora Dallo" width="138" height="35">
+    </a>
+    <button class="topo-abrir" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu">
+      <a href="../empreendimentos.html">Empreendimentos</a>
+      <a href="../sobre.html">A Dallo</a>
+      <a href="../contato.html">Contato</a>
+      <a class="menu-botao" href="../contato.html">Falar com a equipe</a>
+    </nav>
+    <div class="idiomas">
+      <button class="idiomas-atual" type="button" aria-expanded="false" aria-controls="idiomas-lista" aria-label="Trocar idioma">
+        <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>
+        <span class="idiomas-sigla">PT</span>
+        <svg class="idiomas-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="idiomas-lista" id="idiomas-lista" hidden>
+        <li><a href="../empreendimento/sweden.html" lang="pt-BR" aria-current="true">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>Português
+        </a></li>
+        <li><a href="../en/empreendimento/sweden.html" lang="en">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#fff"/><g fill="#b22234"><rect width="24" height="2.4" y="0"/><rect width="24" height="2.4" y="4.8"/><rect width="24" height="2.4" y="9.6"/><rect width="24" height="2.4" y="14.4"/><rect width="24" height="2.4" y="19.2"/></g><rect width="11" height="12" fill="#3c3b6e"/></svg></span>English
+        </a></li>
+        <li><a href="../es/empreendimento/sweden.html" lang="es">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#aa151b"/><rect width="24" height="12" y="6" fill="#f1bf00"/></svg></span>Español
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ======================= ABERTURA DA TORRE ========================
+       Tela cheia, com o nome sobre a imagem e a ficha técnica na mesma
+       composição. Antes eram 558 px de altura com um recorte qualquer do
+       render, e a ficha vinha depois, numa seção à parte. -->
+  <section class="torre-abertura">
+    <img class="torre-fundo" src="../midia/web/midia/uploads/enterprise/43/64d271a323e294.03413290-1600.webp" srcset="../midia/web/midia/uploads/enterprise/43/64d271a323e294.03413290-820.webp 820w, ../midia/web/midia/uploads/enterprise/43/64d271a323e294.03413290-1600.webp 1600w" sizes="100vw" alt="Sweden, Centro · Itapema · Santa Catarina" fetchpriority="high" decoding="async">
+    <div class="faixa torre-abertura-texto">
+      <span class="rotulo">Centro · Itapema · Santa Catarina</span>
+      <h1>Sweden</h1>
+      <dl class="torre-chave">
+        <div><dt>Suítes</dt><dd>4 suítes</dd></div>
+        <div><dt>Metragem</dt><dd>180 m² a 410 m²</dd></div>
+        <div><dt>Vagas</dt><dd>3 a 5 vagas de garagens</dd></div>
+        <div><dt>Andares</dt><dd>59</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao torre-prosa">
+    <div class="faixa">
+      <p class="frase-media revela">Dallo Sweden foi inspirado em uma das criações mais elegantes do universo, a aurora boreal. Os ambientes recriam a atmosfera do céu noturno de forma delicada, mantendo as características do clássico contemporâneo Dallo.</p>
+      <div class="torre-corpo revela atraso-1"><p>Dallo Sweden foi inspirado em uma das criações mais elegantes do universo, a aurora boreal. Os ambientes recriam a atmosfera do céu noturno de forma delicada, mantendo as características do clássico contemporâneo Dallo.</p></div>
+    </div>
+  </section>
+
+  <section class="secao torre-ficha-secao">
+    <div class="faixa">
+      <!-- só o que a abertura ainda não mostrou: repetir os quatro
+           primeiros a uma tela de distância não informa nada -->
+      <dl class="torre-chave torre-chave-larga revela">
+        <div><dt>Altura</dt><dd>220 metros de altura</dd></div>
+        <div><dt>Entrega</dt><dd>2030</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>A torre</h2>
+          </div>
+          <p class="lead">Com 60 pavimentos e a mais de 220 metros de altura. O Dallo Sweden abriga 141 apartamentos de luxo, todos com 4 suítes e 3 a 5 vagas de garagem. 
+Esta imponente torre está localizada no Centro de Itapema, na principal avenida da cidade sob uma galeria com 42 lojas.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/89/default/original_51b277a542c7bbf1b4a780e1edcd0661-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/89/default/original_51b277a542c7bbf1b4a780e1edcd0661-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/89/default/original_51b277a542c7bbf1b4a780e1edcd0661-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — A torre" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao secao-escura">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Rooftop</h2>
+          </div>
+          <p class="lead">O Rooftop Sweden contempla dois pavimentos inteiros.
+São diversos ambientes com uma vista fabulosa do mar e do horizonte.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/90/default/original_4977ad74e232ce8d021b2e4f303ecd5f-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/90/default/original_4977ad74e232ce8d021b2e4f303ecd5f-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/90/default/original_4977ad74e232ce8d021b2e4f303ecd5f-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/90/default/original_605a0d8bc2e1a130864f502a69936a21-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/90/default/original_605a0d8bc2e1a130864f502a69936a21-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/90/default/original_605a0d8bc2e1a130864f502a69936a21-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Sweden — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/90/default/original_e0ce16d8e361d09a0dbd03b24e69b9c4-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/90/default/original_e0ce16d8e361d09a0dbd03b24e69b9c4-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/90/default/original_e0ce16d8e361d09a0dbd03b24e69b9c4-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/90/default/original_0b37512c896e4a2c5950902364363292-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/90/default/original_0b37512c896e4a2c5950902364363292-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/90/default/original_0b37512c896e4a2c5950902364363292-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Sweden — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/90/default/original_e2320d4d58f3fb1b3cf290df66e93dd3-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/90/default/original_e2320d4d58f3fb1b3cf290df66e93dd3-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/90/default/original_e2320d4d58f3fb1b3cf290df66e93dd3-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/90/default/original_29de7fca268c290201dfc21f9daa92e4-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/90/default/original_29de7fca268c290201dfc21f9daa92e4-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/90/default/original_29de7fca268c290201dfc21f9daa92e4-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-panoramica revela"><img src="../midia/web/midia/uploads/enterprisegallery/90/default/original_79591e4d92543565ebf37b555ab26b1b-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/90/default/original_79591e4d92543565ebf37b555ab26b1b-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/90/default/original_79591e4d92543565ebf37b555ab26b1b-1600.webp 1600w" sizes="(min-width: 900px) 92vw, 100vw" alt="Sweden — Rooftop" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Lazer</h2>
+          </div>
+          <p class="lead">2.133m² de área de lazer com diversos ambientes.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/91/default/original_076f7e2d6b4f2658c048796cb9a40faf-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/91/default/original_076f7e2d6b4f2658c048796cb9a40faf-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/91/default/original_076f7e2d6b4f2658c048796cb9a40faf-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/91/default/original_3b6691dea3bdc1ddb7e1ab8fadde01a9-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/91/default/original_3b6691dea3bdc1ddb7e1ab8fadde01a9-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/91/default/original_3b6691dea3bdc1ddb7e1ab8fadde01a9-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Sweden — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/91/default/original_6e4d1ec6f6874fcb9bf63edf0ad3f43d-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/91/default/original_6e4d1ec6f6874fcb9bf63edf0ad3f43d-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/91/default/original_6e4d1ec6f6874fcb9bf63edf0ad3f43d-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/91/default/original_2db0e501f6884078c6448835e1edf1db-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/91/default/original_2db0e501f6884078c6448835e1edf1db-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/91/default/original_2db0e501f6884078c6448835e1edf1db-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Sweden — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/91/default/original_d7d0a496d36af5b70f12efe017d7a576-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/91/default/original_d7d0a496d36af5b70f12efe017d7a576-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/91/default/original_d7d0a496d36af5b70f12efe017d7a576-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/91/default/original_2a3418a440afc4816362b402dd280c15-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/91/default/original_2a3418a440afc4816362b402dd280c15-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/91/default/original_2a3418a440afc4816362b402dd280c15-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-panoramica revela"><img src="../midia/web/midia/uploads/enterprisegallery/91/default/original_76dd321f76f15a6246651238258df282-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/91/default/original_76dd321f76f15a6246651238258df282-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/91/default/original_76dd321f76f15a6246651238258df282-1600.webp 1600w" sizes="(min-width: 900px) 92vw, 100vw" alt="Sweden — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/91/default/original_9e1a392b0b3ac930d4c94a2acadf0555-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/91/default/original_9e1a392b0b3ac930d4c94a2acadf0555-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/91/default/original_9e1a392b0b3ac930d4c94a2acadf0555-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/91/default/original_ac9b8fdfd10dffaa0ed67c177a737eda-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/91/default/original_ac9b8fdfd10dffaa0ed67c177a737eda-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/91/default/original_ac9b8fdfd10dffaa0ed67c177a737eda-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Sweden — Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/91/default/original_bdf1ed861b4ed385cb2d766a1598a4c5-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/91/default/original_bdf1ed861b4ed385cb2d766a1598a4c5-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/91/default/original_bdf1ed861b4ed385cb2d766a1598a4c5-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Lazer" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao secao-escura">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Apartamentos Tipos</h2>
+          </div>
+          <p class="lead">6° ao 48° andar -
+Tipos 1,2 e 3 - 
+180 a 208m² privativos</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/92/default/original_5554bf5c094dadabe2909bcfbb3faff0-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/92/default/original_5554bf5c094dadabe2909bcfbb3faff0-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/92/default/original_5554bf5c094dadabe2909bcfbb3faff0-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Apartamentos Tipos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/92/default/original_4fed2553338b7ecac99a32ddefdefbe6-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/92/default/original_4fed2553338b7ecac99a32ddefdefbe6-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/92/default/original_4fed2553338b7ecac99a32ddefdefbe6-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Sweden — Apartamentos Tipos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/92/default/original_e8a668d6e30f9fe23250f8ac10280df2-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/92/default/original_e8a668d6e30f9fe23250f8ac10280df2-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/92/default/original_e8a668d6e30f9fe23250f8ac10280df2-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Apartamentos Tipos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/92/default/original_f467f7b6470fd06d1c7a1add12ae509a-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/92/default/original_f467f7b6470fd06d1c7a1add12ae509a-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/92/default/original_f467f7b6470fd06d1c7a1add12ae509a-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Sweden — Apartamentos Tipos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/92/default/original_deb3864ceccd86bd428639c8e819198c-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/92/default/original_deb3864ceccd86bd428639c8e819198c-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/92/default/original_deb3864ceccd86bd428639c8e819198c-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Apartamentos Tipos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/92/default/original_0845f23d29a554cd49ce58eca922f185-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/92/default/original_0845f23d29a554cd49ce58eca922f185-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/92/default/original_0845f23d29a554cd49ce58eca922f185-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Apartamentos Tipos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-panoramica revela"><img src="../midia/web/midia/uploads/enterprisegallery/92/default/original_46d05a8236d35000bc812e633c7704f0-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/92/default/original_46d05a8236d35000bc812e633c7704f0-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/92/default/original_46d05a8236d35000bc812e633c7704f0-1600.webp 1600w" sizes="(min-width: 900px) 92vw, 100vw" alt="Sweden — Apartamentos Tipos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/92/default/original_35a157e352e706ff2fa10bcdf8728431-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/92/default/original_35a157e352e706ff2fa10bcdf8728431-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/92/default/original_35a157e352e706ff2fa10bcdf8728431-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Apartamentos Tipos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/92/default/original_57996f3aa77c2e84f1ad8688cbf76af3-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/92/default/original_57996f3aa77c2e84f1ad8688cbf76af3-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/92/default/original_57996f3aa77c2e84f1ad8688cbf76af3-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Sweden — Apartamentos Tipos" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Penthouse</h2>
+          </div>
+          <p class="lead">49° ao 57° andar - 
+São 9 apartamentos que ocupam um pavimento inteiro com
+410m² privativos</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/93/default/original_4765e62f9b1944b3b5db54700bab78ad-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/93/default/original_4765e62f9b1944b3b5db54700bab78ad-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/93/default/original_4765e62f9b1944b3b5db54700bab78ad-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Penthouse" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/93/default/original_0bc142159087268dc87aca475ec7fdcc-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/93/default/original_0bc142159087268dc87aca475ec7fdcc-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/93/default/original_0bc142159087268dc87aca475ec7fdcc-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Sweden — Penthouse" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/93/default/original_8c0dfeb89abe411aba1c11c78a9a8003-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/93/default/original_8c0dfeb89abe411aba1c11c78a9a8003-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/93/default/original_8c0dfeb89abe411aba1c11c78a9a8003-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Penthouse" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/93/default/original_7a2fa4a22cfcd7460690fdd24a9bb7ed-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/93/default/original_7a2fa4a22cfcd7460690fdd24a9bb7ed-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/93/default/original_7a2fa4a22cfcd7460690fdd24a9bb7ed-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Sweden — Penthouse" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/93/default/original_e9e9adea800764b7ad488558b6751956-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/93/default/original_e9e9adea800764b7ad488558b6751956-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/93/default/original_e9e9adea800764b7ad488558b6751956-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Sweden — Penthouse" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+
+  <section class="secao secao-clara">
+    <div class="faixa">
+      <div class="cabeca-dupla revela"><div><h2>Plantas</h2></div></div>
+      <div class="plantas">
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/84/6564ce009ca157.83916627-1600.webp" srcset="../midia/web/midia/uploads/plant/84/6564ce009ca157.83916627-820.webp 820w, ../midia/web/midia/uploads/plant/84/6564ce009ca157.83916627-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Apartamento tipo 1 e 2 — Sweden" loading="lazy" decoding="async">
+            <figcaption><strong>Apartamento tipo 1 e 2</strong><br>Tipo 1 | 208m² privativos | 322m² total · Tipo 2 | 201m² privativos | 313m² total</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/83/6564cd9dceb1b5.00772713-1600.webp" srcset="../midia/web/midia/uploads/plant/83/6564cd9dceb1b5.00772713-820.webp 820w, ../midia/web/midia/uploads/plant/83/6564cd9dceb1b5.00772713-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Apartamento tipo 3 — Sweden" loading="lazy" decoding="async">
+            <figcaption><strong>Apartamento tipo 3</strong><br>Tipo 3 | 180m² privativos | 284m² total</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/87/6564cf2d4da6a3.44101011-1600.webp" srcset="../midia/web/midia/uploads/plant/87/6564cf2d4da6a3.44101011-820.webp 820w, ../midia/web/midia/uploads/plant/87/6564cf2d4da6a3.44101011-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Penthouse — Sweden" loading="lazy" decoding="async">
+            <figcaption><strong>Penthouse</strong><br>Penthouse | 410m² privativos · Penthouse | 624m² área total</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/86/6564cedfbe2d19.77161110-1600.webp" srcset="../midia/web/midia/uploads/plant/86/6564cedfbe2d19.77161110-820.webp 820w, ../midia/web/midia/uploads/plant/86/6564cedfbe2d19.77161110-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Rooftop 1 — Sweden" loading="lazy" decoding="async">
+            <figcaption><strong>Rooftop 1</strong><br>1 - Copela · 2- Estúdio Pilates · 3- Estúdio Yoga · 4- Fire Pit · 5- Workspace · 6- Sala de reunião · 7- Terraço com fire place</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/85/6564ce794b8507.39259793-1600.webp" srcset="../midia/web/midia/uploads/plant/85/6564ce794b8507.39259793-820.webp 820w, ../midia/web/midia/uploads/plant/85/6564ce794b8507.39259793-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Rooftop 2 — Sweden" loading="lazy" decoding="async">
+            <figcaption><strong>Rooftop 2</strong><br>8- Zen Spa · 9- Confraria</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/88/6564cfed5ab831.68807663-1600.webp" srcset="../midia/web/midia/uploads/plant/88/6564cfed5ab831.68807663-820.webp 820w, ../midia/web/midia/uploads/plant/88/6564cfed5ab831.68807663-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Lazer — Sweden" loading="lazy" decoding="async">
+            <figcaption><strong>Lazer</strong><br>1- Sala de jogos · 2- Personal care · 3- Sala de massagem · 4- Baby care · 5- Sauna úmida · 6- Sauna seca · 7- Piscina adulto coberta · 8- Fitness center · 9- Gourmet externo · 10- Área de estar · 11- Piscina infantil · 12- Piscinas adulto com spa · 13- Salão de festas 1 · 14- Salão de festas 2 · 15- Brinquedoteca · 16- Lounge com espelho d'água · 17- Pet care · 18- Espaço teen · 19- Playground · 20- Pet play</figcaption>
+          </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao-escura">
+    <div class="faixa">
+      <div class="cabeca-dupla revela">
+        <div><h2>Obra</h2></div>
+        <p class="lead">Início de obra: Agosto de 2023 • Entrega em: Julho de 2030</p>
+      </div>
+      <div class="obra revela">
+        <div class="obra-item">
+          <span class="obra-nome">Evolução Global</span>
+          <span class="obra-valor">36%</span>
+          <span class="obra-barra"><i style="width:36%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Fundações</span>
+          <span class="obra-valor">93%</span>
+          <span class="obra-barra"><i style="width:93%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Estrutura</span>
+          <span class="obra-valor">35%</span>
+          <span class="obra-barra"><i style="width:35%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Paredes e Divisórias</span>
+          <span class="obra-valor">9%</span>
+          <span class="obra-barra"><i style="width:9%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Instalações Elétricas e Hidrossanitárias</span>
+          <span class="obra-valor">4%</span>
+          <span class="obra-barra"><i style="width:4%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Revestimentos de Argamassa</span>
+          <span class="obra-valor">3%</span>
+          <span class="obra-barra"><i style="width:3%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Acabamentos</span>
+          <span class="obra-valor">2%</span>
+          <span class="obra-barra"><i style="width:2%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Esquadrias</span>
+          <span class="obra-valor">1%</span>
+          <span class="obra-barra"><i style="width:1%"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section class="secao torre-nota">
+    <div class="faixa">
+      <p>Registro de incorporação imobiliária: R-8-76331
+Imagens meramente ilustrativas</p>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="faixa">
+    <div class="rodape-chamada">
+      <p>Todo endereço começa com uma conversa.</p>
+      <a class="botao botao-vazado" href="../contato.html">Falar com a equipe</a>
+    </div>
+    <div class="rodape-grade">
+      <div class="rodape-marca">
+        <img src="../img/logo-dallo.svg" alt="Construtora Dallo" width="128" style="filter:brightness(0) invert(1)">
+        <p class="rodape-assinatura">Construtora e incorporadora em Itapema, Porto Belo e Cascavel. 45 empreendimentos entregues e em obra desde 2008.</p>
+      </div>
+      <div>
+        <h4>Empreendimentos</h4>
+        <ul>
+          <li><a href="../empreendimentos.html?cidade=Itapema">Itapema</a></li>
+          <li><a href="../empreendimentos.html?cidade=Porto Belo">Porto Belo</a></li>
+          <li><a href="../empreendimentos.html?cidade=Cascavel">Cascavel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>A Dallo</h4>
+        <ul>
+          <li><a href="../sobre.html">Nossa história</a></li>
+          <li><a href="../contato.html">Fale conosco</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Dallo Itapema SC</h4>
+        <p>Av. Nereu Ramos, 4077, Meia Praia - Ed. Dallo Business Center | 15º e 16º andares</p>
+        <p><a href="tel:4732671111">(47) 3267-1111</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+      <div>
+        <h4>Dallo Cascavel PR</h4>
+        <p>Rua Visconde de Guarapuava, 2342</p>
+        <p><a href="tel:4522210670">(45) 2221-0670</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+    </div>
+    <div class="rodape-fim">
+      <span>Dallo Empreendimentos</span>
+      <span>Todos os direitos reservados</span>
+    </div>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/554732671111" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.15h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.18 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<script src="../js/site.js"></script>
+</body>
+</html>

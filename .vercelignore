@@ -1,0 +1,16 @@
+# O que NÃO sobe para o Vercel.
+#
+# midia/midia/ são os originais do CMS da Dallo: 1,8 GB que nenhuma
+# página referencia desde que o site passou a servir as versões web
+# (midia/web/, 79 MB em WebP de 1600 e 820 px). Ficam no disco local
+# como arquivo de origem; não há motivo para publicá-los.
+midia/midia/
+
+# ferramentas de build e servidor local: não fazem parte do site
+gerar.js
+servir.js
+
+# nada de notas internas ou rascunhos, caso apareçam
+*.md
+_*.txt
+_*.json

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parigi — Construtora Dallo</title>
+<meta name="description" content="Inspired by the charm of Paris, Dallo Parigi reflects the pure essence of the City of Lights in his architectural designs.">
+<link rel="alternate" hreflang="pt-BR" href="../../empreendimento/parigi.html">
+<link rel="alternate" hreflang="en" href="../../en/empreendimento/parigi.html">
+<link rel="alternate" hreflang="es" href="../../es/empreendimento/parigi.html">
+<link rel="alternate" hreflang="x-default" href="../../empreendimento/parigi.html">
+<link rel="icon" href="../../img/logo-dallo.svg">
+<link rel="preload" href="../../fontes/Manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fontes/PlayfairDisplay-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/estilo.css">
+<!-- A classe js no elemento html e o que liga a revelacao na rolagem.
+     Ela precisa valer em TODAS as paginas: enquanto so a home a tinha, o
+     .revela das outras nunca escondia nada e nunca animava, e o efeito
+     nao existia fora da home sem nenhum erro no console para avisar. A
+     classe js no body continua so na home, porque quem usa e o CSS da
+     abertura. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- As frases que o site.js escreve em tempo de execução (contagem da
+     busca, aviso de filtro) não podem ficar dentro do script: ele é um
+     arquivo só para as três línguas. Vêm por aqui. -->
+<script type="application/json" id="i18n">{"verTorre":"View {n} tower","verTorres":"View {n} towers","torre":"{n} tower","torres":"{n} towers","filtrandoPor":"Filtering by","limpar":"clear","ou":"or","suites":"suites","faixas":{"ate150":"Up to 150 m²","150-250":"150 to 250 m²","250-400":"250 to 400 m²","400+":"Over 400 m²"},"pronto":"ready to move in","obra":"under construction","emp":"{n} development","emps":"{n} developments"}</script>
+</head>
+<body>
+
+<header class="topo">
+  <div class="faixa topo-in">
+    <a class="topo-marca" href="../index.html" aria-label="Dallo Construction Company, home">
+      <img src="../../img/logo-dallo.svg" alt="Construtora Dallo" width="138" height="35">
+    </a>
+    <button class="topo-abrir" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu">
+      <a href="../empreendimentos.html">Developments</a>
+      <a href="../sobre.html">About Dallo</a>
+      <a href="../contato.html">Contact</a>
+      <a class="menu-botao" href="../contato.html">Talk to our team</a>
+    </nav>
+    <div class="idiomas">
+      <button class="idiomas-atual" type="button" aria-expanded="false" aria-controls="idiomas-lista" aria-label="Change language">
+        <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#fff"/><g fill="#b22234"><rect width="24" height="2.4" y="0"/><rect width="24" height="2.4" y="4.8"/><rect width="24" height="2.4" y="9.6"/><rect width="24" height="2.4" y="14.4"/><rect width="24" height="2.4" y="19.2"/></g><rect width="11" height="12" fill="#3c3b6e"/></svg></span>
+        <span class="idiomas-sigla">EN</span>
+        <svg class="idiomas-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="idiomas-lista" id="idiomas-lista" hidden>
+        <li><a href="../../empreendimento/parigi.html" lang="pt-BR">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>Português
+        </a></li>
+        <li><a href="../../en/empreendimento/parigi.html" lang="en" aria-current="true">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#fff"/><g fill="#b22234"><rect width="24" height="2.4" y="0"/><rect width="24" height="2.4" y="4.8"/><rect width="24" height="2.4" y="9.6"/><rect width="24" height="2.4" y="14.4"/><rect width="24" height="2.4" y="19.2"/></g><rect width="11" height="12" fill="#3c3b6e"/></svg></span>English
+        </a></li>
+        <li><a href="../../es/empreendimento/parigi.html" lang="es">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#aa151b"/><rect width="24" height="12" y="6" fill="#f1bf00"/></svg></span>Español
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ======================= ABERTURA DA TORRE ========================
+       Tela cheia, com o nome sobre a imagem e a ficha técnica na mesma
+       composição. Antes eram 558 px de altura com um recorte qualquer do
+       render, e a ficha vinha depois, numa seção à parte. -->
+  <section class="torre-abertura">
+    <img class="torre-fundo" src="../../midia/web/midia/uploads/enterprise/45/651ed42f626828.05542703-1600.webp" srcset="../../midia/web/midia/uploads/enterprise/45/651ed42f626828.05542703-820.webp 820w, ../../midia/web/midia/uploads/enterprise/45/651ed42f626828.05542703-1600.webp 1600w" sizes="100vw" alt="Parigi, Neva · Cascavel · Paraná" fetchpriority="high" decoding="async">
+    <div class="faixa torre-abertura-texto">
+      <span class="rotulo">Neva · Cascavel · Paraná</span>
+      <h1>Parigi</h1>
+      <dl class="torre-chave">
+        <div><dt>Suites</dt><dd>4 suites</dd></div>
+        <div><dt>Floor area</dt><dd>218m²</dd></div>
+        <div><dt>Parking</dt><dd>3 Vacancies</dd></div>
+        <div><dt>Floors</dt><dd>45</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao torre-prosa">
+    <div class="faixa">
+      <p class="frase-media revela">Inspired by the charm of Paris, Dallo Parigi reflects the pure essence of the City of Lights in his architectural designs.</p>
+      <div class="torre-corpo revela atraso-1"><p>This imposing 45-story tower houses 84 luxury residences, all with 4 suites and at least 3 parking spaces.</p></div>
+    </div>
+  </section>
+
+  <section class="secao torre-ficha-secao">
+    <div class="faixa">
+      <!-- só o que a abertura ainda não mostrou: repetir os quatro
+           primeiros a uma tela de distância não informa nada -->
+      <dl class="torre-chave torre-chave-larga revela">
+        <div><dt>Height</dt><dd>163 meters</dd></div>
+        <div><dt>Handover</dt><dd>2029</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>The Tower</h2>
+          </div>
+          <p class="lead">Inspired by the charm of Paris, Dallo Parigi reflects the pure essence of the City of Lights in his architectural designs.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/42/default/original_8e563591ea5687d7ccdfe4df9d1d7d35-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/42/default/original_8e563591ea5687d7ccdfe4df9d1d7d35-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/42/default/original_8e563591ea5687d7ccdfe4df9d1d7d35-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Parigi — The Tower" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/42/default/original_cecfe5f52b0bb82b25fc610f8012a54e-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/42/default/original_cecfe5f52b0bb82b25fc610f8012a54e-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/42/default/original_cecfe5f52b0bb82b25fc610f8012a54e-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Parigi — The Tower" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/42/default/original_33ec76754a0b586cd5a1936bec5fc232-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/42/default/original_33ec76754a0b586cd5a1936bec5fc232-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/42/default/original_33ec76754a0b586cd5a1936bec5fc232-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Parigi — The Tower" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao secao-escura">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Leisure</h2>
+          </div>
+          <p class="lead">Dallo Parigi's leisure activities find their expression amidst its environments that recreate the harmony between nature and the elegance of the boulevards of the French capital.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/43/default/original_2fc6e76a84c7e3404d69c7d30e6c038a-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/43/default/original_2fc6e76a84c7e3404d69c7d30e6c038a-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/43/default/original_2fc6e76a84c7e3404d69c7d30e6c038a-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Parigi — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/43/default/original_b90a0d4fa5f17ec83ef7fd09ed8f2882-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/43/default/original_b90a0d4fa5f17ec83ef7fd09ed8f2882-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/43/default/original_b90a0d4fa5f17ec83ef7fd09ed8f2882-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Parigi — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/43/default/original_4e61c7b633d62ffd338772019b009d58-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/43/default/original_4e61c7b633d62ffd338772019b009d58-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/43/default/original_4e61c7b633d62ffd338772019b009d58-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Parigi — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/43/default/original_36a8d016fc5a743fbd498ea264d2da5a-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/43/default/original_36a8d016fc5a743fbd498ea264d2da5a-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/43/default/original_36a8d016fc5a743fbd498ea264d2da5a-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Parigi — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/43/default/original_d59c2255d62e652c14f346dcbf6b8c1a-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/43/default/original_d59c2255d62e652c14f346dcbf6b8c1a-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/43/default/original_d59c2255d62e652c14f346dcbf6b8c1a-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Parigi — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/43/default/original_2c45f5714fa18d7cb02df51ec321ce35-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/43/default/original_2c45f5714fa18d7cb02df51ec321ce35-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/43/default/original_2c45f5714fa18d7cb02df51ec321ce35-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Parigi — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-panoramica revela"><img src="../../midia/web/midia/uploads/enterprisegallery/43/default/original_39fa9ee813b2e58e4bf694f8169c771c-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/43/default/original_39fa9ee813b2e58e4bf694f8169c771c-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/43/default/original_39fa9ee813b2e58e4bf694f8169c771c-1600.webp 1600w" sizes="(min-width: 900px) 92vw, 100vw" alt="Parigi — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/43/default/original_3e6974806c9762894992b01c649a5ea4-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/43/default/original_3e6974806c9762894992b01c649a5ea4-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/43/default/original_3e6974806c9762894992b01c649a5ea4-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Parigi — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/43/default/original_5bd0da19612dc26040dd2fc4c1e955b9-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/43/default/original_5bd0da19612dc26040dd2fc4c1e955b9-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/43/default/original_5bd0da19612dc26040dd2fc4c1e955b9-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Parigi — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/43/default/original_f275f0d9a213aa32b05c3c0cfad44948-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/43/default/original_f275f0d9a213aa32b05c3c0cfad44948-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/43/default/original_f275f0d9a213aa32b05c3c0cfad44948-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Parigi — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/43/default/original_4c55698cdfca168a2d47fe5a8dd12a94-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/43/default/original_4c55698cdfca168a2d47fe5a8dd12a94-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/43/default/original_4c55698cdfca168a2d47fe5a8dd12a94-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Parigi — Leisure" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/43/default/original_e10cf128d37560ee33a508240eec8314-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/43/default/original_e10cf128d37560ee33a508240eec8314-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/43/default/original_e10cf128d37560ee33a508240eec8314-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Parigi — Leisure" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Rooftop</h2>
+          </div>
+          <p class="lead">Located on the 45th floor, the Dallo Parigi rooftop rises to over 140 meters in height. It features various spaces with privileged views of the city.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/44/default/original_09d9aa9138eda40584233ce61deefddb-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/44/default/original_09d9aa9138eda40584233ce61deefddb-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/44/default/original_09d9aa9138eda40584233ce61deefddb-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Parigi — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/44/default/original_a5e6c285230138d44844a834085a348b-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/44/default/original_a5e6c285230138d44844a834085a348b-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/44/default/original_a5e6c285230138d44844a834085a348b-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Parigi — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/44/default/original_3ade9047edeec77464f3684a3efe69b2-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/44/default/original_3ade9047edeec77464f3684a3efe69b2-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/44/default/original_3ade9047edeec77464f3684a3efe69b2-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Parigi — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/44/default/original_d4aaf51629b6aad23391789bd073d4a7-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/44/default/original_d4aaf51629b6aad23391789bd073d4a7-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/44/default/original_d4aaf51629b6aad23391789bd073d4a7-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Parigi — Rooftop" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao secao-escura">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Apartments</h2>
+          </div>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/45/default/original_426136f826e84e8105576b09dc6300b5-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/45/default/original_426136f826e84e8105576b09dc6300b5-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/45/default/original_426136f826e84e8105576b09dc6300b5-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Parigi — Apartments" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/45/default/original_4ed4896ab39cd5d23f4d0ca9600d11bc-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/45/default/original_4ed4896ab39cd5d23f4d0ca9600d11bc-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/45/default/original_4ed4896ab39cd5d23f4d0ca9600d11bc-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Parigi — Apartments" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/45/default/original_23617a13c5a7a9108967740625da7072-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/45/default/original_23617a13c5a7a9108967740625da7072-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/45/default/original_23617a13c5a7a9108967740625da7072-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Parigi — Apartments" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/45/default/original_0bfdbaef588b8d78b7af2eebb6bbba0e-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/45/default/original_0bfdbaef588b8d78b7af2eebb6bbba0e-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/45/default/original_0bfdbaef588b8d78b7af2eebb6bbba0e-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Parigi — Apartments" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/45/default/original_9f2200b296549c5c20f9ca1819368b82-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/45/default/original_9f2200b296549c5c20f9ca1819368b82-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/45/default/original_9f2200b296549c5c20f9ca1819368b82-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Parigi — Apartments" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+
+  <section class="secao secao-clara">
+    <div class="faixa">
+      <div class="cabeca-dupla revela"><div><h2>Plants</h2></div></div>
+      <div class="plantas">
+        <figure class="planta revela">
+            <img src="../../midia/web/midia/uploads/plant/80/651ee05d0e4a67.06488086-1600.webp" srcset="../../midia/web/midia/uploads/plant/80/651ee05d0e4a67.06488086-820.webp 820w, ../../midia/web/midia/uploads/plant/80/651ee05d0e4a67.06488086-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Floor plans Apartments — Parigi" loading="lazy" decoding="async">
+            <figcaption><strong>Apartments</strong></figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../../midia/web/midia/uploads/plant/81/651ee0b6b8ece4.70523438-1600.webp" srcset="../../midia/web/midia/uploads/plant/81/651ee0b6b8ece4.70523438-820.webp 820w, ../../midia/web/midia/uploads/plant/81/651ee0b6b8ece4.70523438-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Floor plans Leisure — Parigi" loading="lazy" decoding="async">
+            <figcaption><strong>Leisure</strong><br>1 - Adult pool 2 - Children's pool 3 - Chimarródromo (a place for drinking chimarrão, a traditional South American tea) 4 - Kiosk 5 - Indoor pool 6 - Ante-sauna 7 - Sauna 8 - Massage room 9 - Personal care 10 - Games room 11 - Gourmet lounge 12 - Children's playroom 13 - Party room 14 - Outdoor lounge 15 - Recreational court 16 - Teen space 17 - Baby care 18 - Fitness center 19 - Fountain lounge 20 - Pool lounge</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../../midia/web/midia/uploads/plant/82/651ee0f1aaa779.99767372-1600.webp" srcset="../../midia/web/midia/uploads/plant/82/651ee0f1aaa779.99767372-820.webp 820w, ../../midia/web/midia/uploads/plant/82/651ee0f1aaa779.99767372-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Floor plans Rooftop — Parigi" loading="lazy" decoding="async">
+            <figcaption><strong>Rooftop</strong><br>1 - Fireplace terrace 2 - Bistro 3 - Confraternity 4 - Observation terrace 5 - Workspace 6 - Chapel</figcaption>
+          </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao-escura">
+    <div class="faixa">
+      <div class="cabeca-dupla revela">
+        <div><h2>Work</h2></div>
+        <p class="lead">Construction begins: September 2023 • Completion: December 2029</p>
+      </div>
+      <div class="obra revela">
+        <div class="obra-item">
+          <span class="obra-nome">Global Evolution</span>
+          <span class="obra-valor">35%</span>
+          <span class="obra-barra"><i style="width:35%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Foundations</span>
+          <span class="obra-valor">100%</span>
+          <span class="obra-barra"><i style="width:100%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Structure</span>
+          <span class="obra-valor">58%</span>
+          <span class="obra-barra"><i style="width:58%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Walls and Partitions</span>
+          <span class="obra-valor">35%</span>
+          <span class="obra-barra"><i style="width:35%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Electrical and Hydrosanitary Installations</span>
+          <span class="obra-valor">13%</span>
+          <span class="obra-barra"><i style="width:13%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Mortar Coatings</span>
+          <span class="obra-valor">7%</span>
+          <span class="obra-barra"><i style="width:7%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Finishes</span>
+          <span class="obra-valor">1%</span>
+          <span class="obra-barra"><i style="width:1%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Frames</span>
+          <span class="obra-valor">0%</span>
+          <span class="obra-barra"><i style="width:0%"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section class="secao torre-nota">
+    <div class="faixa">
+      <p>Real estate incorporation registration: R-4-51.722.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="faixa">
+    <div class="rodape-chamada">
+      <p>Every address starts with a conversation.</p>
+      <a class="botao botao-vazado" href="../contato.html">Talk to our team</a>
+    </div>
+    <div class="rodape-grade">
+      <div class="rodape-marca">
+        <img src="../../img/logo-dallo.svg" alt="Construtora Dallo" width="128" style="filter:brightness(0) invert(1)">
+        <p class="rodape-assinatura">Builder and developer in Itapema, Porto Belo and Cascavel. 45 developments delivered and under way since 2008.</p>
+      </div>
+      <div>
+        <h4>Developments</h4>
+        <ul>
+          <li><a href="../empreendimentos.html?cidade=Itapema">Itapema</a></li>
+          <li><a href="../empreendimentos.html?cidade=Porto Belo">Porto Belo</a></li>
+          <li><a href="../empreendimentos.html?cidade=Cascavel">Cascavel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About Dallo</h4>
+        <ul>
+          <li><a href="../sobre.html">Our story</a></li>
+          <li><a href="../contato.html">Contact us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Dallo Itapema SC</h4>
+        <p>Av. Nereu Ramos, 4077, Meia Praia - Ed. Dallo Business Center | 15º e 16º andares</p>
+        <p><a href="tel:4732671111">(47) 3267-1111</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+      <div>
+        <h4>Dallo Cascavel PR</h4>
+        <p>Rua Visconde de Guarapuava, 2342</p>
+        <p><a href="tel:4522210670">(45) 2221-0670</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+    </div>
+    <div class="rodape-fim">
+      <span>Dallo Empreendimentos</span>
+      <span>All rights reserved</span>
+    </div>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/554732671111" aria-label="Message us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.15h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.18 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<script src="../../js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,928 @@
+/* ==========================================================================
+   A abertura: a marca, e o O que se abre para a primeira dobra.
+
+   O desenho mudou de lado, e é esse o ponto. Antes a abertura tinha uma
+   foto PRÓPRIA, que crescia e no fim era trocada pela dobra. Duas imagens,
+   duas camadas e uma troca para acertar — e era por isso que a imagem
+   aparecia primeiro e a dobra inteira só depois.
+
+   Agora existe UMA dobra só, a de verdade, parada atrás. Por cima dela há
+   um véu de papel com um BURACO no formato do miolo do O, e o buraco é que
+   cresce. Não há nada a trocar: pelo buraco já se vê a dobra inteira —
+   foto, título, texto —, tudo ao mesmo tempo.
+
+   A geometria não foi estimada. O miolo do O é o 7º subcaminho do traçado
+   do logotipo: 12,36 × 16,6 unidades, centro em 87,85% da largura e 61,3%
+   da altura da marca. Conferido por dois métodos independentes (varredura
+   de preenchimento e caixa do traçado), que deram o mesmo centro.
+
+   Quem cresce é o RECORTE; camada nenhuma é ampliada. Ampliar uma camada
+   dezenas de vezes pede da placa uma textura do tamanho ampliado, e acima
+   de ~16k pixels ela larga pedaços que ficam presos na tela.
+   ========================================================================== */
+
+/* ---- a fonte da primeira dobra ----
+   Playfair Display itálica no título e Montserrat na linha de apoio,
+   as duas variáveis. Servidas pelo próprio site,
+   como a Manrope: nenhuma chamada ao Google parte do navegador de quem
+   visita. Só a home carrega este arquivo, então ela não pesa nas outras
+   páginas. Licença SIL OFL, livre para uso comercial e para hospedar aqui.
+
+   Os unicode-range são os do próprio Google: assim o navegador baixa o
+   arquivo "latin-ext" apenas se a página precisar dele. */
+@font-face {
+  font-family: 'Playfair Display'; font-style: italic; font-weight: 400 900;
+  font-display: swap;
+  src: url('../fontes/PlayfairDisplay-var-italic-latin.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Playfair Display'; font-style: italic; font-weight: 400 900;
+  font-display: swap;
+  src: url('../fontes/PlayfairDisplay-var-italic-latin-ext.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Montserrat'; font-style: normal; font-weight: 400 800;
+  font-display: swap;
+  src: url('../fontes/Montserrat-var-latin.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat'; font-style: normal; font-weight: 400 800;
+  font-display: swap;
+  src: url('../fontes/Montserrat-var-latin-ext.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* O cabeçalho fica por cima da abertura, acima do palco e do véu. O menu
+   NÃO entra nesta regra: ele é filho da faixa e precisa ficar ATRÁS do
+   logotipo e do botão de fechar (z-index negativo, dentro do contexto do
+   cabeçalho). Com 100 aqui, a tela cheia do celular tapava os dois e não
+   havia como fechar o menu. */
+.topo { z-index: 100; }
+
+/* Sem o script, o véu não existe: a dobra fica à mostra, como deve. */
+.abertura { display: none; }
+
+@media (min-width: 981px) {
+
+  /* O palco dá o curso. A dobra e o véu moram DENTRO dele, os dois
+     grudados no topo, e desgrudam juntos quando o palco acaba. */
+  /* As duas medidas que mandam na primeira dobra, e elas são ligadas:
+
+       --curso  quanto se rola com a abertura em cena (a animação inteira)
+       --dobra  a altura da foto; o que passar da tela é o quanto ela ainda
+                desce, rolando, depois de a animação acabar
+
+     O palco é a SOMA das duas. A dobra fica grudada enquanto o palco tem
+     folga, isto é, por `palco − dobra` = exatamente `--curso`: a animação
+     termina no quadro em que a dobra desgruda, e aí a foto sobe sozinha.
+
+     Erro que já foi cometido aqui: aumentar `--dobra` sem somá-la ao palco.
+     Isso não leva a foto mais para baixo — ela só desgruda antes e sobe
+     antes, e no fim do palco acaba no mesmo lugar. O que muda é o curso,
+     que encurta, e a animação fica mais rápida sem ninguém pedir. */
+  /* As medidas moram no BODY, não no palco: a seção que vem depois da
+     dobra também precisa delas, e ela não é descendente do palco — ali
+     `var(--dobra)` não existiria e o `calc` seria descartado inteiro,
+     silenciosamente, deixando a margem negativa sem efeito. */
+  /* A primeira dobra tem UM tempo só:
+
+       --curso   a abertura: a marca, e o zoom que entra pelo O
+
+     A descida — a foto e o texto saindo pelo rodapé com um pulso antes —
+     foi retirada a pedido. Terminada a abertura, a dobra sobe com a
+     rolagem do navegador, como a seção de qualquer site. O script ainda
+     lê `--saida-telas`; em zero ele pula a fase inteira. */
+  body.js {
+    --curso: 420svh;
+    --dobra: 100svh;
+    --saida-telas: 0;
+    --saida: calc(var(--saida-telas) * 100svh);
+  }
+
+  body.js .abertura-palco {
+    position: relative;
+    height: calc(var(--curso) + var(--saida) + var(--dobra));
+  }
+
+  /* O que a foto descobre ao descer é o fundo da dobra, e ele é CÉU, não
+     papel: é isso que faz a descida deixar o céu para trás em vez de abrir
+     um buraco branco. As cores foram tiradas da própria foto — a faixa de
+     cima dela tem média #7e9ece —, e o gradiente sobe um pouco mais
+     escuro, como o céu de verdade faz. Trocar a foto da dobra pede
+     amostrar o topo dela de novo. */
+  body.js .abertura-palco > .dobra-itapema {
+    background: linear-gradient(to bottom, #6b8cc4, #7e9ece 68%);
+  }
+  /* E TODO o resto do site junto com ela, por dois motivos.
+
+     Primeiro, a dobra é `sticky` com z-index, portanto um elemento
+     posicionado; seções sem posição nenhuma ficam ATRÁS dela, e o céu
+     aparecia por baixo da primeira seção, que é mais baixa que a tela.
+
+     As seções seguem sem transform nenhum: o site inteiro anda pela
+     rolagem do navegador. */
+  body.js .abertura-palco ~ * {
+    position: relative; z-index: 2;
+  }
+
+  /* `object-fit: cover` numa caixa MAIS ALTA aproxima mais, não menos:
+     o enquadramento não se perde ao esticar. */
+  body.js .abertura-palco > .dobra-itapema {
+    position: sticky; top: 0; z-index: 1;
+    height: var(--dobra); min-height: 0;
+  }
+
+  /* O véu ocupa o mesmo lugar da dobra (daí a margem negativa) e fica por
+     cima. Não recebe clique: o buraco não é uma janela de verdade, e o que
+     está atrás precisa continuar clicável. */
+  /* A margem negativa é a ALTURA DA DOBRA, não a da tela: é ela que o véu
+     precisa cobrir. Por isso sai da mesma variável — assim não há como
+     mudar uma e esquecer a outra. */
+  body.js .abertura {
+    display: block;
+    position: sticky; top: 0; z-index: 3;
+    height: 100svh; margin-top: calc(var(--dobra) * -1);
+    pointer-events: none;
+  }
+
+  body.js main { padding-top: 0; }
+
+  /* A cena inteira — papel, buraco e marca — é um SVG só, e é o script
+     que dirige o viewBox dele. Papel primeiro, marca depois: com a marca
+     por cima, o buraco pode passar um pouco do miolo (a folga de 1,06 no
+     script) e a sobra fica escondida sob o anel do O. Era isso que
+     faltava quando sobrava um fio branco em volta da foto.
+
+     A largura da marca na tela é min(46vw, 620px) — a medida está no
+     script, que a usa para montar o viewBox inicial. Mexer numa pede
+     mexer na outra. */
+  .abertura-cena {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; display: block;
+  }
+  .abertura-papel { fill: var(--papel); }
+  .abertura-marca { fill: var(--petroleo); }
+
+  .abertura-seta {
+    position: absolute; left: 50%; bottom: 36px; width: 22px; height: 22px;
+    margin-left: -11px; opacity: var(--seta, 0);
+    animation: aberturaSeta 2.4s cubic-bezier(.45,0,.25,1) infinite;
+  }
+  .abertura-seta::after {
+    content: ""; position: absolute; left: 50%; top: 50%;
+    width: 13px; height: 13px; margin: -9px 0 0 -7px;
+    border-right: 1.5px solid rgba(17,17,17,.55);
+    border-bottom: 1.5px solid rgba(17,17,17,.55);
+    transform: rotate(45deg);
+  }
+  @keyframes aberturaSeta {
+    0%, 100% { transform: translateY(-4px); }
+    50%      { transform: translateY(4px); }
+  }
+  @media (prefers-reduced-motion: reduce) { .abertura-seta { animation: none; } }
+
+  /* ---- as escritas surgindo ----
+     Elas sobem de dentro da própria linha, como a marca nasce de dentro do
+     D e a dobra de dentro do O: a página inteira revela por uma forma, não
+     por desbotamento. O recorte é do bloco; o texto anda dentro dele.
+
+  /* A entrada das escritas (linhas subindo por uma máscara) foi
+     retirada a pedido: o texto já está lá quando a abertura descobre a
+     dobra, como em qualquer site. A classe .revelado continua sendo posta
+     pelo script — é por ela que outras coisas podem pegar carona depois. */
+}
+
+/* A dobra existe nos dois tamanhos; só o véu é de tela larga. */
+/* A foto tem o prédio à direita e o céu aberto à esquerda e em cima. O
+   texto mora no céu, no terço esquerdo — e é a foto que manda no layout:
+   com um gradiente no rodapé, como antes, a mancha escura caía justo sobre
+   o rosa do horizonte e sujava a parte mais bonita do céu. O escurecimento
+   vem da esquerda, segue o texto e deixa o alto do céu limpo. */
+.dobra-itapema {
+  position: relative; min-height: 100svh;
+  display: flex; align-items: flex-end;
+  background: var(--tinta);
+  overflow: hidden;
+}
+.dobra-itapema > img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%;
+}
+
+/* No celular a foto é cortada e não sobra céu à esquerda: o texto volta
+   para o rodapé, em largura cheia, com o gradiente clássico. O arranjo do
+   céu aberto é de tela larga, onde o prédio ocupa a direita. */
+@media (max-width: 980px) {
+  /* Sem a barra do topo, a dobra ocupa a tela inteira. Quando ela voltar,
+     descontar os 76px dela aqui de novo. */
+  .dobra-itapema { min-height: 100svh; }
+
+  .dobra-texto {
+    position: relative; z-index: 2; width: 100%;
+    /* o recuo de baixo é a altura da barra de busca, que aqui vira bloco
+       de dois campos por linha e come o rodapé da dobra */
+    /* 30svh e nao 27: medido a 390x844, a barra de busca ocupa 216 px e
+       com 27svh (228 px) a ultima linha do apoio terminava 8 px POR
+       BAIXO do vidro dela. 30svh deixa ~24 px de folga real. */
+    padding: 6rem 0 clamp(15rem, 30svh, 18rem);
+    /* a tarja morre antes do pé da dobra: cortada ali, virava um risco
+       escuro contra o branco da página */
+    background: linear-gradient(to top, rgba(8,14,14,0) 0%, rgba(8,14,14,.82) 17%, rgba(8,14,14,0) 100%);
+    color: #fff;
+  }
+  .dobra-texto h1 { margin-bottom: .4em; }
+  .dobra-texto p { margin: 0; }
+}
+
+/* As duas fontes da dobra valem em qualquer tamanho de tela.
+
+   Branco seco, sem sombra nem contorno. O contraste quem resolve é o véu
+   de .dobra-itapema::before, e não um contorno na letra. */
+/* ---- o véu do hero ----
+   Esta camada resolve um problema que estava documentado como custo: o
+   branco do título sobre o céu claro dava 2,2:1, abaixo dos 3:1 que um
+   título grande exige. O véu escurece o lado do texto e deixa o canto
+   alto do céu intacto — não é uma mancha chapada sobre a foto inteira.
+
+   REFEITO PARA O VÍDEO. A conta da foto antiga não valia mais: o aéreo
+   tem areia e concreto brancos justo onde o título corre, e com a rampa
+   de antes o pior pixel dava 2,53:1 no título — abaixo dos 3:1 que texto
+   grande exige, e muito abaixo dos 4,5:1 da linha de apoio.
+
+   A rampa nova foi calibrada por busca, não no olho: cinco quadros do
+   vídeo capturados de 3,4 em 3,4 s, recompostos num canvas com as quatro
+   camadas (rampa do texto, pé, faixa do cabeçalho e vinheta), lendo o
+   PIOR pixel debaixo de cada caixa de texto. Quatro intensidades
+   testadas; esta é a mais leve que passa:
+
+     rampa      título   apoio
+     anterior    2,53     3,16    reprova
+     ESTA        4,84     6,31    passa com folga
+     +escura     7,64     9,80    passa, mas apaga o vídeo
+     máxima     11,35    13,58    tarja preta
+
+   Trocar o vídeo do hero pede refazer essa conta. */
+/* So a caixa: o desenho do veu mora na regra calibrada la embaixo. A
+   varredura de 100deg que estava aqui ficou morta quando a composicao
+   passou a ser ancorada no pe — mantida duas vezes, ela so confundiria
+   quem for mexer. */
+.dobra-itapema::before {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  pointer-events: none;
+}
+
+/* ---- entrada do hero ----
+   Um movimento só, disparado quando a abertura entrega a dobra: as três
+   linhas sobem em sequência. Não é animação de rolagem — é o fecho da
+   encenação que já estava lá. */
+body.js .dobra-texto h1 > span,
+body.js .dobra-texto p > span {
+  display: block;
+  opacity: 0; transform: translateY(24px);
+}
+body.js.abriu .dobra-texto h1 > span,
+body.js.abriu .dobra-texto p > span {
+  opacity: 1; transform: none;
+  transition: opacity .9s ease, transform 1s var(--curva);
+}
+body.js.abriu .dobra-texto h1 > span:nth-child(2) { transition-delay: .12s; }
+body.js.abriu .dobra-texto p > span { transition-delay: .26s; }
+@media (prefers-reduced-motion: reduce) {
+  body.js .dobra-texto h1 > span, body.js .dobra-texto p > span { opacity: 1; transform: none; }
+}
+
+/* As nuvens da foto (.dobra-nuvens) foram removidas junto com o
+   <img> do hero: elas existiam para por nuvens no CEU DA FOTO,
+   recortadas na silhueta do predio, e o video e um aereo sem ceu.
+   O elemento nao existe mais em nenhuma das tres linguas, entao as
+   seis regras eram letra morta. As nuvens que escondem a emenda
+   entre as dobras sao outras — .emenda-nuvens — e continuam. */
+
+
+/* O título inteiro na Playfair Display itálica; a linha de apoio na
+   Montserrat. As duas são variáveis, então o peso é um número contínuo e
+   não um degrau — 420 no título mantém os 5% a mais de grossura pedidos
+   antes, sem precisar pular para o 500. */
+/* O título é de duas vozes: a primeira linha na grotesca, em peso leve, e
+   a segunda na serifada itálica. É o contraste entre as duas que dá o tom
+   — uma só família, por mais bonita que seja, lê como parágrafo grande. */
+.dobra-texto h1 {
+  font-weight: 400; color: #fff; letter-spacing: -.005em;
+}
+.dobra-texto h1 .linha-grotesca { display: block;
+  font-family: Montserrat, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 300; font-style: normal;
+  letter-spacing: -.012em;
+}
+.dobra-texto h1 .linha-serifada { display: block;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-weight: 420; font-style: italic;
+  /* o recuo é o que faz as duas linhas lerem como uma frase em dois
+     tempos, e não como duas frases empilhadas */
+  padding-left: .09em;
+}
+.dobra-texto p {
+  font-family: Montserrat, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600; font-style: normal; color: #fff;
+}
+
+@media (min-width: 981px) {
+  .dobra-itapema { align-items: flex-start; }
+/* O texto é ESCURO sobre o céu claro, e não branco sobre um véu. Foi o
+   recorte que permitiu isso: fechado nas arcadas, o que sobra à esquerda é
+   céu de crepúsculo claro, e aí a tinta da marca lê melhor que o branco —
+   sem precisar cobrir a foto com mancha nenhuma.
+
+   O texto só pode ocupar o céu: no recorte, o prédio começa a 41,5% da
+   largura, e numa tela mais estreita que a foto o corte lateral traz isso
+   para ~39%. Daí o limite de 38%, que vale para qualquer tela. */
+.dobra-texto {
+  position: relative; z-index: 2; width: 100%;
+  padding: clamp(6rem, 17svh, 11rem) 0 0;
+  color: var(--tinta);
+}
+/* O bloco sai da grade centralizada do site e encosta na margem esquerda:
+     é lá que a foto tem céu. A faixa centralizada deixava o texto começar
+     no meio do caminho, longe da borda e perto do prédio. */
+  .dobra-texto .faixa {
+    position: relative;
+    width: auto; margin-inline: 0;
+    padding-left: clamp(2rem, 7vw, 8rem);
+  }
+  /* A largura máxima é o que sobra de céu: o bloco começa a ~7% e o prédio
+     entra a 41,5%, então 31% é o teto antes de o texto encostar nele. */
+  /* A margem negativa da máscara (-.22em) come parte do respiro, então o
+     valor aqui já vem somado: .75em − .22em ≈ .53em de folga real. */
+  .dobra-texto h1 {
+    /* A serifada pede mais corpo e mais entrelinha que a grotesca que
+       estava aqui: no mesmo tamanho ela lê menor, e com 1,06 de entrelinha
+       os acentos da linha de cima encostam nas maiúsculas da de baixo. */
+    margin-bottom: .55em; max-width: min(15ch, 38%);
+    font-size: clamp(2.9rem, 5vw, 4.7rem); line-height: 1.04;
+    letter-spacing: -.005em;
+  }
+  .dobra-texto p {
+    margin: 0; max-width: min(34ch, 34%);
+    font-size: clamp(.95rem, 1.15vw, 1.12rem); letter-spacing: -.01em;
+    line-height: 1.35;
+  }
+}   /* fim do arranjo de tela larga */
+
+@supports not (height: 100svh) {
+  @media (min-width: 981px) {
+    body.js {
+      --curso: 420vh; --dobra: 100vh;
+      --saida: calc(var(--saida-telas) * 100vh);
+    }
+    body.js .abertura { height: 100vh; }
+  }
+  .dobra-itapema { min-height: 100vh; }
+}
+
+/* Abaixo de 981px não há abertura: o palco é só um invólucro sem altura e
+   o cabeçalho fica fixo desde o início. */
+@media (max-width: 980px) {
+  .abertura-palco { height: auto; }
+  body.js main { padding-top: 0; }   /* a barra do topo está fora por enquanto */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abertura { display: none !important; }
+  .abertura-palco { height: auto !important; }
+  body.js .abertura-palco > .dobra-itapema { position: relative; height: auto; }
+  body.js .dobra-texto .surge > span { transform: none !important; }
+}
+
+/* O nome de quem fala puxa a mesma família do subtítulo da abertura, para
+   a voz da pessoa não soar como mais um parágrafo do site. */
+.trilho-gente .gente-nome {
+  font-family: Montserrat, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600; font-size: .9rem; letter-spacing: .01em;
+  color: var(--petroleo);
+}
+
+/* O fecho da home: uma frase grande, sozinha na seção. */
+.secao-fecho { padding-block: clamp(5rem, 12vh, 9rem); }
+.frase-grande {
+  margin: 0; max-width: 20ch;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic; font-weight: 420;
+  font-size: clamp(2rem, 4.2vw, 3.6rem); line-height: 1.14;
+  color: var(--tinta);
+}
+
+/* ---- barra de busca ----
+   Peça flutuante sobre o hero, em cantos retos e off-white sólido. O
+   vidro líquido saiu junto com o resto do redesign: material de sistema
+   operacional dentro de uma página editorial lê como widget, não como
+   parte da marca. O que sobra é o que importa — fios finos separando os
+   campos e um botão que ocupa a ponta. */
+.busca {
+  position: absolute; z-index: 3;
+  left: 50%; transform: translateX(-50%);
+  bottom: calc(100% - 100svh + clamp(1.1rem, 3.4svh, 2.6rem));
+  width: min(100% - 2.5rem, var(--col));
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1.05fr 1.1fr auto;
+  align-items: stretch;
+  background: var(--papel);
+  box-shadow: 0 24px 60px rgba(17,17,17,.14);
+}
+.busca-campo {
+  position: relative;
+  display: grid; align-content: center; gap: .45rem;
+  padding: 1.15rem clamp(1rem, 1.6vw, 1.5rem); min-width: 0;
+  border: 0; margin: 0;
+  transition: background .3s ease;
+}
+.busca-campo:hover, .busca-campo:focus-within { background: var(--bege-claro); }
+/* o fio entre campos é sombra, não borda: não soma largura */
+.busca-campo + .busca-campo { box-shadow: -1px 0 0 var(--linha); }
+.busca-rotulo {
+  font: var(--rotulo); letter-spacing: var(--tracking-rotulo);
+  text-transform: uppercase; color: var(--cinza);
+  padding: 0; float: none;
+}
+.busca-seletor {
+  appearance: none; -webkit-appearance: none;
+  border: 0; background: none; padding: 0 1.4rem 0 0; margin: 0;
+  width: 100%; min-width: 0; cursor: pointer;
+  font-family: inherit; font-size: .98rem; font-weight: 500; color: var(--tinta);
+  text-overflow: ellipsis;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%23111111' stroke-width='1.3'><path d='m1 1.5 5 5 5-5'/></svg>");
+  background-repeat: no-repeat; background-position: right .1rem center;
+  background-size: 11px 7px;
+}
+.busca-seletor option { color: var(--tinta); background: var(--papel); }
+.busca-seletor option:disabled { color: #b4b0a8; }
+
+.busca-fichas { display: flex; gap: .35rem; }
+.busca-ficha { position: relative; cursor: pointer; }
+.busca-ficha input { position: absolute; inset: 0; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.busca-ficha span {
+  display: grid; place-items: center;
+  min-width: 34px; height: 32px; padding: 0 .45rem;
+  font-size: .9rem; font-weight: 500; color: var(--tinta);
+  border: 1px solid var(--linha);
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.busca-ficha input:checked + span { background: var(--tinta); border-color: var(--tinta); color: var(--papel); }
+.busca-ficha input:focus-visible + span { outline: 2px solid var(--petroleo); outline-offset: 2px; }
+.busca-ficha[data-vazio] span { opacity: .3; }
+
+.busca-ir {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: flex; align-items: center; gap: .6rem;
+  margin: 0; padding: 0 clamp(1.4rem, 2.4vw, 2.4rem); border: 0;
+  background: var(--tinta); color: var(--papel); cursor: pointer;
+  font: var(--rotulo); letter-spacing: var(--tracking-rotulo);
+  text-transform: uppercase; white-space: nowrap;
+  transition: opacity .25s ease;
+}
+.busca-ir::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: var(--petroleo);
+  transform: translateY(101%); transition: transform .45s var(--curva);
+}
+.busca-ir:hover::before { transform: translateY(0); }
+.busca-ir svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+.busca-ir[disabled] { opacity: .4; cursor: not-allowed; }
+.busca-ir[disabled]::before { display: none; }
+
+@media (max-width: 900px) {
+  .busca {
+    grid-template-columns: 1fr 1fr;
+    bottom: clamp(.9rem, 2.4svh, 1.6rem);
+  }
+  .busca-campo + .busca-campo { box-shadow: inset 0 1px 0 var(--linha); }
+  .busca-campo:nth-child(2) { box-shadow: -1px 0 0 var(--linha); }
+  .busca-campo { padding: .85rem 1rem; }
+  .busca-ir { grid-column: 1 / -1; justify-content: center; padding: 1.1rem; }
+}
+
+/* ---- a emenda disfarçada entre a 1ª e a 2ª dobra ----
+   O pé da foto do hero não termina numa linha reta contra o branco da
+   página: ele se desfaz no papel. É um degradê por cima da foto, e não
+   uma máscara nela, porque a dobra tem fundo próprio (céu, para o caso
+   de a foto não carregar) — mascarar a foto descobriria esse fundo em
+   vez do papel. A barra de busca fica acima dele e ganha de brinde um
+   apoio mais claro atrás do vidro. */
+.dobra-itapema::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+  height: clamp(12rem, 30svh, 22rem); z-index: 1; pointer-events: none;
+  /* O branco tem de chegar ANTES do pé e segurar até lá. Um degradê que
+     só fecha no último pixel deixa, logo acima dele, uns 5% da foto
+     passando — e contra o branco puro da seção seguinte isso lê como um
+     degrau. Medido escurecendo a foto a 12%: com o fecho no fim, degrau
+     visível; com o fecho em 86% e branco cheio daí para baixo, nenhum. */
+  background: linear-gradient(to bottom,
+    rgba(245,243,239,0) 0%,
+    rgba(245,243,239,.5) 40%,
+    rgba(245,243,239,.93) 72%,
+    var(--papel) 86%,
+    var(--papel) 100%);
+}
+
+/* ---- as nuvens que escondem a emenda ----
+   O degradê sozinho não bastava: por mais que termine em branco puro, o
+   olho ainda acha a altura onde a foto deixa de ser foto. Nuvem resolve
+   porque muda a PERGUNTA — deixa de haver uma linha a encontrar e passa a
+   haver céu baixo, que é a coisa mais natural do mundo no alto de uma
+   página sobre prédios.
+
+   Elas ficam ACIMA do degradê (z-index 2 contra 1): embaixo dele ficariam
+   lavadas justo onde precisam aparecer. E o próprio branco delas some
+   contra o branco do papel, então a banda se apaga sozinha ao chegar na
+   borda — não há segunda emenda a esconder.
+
+   Desenhadas, não imagem: manchas abertas em três planos, cada uma com o
+   dobro da largura e deslizando metade dela, para a volta ser contínua. */
+.emenda-nuvens {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: clamp(16rem, 44svh, 30rem);
+  z-index: 2; pointer-events: none; overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #000 20%, #000 76%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #000 20%, #000 76%, rgba(0,0,0,0) 100%);
+}
+.emenda-nuvens span {
+  position: absolute; left: 0; width: 200%; height: 100%;
+  will-change: transform;
+}
+.emenda-nuvens span:nth-child(1) {
+  top: 6%;
+  background-image:
+    radial-gradient(24% 34% at 7% 52%, rgba(255,255,255,.72), rgba(255,255,255,0) 70%),
+    radial-gradient(19% 28% at 26% 38%, rgba(255,255,255,.62), rgba(255,255,255,0) 72%),
+    radial-gradient(28% 36% at 47% 56%, rgba(255,255,255,.58), rgba(255,255,255,0) 70%),
+    radial-gradient(21% 30% at 70% 40%, rgba(255,255,255,.66), rgba(255,255,255,0) 72%),
+    radial-gradient(26% 34% at 91% 54%, rgba(255,255,255,.58), rgba(255,255,255,0) 70%);
+  animation: emendaNuvens 190s linear infinite;
+}
+.emenda-nuvens span:nth-child(2) {
+  top: -4%;
+  background-image:
+    radial-gradient(15% 22% at 16% 44%, rgba(255,255,255,.60), rgba(255,255,255,0) 74%),
+    radial-gradient(12% 19% at 41% 30%, rgba(255,255,255,.52), rgba(255,255,255,0) 76%),
+    radial-gradient(17% 23% at 63% 46%, rgba(255,255,255,.56), rgba(255,255,255,0) 74%),
+    radial-gradient(13% 20% at 85% 32%, rgba(255,255,255,.50), rgba(255,255,255,0) 76%);
+  animation: emendaNuvens 112s linear infinite;
+}
+/* a camada de baixo é a mais densa: é ela que encosta no papel e entrega
+   o branco da página sem que se veja onde um acaba e o outro começa */
+.emenda-nuvens span:nth-child(3) {
+  top: 34%;
+  background-image:
+    radial-gradient(34% 44% at 20% 58%, rgba(255,255,255,.80), rgba(255,255,255,0) 72%),
+    radial-gradient(30% 40% at 58% 64%, rgba(255,255,255,.76), rgba(255,255,255,0) 72%),
+    radial-gradient(32% 42% at 88% 56%, rgba(255,255,255,.72), rgba(255,255,255,0) 72%);
+  animation: emendaNuvens 240s linear infinite;
+}
+@keyframes emendaNuvens { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .emenda-nuvens span { animation: none; } }
+
+/* ---- o que só entra depois da abertura ----
+   Enquanto o papel branco e a marca crescendo estão em cena, a página não
+   tem barra nem botão de WhatsApp: ela começa limpa, e os dois entram
+   quando o papel sai. Quem marca esse instante é o script, com `abriu` —
+   e ele também o marca no caminho sem abertura (tela estreita ou
+   movimento reduzido), então nada fica preso fora da tela. */
+/* A barra entra e SAI encenada: desce de fora da tela quando a câmera
+   acaba de entrar pelo O e o papel sai, e sobe de volta para fora quando
+   a abertura volta à cena.
+
+   São transições, e não `@keyframes`: um keyframe só dispara na entrada,
+   e a volta ficava seca. Com transição, a mesma propriedade anima nos
+   dois sentidos — só mudam o tempo e a curva de cada lado.
+
+   `visibility` entra no jogo com truque: na saída ela espera o fim do
+   movimento (`0s linear .45s`), senão a barra sumiria de uma vez e não
+   haveria o que ver deslizando. Na entrada troca na hora. */
+body.js .topo {
+  transition:
+    transform .5s cubic-bezier(.22, 1, .3, 1),
+    opacity .4s ease,
+    visibility 0s,
+    background .35s ease,
+    border-color .35s ease;
+}
+body.js:not(.abriu) .topo {
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transform: translateY(-100%);
+  transition:
+    transform .45s cubic-bezier(.45, 0, .75, 1),
+    opacity .32s ease,
+    visibility 0s linear .45s,
+    background .35s ease,
+    border-color .35s ease;
+}
+
+/* O WhatsApp entra e sai SECO, junto com a dobra: sem transição nenhuma.
+   Ele é botão de serviço, não parte da encenação. */
+body.js:not(.abriu) .zap {
+  opacity: 0; visibility: hidden; pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.js .topo, body.js:not(.abriu) .topo { transition: none; transform: none; }
+}
+
+/* Sobre a primeira dobra a barra é só o conteúdo dela: sem fundo, sem fio
+   embaixo, sem vidro. O céu da foto faz as vezes de fundo. Ela volta a ser
+   branca assim que a dobra sai da tela — a troca é suave porque `.topo`
+   já transiciona fundo e borda. */
+body.topo-no-ceu .topo {
+  background: transparent;
+  border-bottom-color: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+/* Sobre o hero o cabeçalho inverte: o logotipo, os links e as barrinhas
+   ficam claros, porque ali o fundo é a faixa escura do véu. Passando da
+   dobra tudo volta ao preto sobre off-white — a troca acompanha a mesma
+   transição de fundo da barra. */
+body.topo-no-ceu .topo-marca img { filter: brightness(0) invert(1); }
+body.topo-no-ceu .menu a { color: var(--papel); }
+body.topo-no-ceu .menu a.menu-botao { border-color: rgba(245,243,239,.5); }
+body.topo-no-ceu .menu a.menu-botao::before { background: var(--papel); }
+body.topo-no-ceu .menu a.menu-botao:hover { color: var(--tinta); }
+body.topo-no-ceu .topo-abrir span { background: var(--papel); }
+body.topo-no-ceu .topo-marca img,
+body.topo-no-ceu .menu a,
+body.topo-no-ceu .topo-abrir span { transition: color .4s ease, filter .4s ease, background-color .4s ease; }
+
+/* ====================================================================
+   PRIMEIRA DOBRA EM VÍDEO
+   --------------------------------------------------------------------
+   O travelling aéreo sobre Itapema no lugar da foto. É o vídeo que a
+   própria Dallo usa na home dela, e estava no acervo sem uso.
+
+   O MASTER É 1638x580. Num hero de 1440x900 o `cover` escala por
+   900/580 = 1,55x, e numa tela retina 3,1x. A granulação disso é real e
+   só se resolve com um master maior — está anotado no relatório. O que
+   dá para fazer no CSS é não piorar: nada de `filter: blur`, nada de
+   saturação puxada, e a graduação escura que a composição pede já cobre
+   boa parte da moleza em sombra.
+
+   `--hero-foto` guarda a foto antiga: ela volta a ser o fundo para quem
+   pede menos movimento, e é o pôster de reserva se o vídeo falhar. */
+.dobra-itapema { --hero-foto: url("../img/dobra-janelas.jpg"); }
+
+/* o mesmo enquadramento que a foto tinha, agora valendo para os dois */
+.dobra-itapema > img,
+.dobra-itapema > .dobra-filme {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 50%;
+  display: block;
+  pointer-events: none;       /* o vídeo é fundo: não intercepta clique */
+}
+/* O pôster entra antes do vídeo e some quando o primeiro quadro pinta.
+   Sem isto, o salto do pôster para o vídeo é um piscar seco. */
+.dobra-itapema > .dobra-filme {
+  transition: opacity .9s ease;
+  background: var(--tinta) var(--hero-foto) 50% 50% / cover no-repeat;
+}
+/* Some SO quando o script avisa que vai tocar (data-vai-tocar), e volta
+   quando o primeiro quadro pinta (data-tocando). Sem esse par, a dobra
+   ficava preta justamente onde o video nao roda — celular, movimento
+   reduzido, economia de dados —, porque a opacidade zero escondia
+   tambem o poster e a foto de reserva. */
+.dobra-itapema > .dobra-filme[data-vai-tocar] { opacity: 0; }
+.dobra-itapema > .dobra-filme[data-tocando] { opacity: 1; }
+
+/* ---- a graduação ----
+   Três camadas, cada uma com um trabalho:
+   `::before` — as rampas de leitura (o lado do texto, o pé e a faixa do
+   cabeçalho). É a camada que garante contraste, e os números dela estão
+   medidos logo abaixo.
+   `.dobra-grao` — a vinheta, só nos cantos, discreta. Separada porque
+   vinheta é composição e rampa é legibilidade: misturar as duas num
+   gradiente só obriga a escurecer o quadro inteiro para acertar o canto.
+   `::after` — a emenda com o papel da página, que já existia. */
+.dobra-grao {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(130% 115% at 50% 42%, rgba(10,12,14,0) 52%, rgba(10,12,14,.34) 100%);
+}
+
+/* ---- entrada do vídeo ----
+   O hero não nasce em movimento: o quadro assenta num avanço mínimo de
+   escala enquanto a abertura entrega a dobra. 1.06 -> 1 em 1,6 s é
+   movimento que se sente e não se nota. */
+body.js .dobra-itapema > .dobra-filme,
+body.js .dobra-itapema > img { transform: scale(1.06); }
+body.js.abriu .dobra-itapema > .dobra-filme,
+body.js.abriu .dobra-itapema > img {
+  transform: none;
+  transition: opacity .9s ease, transform 1.6s cubic-bezier(.22, 1, .3, 1);
+}
+
+/* ---- quem pede menos movimento ----
+   O vídeo não toca (o site.js nem liga a fonte) e a dobra fica com a
+   foto, que é o que havia antes. Nada de quadro preto. */
+@media (prefers-reduced-motion: reduce) {
+  .dobra-itapema > .dobra-filme { opacity: 1; transition: none; }
+  body.js .dobra-itapema > .dobra-filme,
+  body.js.abriu .dobra-itapema > .dobra-filme { transform: none; transition: none; }
+}
+
+/* ---- A BUSCA SOBRE O VÍDEO ----
+   Nenhuma mudança de estrutura: os mesmos `select[name]`, os mesmos
+   `input[name=suites]`, o mesmo `[data-busca-contagem]` e o mesmo
+   `#busca-acervo`. O site.js continua achando tudo onde achava. O que
+   muda é só a pele.
+
+   Vidro, e não papel: sobre o vídeo, a barra branca chapada cortava o
+   quadro em dois. O fosco deixa o movimento atravessar por baixo sem
+   custar legibilidade — o contraste do texto dos campos é contra o
+   próprio fundo da barra, não contra o vídeo.
+
+   `backdrop-filter` tem reserva: onde não houver, a barra fica opaca
+   (a regra `@supports not`), porque meio-translúcido sem desfoque é
+   ilegível. */
+.busca {
+  background: rgba(252, 251, 249, .80);
+  -webkit-backdrop-filter: blur(22px) saturate(1.1);
+  backdrop-filter: blur(22px) saturate(1.1);
+  border: 1px solid rgba(255, 255, 255, .55);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.6) inset,
+    0 30px 70px rgba(10,12,14,.30),
+    0 2px 10px rgba(10,12,14,.12);
+  transition: box-shadow .45s var(--curva), background .45s ease;
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .busca { background: var(--papel); border-color: var(--linha); }
+}
+.busca:focus-within {
+  background: rgba(253, 252, 251, .93);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.7) inset,
+    0 34px 80px rgba(10,12,14,.34),
+    0 2px 12px rgba(10,12,14,.14);
+}
+
+/* o fio entre campos acompanha o vidro */
+.busca-campo + .busca-campo { box-shadow: -1px 0 0 rgba(17,17,17,.10); }
+.busca-campo:hover, .busca-campo:focus-within { background: rgba(17,17,17,.045); }
+
+/* o rótulo some de leve e o valor ganha peso: a hierarquia dentro do
+   campo passa a ser de cor, não de tamanho */
+.busca-rotulo { color: rgba(17,17,17,.52); }
+.busca-seletor { font-weight: 500; }
+
+/* as fichas de suíte viram pastilhas de vidro */
+.busca-ficha span {
+  background: rgba(255,255,255,.5);
+  border-color: rgba(17,17,17,.14);
+  transition: background .25s ease, border-color .25s ease, color .25s ease, transform .25s var(--curva);
+}
+.busca-ficha:hover span { border-color: rgba(17,17,17,.32); transform: translateY(-1px); }
+.busca-ficha input:checked + span { transform: none; }
+
+/* o botão: a lupa anda um fio para a direita no hover, como quem entra */
+.busca-ir svg { transition: transform .35s var(--curva); }
+.busca-ir:hover svg { transform: translateX(2px); }
+
+/* ---- entrada da busca ----
+   Sobe junto com o terceiro bloco de texto, logo depois dele. É o fecho
+   do mesmo gesto, não uma animação nova. */
+body.js .busca { opacity: 0; transform: translateX(-50%) translateY(22px); }
+body.js.abriu .busca {
+  opacity: 1; transform: translateX(-50%) translateY(0);
+  transition: opacity .9s ease, transform 1s var(--curva);
+  transition-delay: .42s;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.js .busca { opacity: 1; transform: translateX(-50%); }
+  body.js.abriu .busca { transition: none; }
+}
+
+/* ====================================================================
+   REFINAMENTO DA PRIMEIRA DOBRA
+   --------------------------------------------------------------------
+   Três defeitos medidos na dobra em vídeo, e os três vinham da mesma
+   origem: as regras de tela larga foram calibradas para a FOTO antiga,
+   cuja geometria ("o prédio começa a 41,5% da largura") deixou de
+   existir quando o hero virou vídeo.
+
+   1. ALINHAMENTO. O cabeçalho começa em x=43 (a calha de --col) e a
+      busca também. O título e a linha de apoio começavam em x=101,
+      porque o hero trocava a grade do site por um padding-left de 7vw.
+      58 px fora do grid, na peça mais visível da página — é o que fazia
+      a dobra parecer um amontoado em vez de uma composição.
+
+   2. O VAZIO. Título e apoio terminavam em y=484 e a busca começava em
+      y=776: 292 px de buraco no meio, contra 39 px entre o título e o
+      apoio. O texto flutuava em cima e a busca flutuava embaixo.
+
+   3. O VÉU. A rampa de 100deg varria o quadro inteiro na diagonal e
+      deixava uma mancha cinza atravessando o prédio. Escurecia muito, e
+      no lugar errado.
+
+   A correção é uma só: o texto desce e encosta na busca, formando um
+   bloco de leitura no pé da dobra; aí o escurecimento também desce e
+   vira uma rampa de baixo para cima, que é onde o texto está. O terço
+   superior do quadro — céu, mar, morro — fica limpo. */
+@media (min-width: 981px) {
+  .dobra-itapema { align-items: flex-end; }
+
+  /* o texto assenta logo acima da busca, e o respiro de baixo é o que
+     reserva a faixa dela */
+  .dobra-texto {
+    padding: 0 0 clamp(10.5rem, 22svh, 14.5rem);
+    color: #fff;
+  }
+
+  /* de volta à calha do site: mesma origem do logotipo, do menu e da
+     busca */
+  .dobra-texto .faixa {
+    width: min(100% - 2.5rem, var(--col));
+    margin-inline: auto;
+    padding-left: 0;
+  }
+
+  /* 13,5ch e nao 15ch: com 15 a serifada quebrava em "a Dallo mudou a /
+     linha do ceu", deixando o artigo pendurado no fim da linha; e os
+     648 px levavam o titulo para o meio claro do quadro, onde o pior
+     pixel dava 1,90:1. Com 13,5 a quebra volta a ser "a Dallo mudou /
+     a linha do ceu" e o bloco fica na faixa escura da esquerda.
+     text-wrap: balance cuida das outras duas linguas, cujas frases tem
+     comprimentos diferentes. */
+  .dobra-texto h1 { max-width: min(13.5ch, 38%); margin-bottom: .42em; text-wrap: balance; }
+
+  /* 46ch: com os 34% de antes a linha quebrava em "Itapema, Porto /
+     Belo", partindo o nome da cidade no pior lugar possível */
+  .dobra-texto p { max-width: min(46ch, 44%); }
+}
+
+/* ---- o véu, refeito ----
+   Rampa de baixo para cima no lugar da varredura diagonal: ela cobre
+   exatamente a faixa onde o texto e a busca moram e não toca no alto do
+   quadro. O reforço da esquerda virou uma elipse ancorada no canto
+   inferior esquerdo — escurece onde a linha de apoio corre, sem cruzar
+   o prédio no meio da cena.
+
+   Números refeitos para esta composição: ver a tabela abaixo. */
+/* CALIBRADO POR MEDIÇÃO, não no olho. Seis quadros do vídeo capturados
+   de 3 em 3 s, recompostos num canvas com as quatro camadas, lendo o
+   PIOR pixel dentro de cada caixa de texto.
+
+   O diagnóstico veio de mapear ONDE o pior pixel cai: não era o bloco
+   inteiro, era a BORDA DE CIMA do título (y 0 a 14 da caixa, 4% dos
+   pixels) em dois quadros tardios, onde o drone passa sobre a fachada
+   branca. Ou seja, o problema era ALCANCE da rampa, não intensidade —
+   escurecer mais o que já estava escuro não resolvia nada:
+
+     rampa até    título  apoio   luz no topo (40% de cima)
+     62%           1,91   6,91    0,268   reprova
+     72%           2,72   8,87    0,259   reprova
+     78%           3,33   9,49    0,242   passa raspando
+     78% + elipse  4,18  11,26    0,229   ESTA
+     84% + elipse  5,87  12,87    0,200   passa, mas apaga o quadro
+
+   O título tem 72 px, então o mínimo é 3:1; 4,18 dá margem real para a
+   variação de brilho do vídeo. A elipse do canto faz o reforço LOCAL,
+   onde o texto mora, em vez de puxar o quadro inteiro para baixo — por
+   isso ela custa só 0,013 de luz e rende 0,85 de contraste.
+
+   Trocar o vídeo, o tamanho do título ou a posição do bloco pede
+   refazer esta conta. */
+.dobra-itapema::before {
+  background:
+    /* a rampa do pé: é ela que carrega a legibilidade */
+    linear-gradient(to top,
+      rgba(10,12,14,.90) 0%, rgba(10,12,14,.80) 14%,
+      rgba(10,12,14,.62) 32%, rgba(10,12,14,.38) 52%,
+      rgba(10,12,14,0) 78%),
+    /* o reforço local do canto onde o texto corre */
+    radial-gradient(86% 62% at 2% 100%,
+      rgba(10,12,14,.78) 0%, rgba(10,12,14,.40) 48%, rgba(10,12,14,0) 80%),
+    /* a faixa do cabeçalho, para a barra transparente ler sobre o vídeo */
+    linear-gradient(to bottom,
+      rgba(10,12,14,.42) 0%, rgba(10,12,14,.10) 13%, rgba(10,12,14,0) 22%);
+}
+
+/* vinheta mais discreta: com a rampa de baixo fazendo o trabalho pesado,
+   ela volta a ser só o fecho dos cantos */
+.dobra-grao {
+  background: radial-gradient(140% 120% at 50% 38%, rgba(10,12,14,0) 58%, rgba(10,12,14,.26) 100%);
+}
+
+/* ---- a linha de base dentro da busca ----
+   Medido: o rótulo "Suítes" nascia 5 px acima dos outros três, e as
+   pastilhas 5 px acima dos selects. A causa é `align-content: center`
+   com conteúdos de alturas diferentes — o campo das suítes tem
+   pastilhas de 32 px onde os outros têm um select de 22, então cada
+   caixa centrava a si mesma num lugar diferente.
+
+   Com a linha do valor fixada na altura da pastilha, os quatro campos
+   passam a ter a mesma geometria interna e tudo assenta na mesma base.
+   O select continua centrado dentro dela. */
+.busca-campo {
+  grid-template-rows: auto 2rem;
+  align-items: center;
+}

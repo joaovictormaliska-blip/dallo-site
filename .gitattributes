@@ -1,0 +1,12 @@
+# Quebra de linha LF em todo lugar, inclusive no Windows. Sem isto o Git
+# devolve CRLF no checkout, o gerar.js escreve LF, e o repositorio inteiro
+# aparece modificado sem ninguem ter mudado nada.
+* text=auto eol=lf
+
+# binarios: o Git nao mexe
+*.webp binary
+*.woff2 binary
+*.jpg binary
+*.png binary
+*.mp4 binary
+*.webm binary

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desarrollos - Dallo Construction Company</title>
+<meta name="description" content="">
+<link rel="alternate" hreflang="pt-BR" href="../empreendimentos.html">
+<link rel="alternate" hreflang="en" href="../en/empreendimentos.html">
+<link rel="alternate" hreflang="es" href="../es/empreendimentos.html">
+<link rel="alternate" hreflang="x-default" href="../empreendimentos.html">
+<link rel="icon" href="../img/logo-dallo.svg">
+<link rel="preload" href="../fontes/Manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fontes/PlayfairDisplay-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/estilo.css">
+<!-- A classe js no elemento html e o que liga a revelacao na rolagem.
+     Ela precisa valer em TODAS as paginas: enquanto so a home a tinha, o
+     .revela das outras nunca escondia nada e nunca animava, e o efeito
+     nao existia fora da home sem nenhum erro no console para avisar. A
+     classe js no body continua so na home, porque quem usa e o CSS da
+     abertura. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- As frases que o site.js escreve em tempo de execução (contagem da
+     busca, aviso de filtro) não podem ficar dentro do script: ele é um
+     arquivo só para as três línguas. Vêm por aqui. -->
+<script type="application/json" id="i18n">{"verTorre":"Ver {n} torre","verTorres":"Ver {n} torres","torre":"{n} torre","torres":"{n} torres","filtrandoPor":"Filtrando por","limpar":"limpiar","ou":"o","suites":"suites","faixas":{"ate150":"Hasta 150 m²","150-250":"150 a 250 m²","250-400":"250 a 400 m²","400+":"Más de 400 m²"},"pronto":"listo para habitar","obra":"en construcción","emp":"{n} emprendimiento","emps":"{n} emprendimientos"}</script>
+</head>
+<body>
+
+<header class="topo">
+  <div class="faixa topo-in">
+    <a class="topo-marca" href="index.html" aria-label="Constructora Dallo, página de inicio">
+      <img src="../img/logo-dallo.svg" alt="Construtora Dallo" width="138" height="35">
+    </a>
+    <button class="topo-abrir" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu">
+      <a href="empreendimentos.html">Emprendimientos</a>
+      <a href="sobre.html">La Dallo</a>
+      <a href="contato.html">Contacto</a>
+      <a class="menu-botao" href="contato.html">Hablar con el equipo</a>
+    </nav>
+    <div class="idiomas">
+      <button class="idiomas-atual" type="button" aria-expanded="false" aria-controls="idiomas-lista" aria-label="Cambiar idioma">
+        <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#aa151b"/><rect width="24" height="12" y="6" fill="#f1bf00"/></svg></span>
+        <span class="idiomas-sigla">ES</span>
+        <svg class="idiomas-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="idiomas-lista" id="idiomas-lista" hidden>
+        <li><a href="../empreendimentos.html" lang="pt-BR">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>Português
+        </a></li>
+        <li><a href="../en/empreendimentos.html" lang="en">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#fff"/><g fill="#b22234"><rect width="24" height="2.4" y="0"/><rect width="24" height="2.4" y="4.8"/><rect width="24" height="2.4" y="9.6"/><rect width="24" height="2.4" y="14.4"/><rect width="24" height="2.4" y="19.2"/></g><rect width="11" height="12" fill="#3c3b6e"/></svg></span>English
+        </a></li>
+        <li><a href="../es/empreendimentos.html" lang="es" aria-current="true">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#aa151b"/><rect width="24" height="12" y="6" fill="#f1bf00"/></svg></span>Español
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="secao">
+    <div class="faixa">
+      <div class="cabeca-secao">
+        <h1>Emprendimientos</h1>
+        <p class="lead" data-contagem>45 emprendimientos</p>
+      </div>
+
+      <div class="filtros" data-filtros>
+        <button type="button" data-grupo="cidade" data-valor="todas" aria-pressed="true">Todas las ciudades</button>
+        <button type="button" data-grupo="cidade" data-valor="Cascavel" aria-pressed="false">Cascavel</button>
+        <button type="button" data-grupo="cidade" data-valor="Itapema" aria-pressed="false">Itapema</button>
+        <button type="button" data-grupo="cidade" data-valor="Porto Belo" aria-pressed="false">Porto Belo</button>
+      </div>
+      <div class="filtros" data-filtros-estado>
+        <button type="button" data-grupo="estado" data-valor="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-grupo="estado" data-valor="disponivel" aria-pressed="false">Con unidades</button>
+        <button type="button" data-grupo="estado" data-valor="esgotado" aria-pressed="false">Comercializados</button>
+        <button type="button" data-grupo="estado" data-valor="entregue" aria-pressed="false">Entregados</button>
+      </div>
+
+      <div class="torres">
+        <a class="torre " href="empreendimento/belissimo.html"
+         data-cidade="Itapema" data-estado="esgotado"
+         data-suites="4" data-faixa="250-400" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/6/677d84c6bdd3a8.53117695-1600.webp" srcset="../midia/web/midia/uploads/enterprise/6/677d84c6bdd3a8.53117695-820.webp 820w, ../midia/web/midia/uploads/enterprise/6/677d84c6bdd3a8.53117695-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Belíssimo, Meia Praia · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="esgotado">100% vendido</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Belíssimo</h3>
+          <span class="torre-local">Meia Praia · Itapema · Santa Catarina</span>
+          <span class="torre-specs">4 suites · Hasta 277m² de espacio privado.</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/belvedere.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/17/61e810be0534c3.99253933-1600.webp" srcset="../midia/web/midia/uploads/enterprise/17/61e810be0534c3.99253933-820.webp 820w, ../midia/web/midia/uploads/enterprise/17/61e810be0534c3.99253933-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Belvedere, Frente mar - Canto da Praia · Itapema · SC" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="entregue">Frente al mar - Listo para mudarse</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Belvedere</h3>
+          <span class="torre-local">Frente mar - Canto da Praia · Itapema · SC</span>
+          <span class="torre-specs">4 suites · Hasta 200m² de espacio privado</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/cadenza.html"
+         data-cidade="Porto Belo" data-estado="entregue"
+         data-suites="3" data-faixa="ate150" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/24/6246f8ef6226b4.12829337-1600.webp" srcset="../midia/web/midia/uploads/enterprise/24/6246f8ef6226b4.12829337-820.webp 820w, ../midia/web/midia/uploads/enterprise/24/6246f8ef6226b4.12829337-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Cadenza, Frente mar - Balneário Perequê · Porto Belo · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Cadenza</h3>
+          <span class="torre-local">Frente mar - Balneário Perequê · Porto Belo · SC</span>
+          <span class="torre-specs">3 suites · A partir de 141m² de espacio privado.</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/catherine.html"
+         data-cidade="Cascavel" data-estado="disponivel"
+         data-suites="4" data-faixa="150-250" data-estagio="obra">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/46/664f77b5ceaa83.74052583-1600.webp" srcset="../midia/web/midia/uploads/enterprise/46/664f77b5ceaa83.74052583-820.webp 820w, ../midia/web/midia/uploads/enterprise/46/664f77b5ceaa83.74052583-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Catherine, Bairro Country · Cascavel · Paraná" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Unidades disponibles</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Catherine</h3>
+          <span class="torre-local">Bairro Country · Cascavel · Paraná</span>
+          <span class="torre-specs">4 suites · 200,4 m² de superficie privada</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/celine.html"
+         data-cidade="Itapema" data-estado="disponivel"
+         data-suites="4" data-faixa="ate150" data-estagio="obra">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/41/637cbf1fed4168.01052528-1600.webp" srcset="../midia/web/midia/uploads/enterprise/41/637cbf1fed4168.01052528-820.webp 820w, ../midia/web/midia/uploads/enterprise/41/637cbf1fed4168.01052528-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Celine, Frente Mar - Canto da Praia · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Última unidad</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Celine</h3>
+          <span class="torre-local">Frente Mar - Canto da Praia · Itapema · Santa Catarina</span>
+          <span class="torre-specs">4 suites · 300 - 1.000m² de superficie privada</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/chateau-blanc.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="3" data-faixa="ate150" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/25/61e8602ca9e3e9.83826994-1600.webp" srcset="../midia/web/midia/uploads/enterprise/25/61e8602ca9e3e9.83826994-820.webp 820w, ../midia/web/midia/uploads/enterprise/25/61e8602ca9e3e9.83826994-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Château Blanc, Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Château Blanc</h3>
+          <span class="torre-local">Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">3 suites · Área privada de 115m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/dallo-business-center-palazzo-luna.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="3,4" data-faixa="" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/27/624ef38f64a0c8.33160418-1600.webp" srcset="../midia/web/midia/uploads/enterprise/27/624ef38f64a0c8.33160418-820.webp 820w, ../midia/web/midia/uploads/enterprise/27/624ef38f64a0c8.33160418-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Dallo Business Center &amp; Palazzo Luna, Frente avenida - Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Dallo Business Center &amp; Palazzo Luna</h3>
+          <span class="torre-local">Frente avenida - Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">3 y 4 suites</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/grand-chateau.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="3" data-faixa="ate150" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/26/624f2f19ecf979.83692006-1600.webp" srcset="../midia/web/midia/uploads/enterprise/26/624f2f19ecf979.83692006-820.webp 820w, ../midia/web/midia/uploads/enterprise/26/624f2f19ecf979.83692006-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Grand Château, Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Grand Château</h3>
+          <span class="torre-local">Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">3 suites · Área privada de 128m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/grand-palais.html"
+         data-cidade="Porto Belo" data-estado="entregue"
+         data-suites="3,4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/21/6246fb12a90f73.50225512-1600.webp" srcset="../midia/web/midia/uploads/enterprise/21/6246fb12a90f73.50225512-820.webp 820w, ../midia/web/midia/uploads/enterprise/21/6246fb12a90f73.50225512-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Grand Palais, Frente mar - Balneário Perequê · Porto Belo · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Grand Palais</h3>
+          <span class="torre-local">Frente mar - Balneário Perequê · Porto Belo · SC</span>
+          <span class="torre-specs">3 y 4 suites · Hasta 250m² de espacio privado.</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/hampton-park.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="3" data-faixa="" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/28/61e8817c334cd0.16395672-1600.webp" srcset="../midia/web/midia/uploads/enterprise/28/61e8817c334cd0.16395672-820.webp 820w, ../midia/web/midia/uploads/enterprise/28/61e8817c334cd0.16395672-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Hampton Park, Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Hampton Park</h3>
+          <span class="torre-local">Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">3 suites</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/jardim-europa.html"
+         data-cidade="Porto Belo" data-estado="esgotado"
+         data-suites="4" data-faixa="250-400" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/8/643d5c4fa777f5.45862746-1600.webp" srcset="../midia/web/midia/uploads/enterprise/8/643d5c4fa777f5.45862746-820.webp 820w, ../midia/web/midia/uploads/enterprise/8/643d5c4fa777f5.45862746-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Jardim Europa, Balneário Perequê · Porto Belo · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="esgotado">100% vendido</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Jardim Europa</h3>
+          <span class="torre-local">Balneário Perequê · Porto Belo · Santa Catarina</span>
+          <span class="torre-specs">4 suites · Hasta 295m² de espacio privado</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/jardim-moliere.html"
+         data-cidade="Porto Belo" data-estado="disponivel"
+         data-suites="2" data-faixa="ate150" data-estagio="">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/49/673601748083c7.51333304-1600.webp" srcset="../midia/web/midia/uploads/enterprise/49/673601748083c7.51333304-820.webp 820w, ../midia/web/midia/uploads/enterprise/49/673601748083c7.51333304-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Jardim Molière, Balneário Perequê · Porto Belo · SC" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Unidades disponibles</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Jardim Molière</h3>
+          <span class="torre-local">Balneário Perequê · Porto Belo · SC</span>
+          <span class="torre-specs">2 suites · 80m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/key-west.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="3" data-faixa="" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/29/624f20f4be2929.08063170-1600.webp" srcset="../midia/web/midia/uploads/enterprise/29/624f20f4be2929.08063170-820.webp 820w, ../midia/web/midia/uploads/enterprise/29/624f20f4be2929.08063170-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Key West, Frente avenida - Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Key West</h3>
+          <span class="torre-local">Frente avenida - Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">3 suites</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/la-belle.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/30/6246f78d8578d4.52285698-1600.webp" srcset="../midia/web/midia/uploads/enterprise/30/6246f78d8578d4.52285698-820.webp 820w, ../midia/web/midia/uploads/enterprise/30/6246f78d8578d4.52285698-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="La Belle, Frente mar - Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>La Belle</h3>
+          <span class="torre-local">Frente mar - Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">4 suites · A partir de 180m² de espacio privado.</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/la-dolce-vita.html"
+         data-cidade="Itapema" data-estado="esgotado"
+         data-suites="4" data-faixa="250-400" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/38/69610d4a9bc150.14389201-1600.webp" srcset="../midia/web/midia/uploads/enterprise/38/69610d4a9bc150.14389201-820.webp 820w, ../midia/web/midia/uploads/enterprise/38/69610d4a9bc150.14389201-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="La Dolce Vita, Frente Mar - Centro · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="esgotado">100% vendido</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>La Dolce Vita</h3>
+          <span class="torre-local">Frente Mar - Centro · Itapema · Santa Catarina</span>
+          <span class="torre-specs">4 suites · 160m² - 301m² Área privada</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/la-martina.html"
+         data-cidade="Itapema" data-estado="esgotado"
+         data-suites="4" data-faixa="250-400" data-estagio="">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/9/660d5a068cc860.09650470-1600.webp" srcset="../midia/web/midia/uploads/enterprise/9/660d5a068cc860.09650470-820.webp 820w, ../midia/web/midia/uploads/enterprise/9/660d5a068cc860.09650470-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="La Martina, Meia Praia · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="esgotado">100% vendido</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>La Martina</h3>
+          <span class="torre-local">Meia Praia · Itapema · Santa Catarina</span>
+          <span class="torre-specs">4 suites · Hasta 377m² de espacio privado.</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/la-riviere.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="3" data-faixa="ate150" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/22/624eedfdae8cb1.54543917-1600.webp" srcset="../midia/web/midia/uploads/enterprise/22/624eedfdae8cb1.54543917-820.webp 820w, ../midia/web/midia/uploads/enterprise/22/624eedfdae8cb1.54543917-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="La Rivière, Frente mar - Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>La Rivière</h3>
+          <span class="torre-local">Frente mar - Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">3 suites · Hasta 140m² de espacio privado.</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/la-rocca.html"
+         data-cidade="Itapema" data-estado="disponivel"
+         data-suites="4" data-faixa="400+" data-estagio="obra">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/1/62472d8d87c566.49220893-1600.webp" srcset="../midia/web/midia/uploads/enterprise/1/62472d8d87c566.49220893-820.webp 820w, ../midia/web/midia/uploads/enterprise/1/62472d8d87c566.49220893-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="La Rocca, Centro · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Últimas unidades</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>La Rocca</h3>
+          <span class="torre-local">Centro · Itapema · Santa Catarina</span>
+          <span class="torre-specs">4 suites · De 165 a 505m² de espacio privado</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/la-vie.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="4" data-faixa="250-400" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/23/624ef227acd9a2.81711438-1600.webp" srcset="../midia/web/midia/uploads/enterprise/23/624ef227acd9a2.81711438-820.webp 820w, ../midia/web/midia/uploads/enterprise/23/624ef227acd9a2.81711438-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="La Vie, Frente mar - Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>La Vie</h3>
+          <span class="torre-local">Frente mar - Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">4 suites · Hasta 350m² de espacio privado</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/le-jardin.html"
+         data-cidade="Itapema" data-estado="disponivel"
+         data-suites="4" data-faixa="150-250" data-estagio="obra">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/48/6687f4cf9b9087.28925699-1600.webp" srcset="../midia/web/midia/uploads/enterprise/48/6687f4cf9b9087.28925699-820.webp 820w, ../midia/web/midia/uploads/enterprise/48/6687f4cf9b9087.28925699-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Le Jardin, Centro · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Unidades disponibles</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Le Jardin</h3>
+          <span class="torre-local">Centro · Itapema · Santa Catarina</span>
+          <span class="torre-specs">4 suites · A partir de 184m² de espacio privado</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/le-lis-blanc.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/31/624efafc3b6390.97288375-1600.webp" srcset="../midia/web/midia/uploads/enterprise/31/624efafc3b6390.97288375-820.webp 820w, ../midia/web/midia/uploads/enterprise/31/624efafc3b6390.97288375-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Le Lis Blanc, Frente avenida - Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Le Lis Blanc</h3>
+          <span class="torre-local">Frente avenida - Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">4 suites · A partir de 182m² de espacio privado.</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/liverpool-house.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="3" data-faixa="ate150" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/32/61e886158e80c7.72098066-1600.webp" srcset="../midia/web/midia/uploads/enterprise/32/61e886158e80c7.72098066-820.webp 820w, ../midia/web/midia/uploads/enterprise/32/61e886158e80c7.72098066-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Liverpool House, Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Liverpool House</h3>
+          <span class="torre-local">Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">3 suites · Áreas privadas de 103m² y 107m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/magnolia.html"
+         data-cidade="Itapema" data-estado="esgotado"
+         data-suites="3,4" data-faixa="400+" data-estagio="">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/5/696110887c1a94.45375569-1600.webp" srcset="../midia/web/midia/uploads/enterprise/5/696110887c1a94.45375569-820.webp 820w, ../midia/web/midia/uploads/enterprise/5/696110887c1a94.45375569-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Magnólia, Canto da Praia · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="esgotado">100% vendido</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Magnólia</h3>
+          <span class="torre-local">Canto da Praia · Itapema · Santa Catarina</span>
+          <span class="torre-specs">3 y 4 suites · Hasta 401m² de espacio privado.</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/maine.html"
+         data-cidade="Itapema" data-estado="disponivel"
+         data-suites="3" data-faixa="150-250" data-estagio="obra">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/47/68b6e1cadfdb60.58467136-1600.webp" srcset="../midia/web/midia/uploads/enterprise/47/68b6e1cadfdb60.58467136-820.webp 820w, ../midia/web/midia/uploads/enterprise/47/68b6e1cadfdb60.58467136-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Maine, Meia Praia · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Unidades disponibles</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Maine</h3>
+          <span class="torre-local">Meia Praia · Itapema · Santa Catarina</span>
+          <span class="torre-specs">3 suites · 111m² a 209m² de superficie privada</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/maison-laduree.html"
+         data-cidade="Itapema" data-estado="disponivel"
+         data-suites="4" data-faixa="250-400" data-estagio="obra">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/52/69fb55f05250c1.31247892-1600.webp" srcset="../midia/web/midia/uploads/enterprise/52/69fb55f05250c1.31247892-820.webp 820w, ../midia/web/midia/uploads/enterprise/52/69fb55f05250c1.31247892-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Maison Ladurée, Centro · Itapema · SC" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Unidades disponibles</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Maison Ladurée</h3>
+          <span class="torre-local">Centro · Itapema · SC</span>
+          <span class="torre-specs">4 suites · 173m² a 340m² de superficie privada</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/maison-lafayette.html"
+         data-cidade="Itapema" data-estado="esgotado"
+         data-suites="4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/2/6960f9bfdf78b3.01951235-1600.webp" srcset="../midia/web/midia/uploads/enterprise/2/6960f9bfdf78b3.01951235-820.webp 820w, ../midia/web/midia/uploads/enterprise/2/6960f9bfdf78b3.01951235-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Maison Lafayette, Meia Praia · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="esgotado">100% vendido</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Maison Lafayette</h3>
+          <span class="torre-local">Meia Praia · Itapema · Santa Catarina</span>
+          <span class="torre-specs">4 suites · Área privada de 185m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/maison-paris.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/33/624f27af2799b0.46076059-1600.webp" srcset="../midia/web/midia/uploads/enterprise/33/624f27af2799b0.46076059-820.webp 820w, ../midia/web/midia/uploads/enterprise/33/624f27af2799b0.46076059-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Maison Paris, Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Maison Paris</h3>
+          <span class="torre-local">Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">4 suites · Área privada de 186m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/montreux.html"
+         data-cidade="Itapema" data-estado="disponivel"
+         data-suites="4" data-faixa="250-400" data-estagio="obra">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/40/62952475688549.32729660-1600.webp" srcset="../midia/web/midia/uploads/enterprise/40/62952475688549.32729660-820.webp 820w, ../midia/web/midia/uploads/enterprise/40/62952475688549.32729660-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Montreux, Centro · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Últimas unidades</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Montreux</h3>
+          <span class="torre-local">Centro · Itapema · Santa Catarina</span>
+          <span class="torre-specs">4 suites · 163 - 280 m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/noah.html"
+         data-cidade="Itapema" data-estado="esgotado"
+         data-suites="4" data-faixa="400+" data-estagio="">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/10/660d584f9fea84.57450250-1600.webp" srcset="../midia/web/midia/uploads/enterprise/10/660d584f9fea84.57450250-820.webp 820w, ../midia/web/midia/uploads/enterprise/10/660d584f9fea84.57450250-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Noah, Meia Praia · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="esgotado">100% vendido</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Noah</h3>
+          <span class="torre-local">Meia Praia · Itapema · Santa Catarina</span>
+          <span class="torre-specs">4 suites · Hasta 455m² de espacio privado</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/palais-royal.html"
+         data-cidade="Porto Belo" data-estado="disponivel"
+         data-suites="3,4" data-faixa="250-400" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/39/6aa456016acd49.81793222-1600.webp" srcset="../midia/web/midia/uploads/enterprise/39/6aa456016acd49.81793222-820.webp 820w, ../midia/web/midia/uploads/enterprise/39/6aa456016acd49.81793222-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Palacio Real, Balneário Perequê · Porto Belo · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">100% vendido</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Palacio Real</h3>
+          <span class="torre-local">Balneário Perequê · Porto Belo · Santa Catarina</span>
+          <span class="torre-specs">Suites de 3 y 4 habitaciones · Área privada de 161 m² a 280 m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/parigi.html"
+         data-cidade="Cascavel" data-estado="disponivel"
+         data-suites="4" data-faixa="150-250" data-estagio="obra">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/45/651ed42f626828.05542703-1600.webp" srcset="../midia/web/midia/uploads/enterprise/45/651ed42f626828.05542703-820.webp 820w, ../midia/web/midia/uploads/enterprise/45/651ed42f626828.05542703-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Parigi, Neva · Cascavel · Paraná" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Unidades disponibles</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Parigi</h3>
+          <span class="torre-local">Neva · Cascavel · Paraná</span>
+          <span class="torre-specs">4 suites · 218m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/park-lane.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/34/61e8884e382ee2.41474791-1600.webp" srcset="../midia/web/midia/uploads/enterprise/34/61e8884e382ee2.41474791-820.webp 820w, ../midia/web/midia/uploads/enterprise/34/61e8884e382ee2.41474791-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Park Lane, Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Park Lane</h3>
+          <span class="torre-local">Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">4 suites · Área privada de 163m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/petit-chateau.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="3,4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/20/624eeb3bbfaab8.02979162-1600.webp" srcset="../midia/web/midia/uploads/enterprise/20/624eeb3bbfaab8.02979162-820.webp 820w, ../midia/web/midia/uploads/enterprise/20/624eeb3bbfaab8.02979162-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Petit Château, Frente mar - Canto da Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Petit Château</h3>
+          <span class="torre-local">Frente mar - Canto da Praia · Itapema · SC</span>
+          <span class="torre-specs">3 y 4 suites · Hasta 173m² de espacio privado.</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/ristretto.html"
+         data-cidade="Itapema" data-estado="esgotado"
+         data-suites="4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/3/69610d14750fb2.03307491-1600.webp" srcset="../midia/web/midia/uploads/enterprise/3/69610d14750fb2.03307491-820.webp 820w, ../midia/web/midia/uploads/enterprise/3/69610d14750fb2.03307491-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Ristretto, Canto da Praia · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="esgotado">100% vendido</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Ristretto</h3>
+          <span class="torre-local">Canto da Praia · Itapema · Santa Catarina</span>
+          <span class="torre-specs">4 suites · 161m² - 245m² de superficie privada</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/saint-louis.html"
+         data-cidade="Porto Belo" data-estado="esgotado"
+         data-suites="4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/44/650dd9708d7595.50020501-1600.webp" srcset="../midia/web/midia/uploads/enterprise/44/650dd9708d7595.50020501-820.webp 820w, ../midia/web/midia/uploads/enterprise/44/650dd9708d7595.50020501-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Saint Louis, Frente Mar - Perequê · Porto Belo · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="esgotado">100% VENDIDO</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Saint Louis</h3>
+          <span class="torre-local">Frente Mar - Perequê · Porto Belo · Santa Catarina</span>
+          <span class="torre-specs">4 suites · 170 a 180m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/salzburgo.html"
+         data-cidade="Itapema" data-estado="disponivel"
+         data-suites="4" data-faixa="250-400" data-estagio="obra">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/42/63e3f6f9234cf2.97230853-1600.webp" srcset="../midia/web/midia/uploads/enterprise/42/63e3f6f9234cf2.97230853-820.webp 820w, ../midia/web/midia/uploads/enterprise/42/63e3f6f9234cf2.97230853-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Salzburgo, Meia Praia · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Unidades disponibles</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Salzburgo</h3>
+          <span class="torre-local">Meia Praia · Itapema · Santa Catarina</span>
+          <span class="torre-specs">4 suites · 213 m² a 352 m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/san-lorenzo.html"
+         data-cidade="Itapema" data-estado="esgotado"
+         data-suites="3,4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/4/677d85ea5644d3.58780567-1600.webp" srcset="../midia/web/midia/uploads/enterprise/4/677d85ea5644d3.58780567-820.webp 820w, ../midia/web/midia/uploads/enterprise/4/677d85ea5644d3.58780567-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="San Lorenzo, Centro · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="esgotado">100% vendido</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>San Lorenzo</h3>
+          <span class="torre-local">Centro · Itapema · Santa Catarina</span>
+          <span class="torre-specs">3 y 4 suites · Hasta 165m² de espacio privado.</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/st-andrews.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="4" data-faixa="ate150" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/19/624eeab0033d48.95539078-1600.webp" srcset="../midia/web/midia/uploads/enterprise/19/624eeab0033d48.95539078-820.webp 820w, ../midia/web/midia/uploads/enterprise/19/624eeab0033d48.95539078-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="St. Andrews, Meia praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>St. Andrews</h3>
+          <span class="torre-local">Meia praia · Itapema · SC</span>
+          <span class="torre-specs">4 suites · Área privada de 150m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/st-clair.html"
+         data-cidade="Itapema" data-estado="esgotado"
+         data-suites="3,4" data-faixa="400+" data-estagio="">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/7/677d7de021c171.62854376-1600.webp" srcset="../midia/web/midia/uploads/enterprise/7/677d7de021c171.62854376-820.webp 820w, ../midia/web/midia/uploads/enterprise/7/677d7de021c171.62854376-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="St. Clair, Centro · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="esgotado">100% vendido</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>St. Clair</h3>
+          <span class="torre-local">Centro · Itapema · Santa Catarina</span>
+          <span class="torre-specs">3 o 4 suites · Hasta 419m² de espacio privado</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/sweden.html"
+         data-cidade="Itapema" data-estado="disponivel"
+         data-suites="4" data-faixa="400+" data-estagio="obra">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/43/64d271a323e294.03413290-1600.webp" srcset="../midia/web/midia/uploads/enterprise/43/64d271a323e294.03413290-820.webp 820w, ../midia/web/midia/uploads/enterprise/43/64d271a323e294.03413290-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Sweden, Centro · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Unidades disponibles</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Sweden</h3>
+          <span class="torre-local">Centro · Itapema · Santa Catarina</span>
+          <span class="torre-specs">4 suites · 180 m² a 410 m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/venice.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/18/624ee65e4548d2.33423107-1600.webp" srcset="../midia/web/midia/uploads/enterprise/18/624ee65e4548d2.33423107-820.webp 820w, ../midia/web/midia/uploads/enterprise/18/624ee65e4548d2.33423107-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Venice, Frente mar - Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="entregue">Frente al mar - Listo para mudarse</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Venice</h3>
+          <span class="torre-local">Frente mar - Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">4 suites · Área privada de 224m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/via-veneto.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/35/624f3d145c1605.95684324-1600.webp" srcset="../midia/web/midia/uploads/enterprise/35/624f3d145c1605.95684324-820.webp 820w, ../midia/web/midia/uploads/enterprise/35/624f3d145c1605.95684324-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Via Veneto, Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Via Veneto</h3>
+          <span class="torre-local">Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">4 suites · 171m² de superficie privada</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/victoria.html"
+         data-cidade="Cascavel" data-estado="disponivel"
+         data-suites="3,4" data-faixa="400+" data-estagio="obra">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/54/6a4eb232df83d4.93152548-1600.webp" srcset="../midia/web/midia/uploads/enterprise/54/6a4eb232df83d4.93152548-820.webp 820w, ../midia/web/midia/uploads/enterprise/54/6a4eb232df83d4.93152548-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Victoria, Bairro Country · Cascavel · Paraná" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Unidades disponibles</span>
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Victoria</h3>
+          <span class="torre-local">Bairro Country · Cascavel · Paraná</span>
+          <span class="torre-specs">De 3 a 4 suites · De 152 m² a 460 m²</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/villa-florense.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="3" data-faixa="" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/36/61e889ee692ca2.02467332-1600.webp" srcset="../midia/web/midia/uploads/enterprise/36/61e889ee692ca2.02467332-820.webp 820w, ../midia/web/midia/uploads/enterprise/36/61e889ee692ca2.02467332-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Villa Florense, Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Villa Florense</h3>
+          <span class="torre-local">Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">3 suites</span>
+        </span>
+      </a>
+        <a class="torre " href="empreendimento/vogue-maison.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="../midia/web/midia/uploads/enterprise/37/624ef8ff942556.68550537-1600.webp" srcset="../midia/web/midia/uploads/enterprise/37/624ef8ff942556.68550537-820.webp 820w, ../midia/web/midia/uploads/enterprise/37/624ef8ff942556.68550537-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Vogue Maison, Frente avenida - Meia praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver emprendimiento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Vogue Maison</h3>
+          <span class="torre-local">Frente avenida - Meia praia · Itapema · SC</span>
+          <span class="torre-specs">4 suites · Hasta 250m² de espacio privado.</span>
+        </span>
+      </a>
+      </div>
+      <p class="vazio" data-vazio hidden>Ningún emprendimiento con esos filtros.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="faixa">
+    <div class="rodape-chamada">
+      <p>Toda dirección empieza con una conversación.</p>
+      <a class="botao botao-vazado" href="contato.html">Hablar con el equipo</a>
+    </div>
+    <div class="rodape-grade">
+      <div class="rodape-marca">
+        <img src="../img/logo-dallo.svg" alt="Construtora Dallo" width="128" style="filter:brightness(0) invert(1)">
+        <p class="rodape-assinatura">Constructora y promotora en Itapema, Porto Belo y Cascavel. 45 emprendimientos entregados y en obra desde 2008.</p>
+      </div>
+      <div>
+        <h4>Emprendimientos</h4>
+        <ul>
+          <li><a href="empreendimentos.html?cidade=Itapema">Itapema</a></li>
+          <li><a href="empreendimentos.html?cidade=Porto Belo">Porto Belo</a></li>
+          <li><a href="empreendimentos.html?cidade=Cascavel">Cascavel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>La Dallo</h4>
+        <ul>
+          <li><a href="sobre.html">Nuestra historia</a></li>
+          <li><a href="contato.html">Contáctenos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Dallo Itapema SC</h4>
+        <p>Av. Nereu Ramos, 4077, Meia Praia - Ed. Dallo Business Center | 15º e 16º andares</p>
+        <p><a href="tel:4732671111">(47) 3267-1111</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+      <div>
+        <h4>Dallo Cascavel PR</h4>
+        <p>Rua Visconde de Guarapuava, 2342</p>
+        <p><a href="tel:4522210670">(45) 2221-0670</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+    </div>
+    <div class="rodape-fim">
+      <span>Dallo Empreendimentos</span>
+      <span>Todos los derechos reservados</span>
+    </div>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/554732671111" aria-label="Hablar por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.15h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.18 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<script src="../js/site.js"></script>
+</body>
+</html>

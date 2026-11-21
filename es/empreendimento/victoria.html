@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Victoria — Construtora Dallo</title>
+<meta name="description" content="Con una arquitectura inspirada en la elegancia atemporal de los clásicos, Victoria encarna una visión de sofisticación basada en la armonía, la proporción y la atención al detalle.">
+<link rel="alternate" hreflang="pt-BR" href="../../empreendimento/victoria.html">
+<link rel="alternate" hreflang="en" href="../../en/empreendimento/victoria.html">
+<link rel="alternate" hreflang="es" href="../../es/empreendimento/victoria.html">
+<link rel="alternate" hreflang="x-default" href="../../empreendimento/victoria.html">
+<link rel="icon" href="../../img/logo-dallo.svg">
+<link rel="preload" href="../../fontes/Manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fontes/PlayfairDisplay-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/estilo.css">
+<!-- A classe js no elemento html e o que liga a revelacao na rolagem.
+     Ela precisa valer em TODAS as paginas: enquanto so a home a tinha, o
+     .revela das outras nunca escondia nada e nunca animava, e o efeito
+     nao existia fora da home sem nenhum erro no console para avisar. A
+     classe js no body continua so na home, porque quem usa e o CSS da
+     abertura. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- As frases que o site.js escreve em tempo de execução (contagem da
+     busca, aviso de filtro) não podem ficar dentro do script: ele é um
+     arquivo só para as três línguas. Vêm por aqui. -->
+<script type="application/json" id="i18n">{"verTorre":"Ver {n} torre","verTorres":"Ver {n} torres","torre":"{n} torre","torres":"{n} torres","filtrandoPor":"Filtrando por","limpar":"limpiar","ou":"o","suites":"suites","faixas":{"ate150":"Hasta 150 m²","150-250":"150 a 250 m²","250-400":"250 a 400 m²","400+":"Más de 400 m²"},"pronto":"listo para habitar","obra":"en construcción","emp":"{n} emprendimiento","emps":"{n} emprendimientos"}</script>
+</head>
+<body>
+
+<header class="topo">
+  <div class="faixa topo-in">
+    <a class="topo-marca" href="../index.html" aria-label="Constructora Dallo, página de inicio">
+      <img src="../../img/logo-dallo.svg" alt="Construtora Dallo" width="138" height="35">
+    </a>
+    <button class="topo-abrir" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu">
+      <a href="../empreendimentos.html">Emprendimientos</a>
+      <a href="../sobre.html">La Dallo</a>
+      <a href="../contato.html">Contacto</a>
+      <a class="menu-botao" href="../contato.html">Hablar con el equipo</a>
+    </nav>
+    <div class="idiomas">
+      <button class="idiomas-atual" type="button" aria-expanded="false" aria-controls="idiomas-lista" aria-label="Cambiar idioma">
+        <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#aa151b"/><rect width="24" height="12" y="6" fill="#f1bf00"/></svg></span>
+        <span class="idiomas-sigla">ES</span>
+        <svg class="idiomas-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="idiomas-lista" id="idiomas-lista" hidden>
+        <li><a href="../../empreendimento/victoria.html" lang="pt-BR">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>Português
+        </a></li>
+        <li><a href="../../en/empreendimento/victoria.html" lang="en">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#fff"/><g fill="#b22234"><rect width="24" height="2.4" y="0"/><rect width="24" height="2.4" y="4.8"/><rect width="24" height="2.4" y="9.6"/><rect width="24" height="2.4" y="14.4"/><rect width="24" height="2.4" y="19.2"/></g><rect width="11" height="12" fill="#3c3b6e"/></svg></span>English
+        </a></li>
+        <li><a href="../../es/empreendimento/victoria.html" lang="es" aria-current="true">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#aa151b"/><rect width="24" height="12" y="6" fill="#f1bf00"/></svg></span>Español
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ======================= ABERTURA DA TORRE ========================
+       Tela cheia, com o nome sobre a imagem e a ficha técnica na mesma
+       composição. Antes eram 558 px de altura com um recorte qualquer do
+       render, e a ficha vinha depois, numa seção à parte. -->
+  <section class="torre-abertura">
+    <img class="torre-fundo" src="../../midia/web/midia/uploads/enterprise/54/6a4eb232df83d4.93152548-1600.webp" srcset="../../midia/web/midia/uploads/enterprise/54/6a4eb232df83d4.93152548-820.webp 820w, ../../midia/web/midia/uploads/enterprise/54/6a4eb232df83d4.93152548-1600.webp 1600w" sizes="100vw" alt="Victoria, Bairro Country · Cascavel · Paraná" fetchpriority="high" decoding="async">
+    <div class="faixa torre-abertura-texto">
+      <span class="rotulo">Bairro Country · Cascavel · Paraná</span>
+      <h1>Victoria</h1>
+      <dl class="torre-chave">
+        <div><dt>Suites</dt><dd>De 3 a 4 suites</dd></div>
+        <div><dt>Superficie</dt><dd>De 152 m² a 460 m²</dd></div>
+        <div><dt>Cocheras</dt><dd>De 2 a 4 vacantes</dd></div>
+        <div><dt>Pisos</dt><dd>38</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao torre-prosa">
+    <div class="faixa">
+      <p class="frase-media revela">Con una arquitectura inspirada en la elegancia atemporal de los clásicos, Victoria encarna una visión de sofisticación basada en la armonía, la proporción y la atención al detalle. Sus jardines, influenciados por los jardines franceses tradicionales, crean ambientes contemplativos y espacios exteriores cuidadosamente diseñados, transformando la vida cotidiana en una experiencia marcada por la exclusividad y el bienestar.</p>
+      <div class="torre-corpo revela atraso-1"><p>Con 140 metros de altura en el Distrito Rural, Victória se integra a la perfección en una de las zonas más tradicionales y prestigiosas de Cascavel. Un lugar que se caracteriza por el equilibrio entre infraestructura, espacios verdes y calidad de vida. El proyecto incluye 56 apartamentos con 3 suites, 7 áticos con 4 suites y más de 1600 m² dedicados a ocio, jardines y zonas de estar.</p></div>
+    </div>
+  </section>
+
+  <section class="secao torre-ficha-secao">
+    <div class="faixa">
+      <!-- só o que a abertura ainda não mostrou: repetir os quatro
+           primeiros a uma tela de distância não informa nada -->
+      <dl class="torre-chave torre-chave-larga revela">
+        <div><dt>Altura</dt><dd>140 metros de altura</dd></div>
+        <div><dt>Entrega</dt><dd>Novembro de 2031</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>A torre</h2>
+          </div>
+          <p class="lead">Com sua arquitetura inspirada na elegância atemporal dos clássicos, o Victória traduz uma visão de sofisticação baseada na harmonia, na proporção e na valorização dos detalhes.
+
+Influenciado pelos tradicionais jardins franceses, seu paisagismo compõe cenários contemplativos e áreas externas cuidadosamente desenhadas, ampliando a sensação de bem-estar e valorizando os momentos vividos ao ar livre.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/96/default/original_c20fb0feaf024b07f74dce43bc5d68fd-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/96/default/original_c20fb0feaf024b07f74dce43bc5d68fd-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/96/default/original_c20fb0feaf024b07f74dce43bc5d68fd-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — A torre" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao secao-escura">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Planta baja</h2>
+          </div>
+          <p class="lead">Influenciado por los jardines tradicionales franceses, su paisajismo crea entornos contemplativos y áreas exteriores cuidadosamente diseñadas, realzando la sensación de bienestar y valorando los momentos que se pasan al aire libre.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/100/default/original_b1580d7ccf7423eecc2723c81c1c4567-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/100/default/original_b1580d7ccf7423eecc2723c81c1c4567-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/100/default/original_b1580d7ccf7423eecc2723c81c1c4567-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Planta baja" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/100/default/original_f2f3cd5698b20afdd94c1ef555f506ae-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/100/default/original_f2f3cd5698b20afdd94c1ef555f506ae-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/100/default/original_f2f3cd5698b20afdd94c1ef555f506ae-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Victoria — Planta baja" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/100/default/original_82c4d0cf376a6c610d4c9a902bfa7e52-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/100/default/original_82c4d0cf376a6c610d4c9a902bfa7e52-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/100/default/original_82c4d0cf376a6c610d4c9a902bfa7e52-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Planta baja" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/100/default/original_6337d18d8afb0330177285db89ffd5e6-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/100/default/original_6337d18d8afb0330177285db89ffd5e6-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/100/default/original_6337d18d8afb0330177285db89ffd5e6-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Victoria — Planta baja" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/100/default/original_b62795666c2b050640713e946e5dd920-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/100/default/original_b62795666c2b050640713e946e5dd920-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/100/default/original_b62795666c2b050640713e946e5dd920-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Planta baja" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/100/default/original_02eb26401bba7cae003fb8369d800e2b-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/100/default/original_02eb26401bba7cae003fb8369d800e2b-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/100/default/original_02eb26401bba7cae003fb8369d800e2b-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Planta baja" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Ocio</h2>
+          </div>
+          <p class="lead">Las instalaciones de ocio del Victoria incluyen piscinas, spa, sauna, gimnasio, salones para fiestas, sala de juegos y sala infantil. Una experiencia de bienestar que se extiende por más de 1600 m², abarcando zonas de ocio, jardines y espacios al aire libre.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/97/default/original_d5f03ea2c111860302e0a4aec4c8ef98-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/97/default/original_d5f03ea2c111860302e0a4aec4c8ef98-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/97/default/original_d5f03ea2c111860302e0a4aec4c8ef98-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Ocio" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/97/default/original_7a9cb23b8f732b098c527bf8ae338020-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/97/default/original_7a9cb23b8f732b098c527bf8ae338020-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/97/default/original_7a9cb23b8f732b098c527bf8ae338020-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Victoria — Ocio" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/97/default/original_4f17d6eadca515f2d41725137033f994-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/97/default/original_4f17d6eadca515f2d41725137033f994-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/97/default/original_4f17d6eadca515f2d41725137033f994-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Ocio" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/97/default/original_328be2667d20bbb4110017a5f3d9b44c-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/97/default/original_328be2667d20bbb4110017a5f3d9b44c-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/97/default/original_328be2667d20bbb4110017a5f3d9b44c-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Victoria — Ocio" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/97/default/original_f171ae291b32c4cb3a25017781df6686-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/97/default/original_f171ae291b32c4cb3a25017781df6686-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/97/default/original_f171ae291b32c4cb3a25017781df6686-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Ocio" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/97/default/original_9ad20c8db264212dcf591a7bcdabd871-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/97/default/original_9ad20c8db264212dcf591a7bcdabd871-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/97/default/original_9ad20c8db264212dcf591a7bcdabd871-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Ocio" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-panoramica revela"><img src="../../midia/web/midia/uploads/enterprisegallery/97/default/original_1c89407c1639a3a36bfa9b80a65db969-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/97/default/original_1c89407c1639a3a36bfa9b80a65db969-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/97/default/original_1c89407c1639a3a36bfa9b80a65db969-1600.webp 1600w" sizes="(min-width: 900px) 92vw, 100vw" alt="Victoria — Ocio" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/97/default/original_81a0bf4a244698f8cf83472a9d02f0b6-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/97/default/original_81a0bf4a244698f8cf83472a9d02f0b6-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/97/default/original_81a0bf4a244698f8cf83472a9d02f0b6-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Ocio" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/97/default/original_373962c13b028460baf7c23f574ef71a-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/97/default/original_373962c13b028460baf7c23f574ef71a-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/97/default/original_373962c13b028460baf7c23f574ef71a-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Victoria — Ocio" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao secao-escura">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Tipos de apartamentos</h2>
+          </div>
+          <p class="lead">Los apartamentos estándar de Victória ofrecen 152 m² de espacio privado y 250 m² de superficie total. Cuentan con 3 suites y 2 plazas de aparcamiento.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/98/default/original_7024e9994bea24e1b1152b06047a6aaa-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/98/default/original_7024e9994bea24e1b1152b06047a6aaa-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/98/default/original_7024e9994bea24e1b1152b06047a6aaa-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Tipos de apartamentos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/98/default/original_730fd32adf06a0cb06097070963ab33a-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/98/default/original_730fd32adf06a0cb06097070963ab33a-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/98/default/original_730fd32adf06a0cb06097070963ab33a-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Victoria — Tipos de apartamentos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/98/default/original_a5de7ac66282bc0f206772467f2911f1-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/98/default/original_a5de7ac66282bc0f206772467f2911f1-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/98/default/original_a5de7ac66282bc0f206772467f2911f1-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Tipos de apartamentos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/98/default/original_6d4756ad224c3f5fc0bdfdbc4abfbc90-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/98/default/original_6d4756ad224c3f5fc0bdfdbc4abfbc90-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/98/default/original_6d4756ad224c3f5fc0bdfdbc4abfbc90-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Victoria — Tipos de apartamentos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/98/default/original_b8348a08a1569651922eb28b75b46098-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/98/default/original_b8348a08a1569651922eb28b75b46098-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/98/default/original_b8348a08a1569651922eb28b75b46098-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Tipos de apartamentos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/98/default/original_11daca664aadfcc94b6a892552ddc267-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/98/default/original_11daca664aadfcc94b6a892552ddc267-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/98/default/original_11daca664aadfcc94b6a892552ddc267-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Tipos de apartamentos" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Áticos</h2>
+          </div>
+          <p class="lead">Los áticos de Victória impresionan con 262 m² de espacio privado y 423 m² de superficie total. Cuentan con 4 suites y 3 plazas de aparcamiento.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/99/default/original_a456c6125988a0fadd686fcc4f30595e-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/99/default/original_a456c6125988a0fadd686fcc4f30595e-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/99/default/original_a456c6125988a0fadd686fcc4f30595e-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Áticos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/99/default/original_c02c68a929b7672925fd6bb21d4a8da4-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/99/default/original_c02c68a929b7672925fd6bb21d4a8da4-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/99/default/original_c02c68a929b7672925fd6bb21d4a8da4-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Victoria — Áticos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/99/default/original_96be754ab151f1e782f7ef95e6fe26b8-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/99/default/original_96be754ab151f1e782f7ef95e6fe26b8-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/99/default/original_96be754ab151f1e782f7ef95e6fe26b8-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Áticos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../../midia/web/midia/uploads/enterprisegallery/99/default/original_9420adeaa02f481303cfe4b9d3377a65-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/99/default/original_9420adeaa02f481303cfe4b9d3377a65-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/99/default/original_9420adeaa02f481303cfe4b9d3377a65-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Victoria — Áticos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../../midia/web/midia/uploads/enterprisegallery/99/default/original_d1843422200630976e9f2b94fbd3555b-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/99/default/original_d1843422200630976e9f2b94fbd3555b-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/99/default/original_d1843422200630976e9f2b94fbd3555b-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Áticos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../../midia/web/midia/uploads/enterprisegallery/99/default/original_58bf7b47af0465ad16aa3efd14aafd27-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/99/default/original_58bf7b47af0465ad16aa3efd14aafd27-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/99/default/original_58bf7b47af0465ad16aa3efd14aafd27-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Victoria — Áticos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-panoramica revela"><img src="../../midia/web/midia/uploads/enterprisegallery/99/default/original_9f1ce9ec1c01651868b52622c268fc30-1600.webp" srcset="../../midia/web/midia/uploads/enterprisegallery/99/default/original_9f1ce9ec1c01651868b52622c268fc30-820.webp 820w, ../../midia/web/midia/uploads/enterprisegallery/99/default/original_9f1ce9ec1c01651868b52622c268fc30-1600.webp 1600w" sizes="(min-width: 900px) 92vw, 100vw" alt="Victoria — Áticos" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+
+  <section class="secao secao-clara">
+    <div class="faixa">
+      <div class="cabeca-dupla revela"><div><h2>Plantas</h2></div></div>
+      <div class="plantas">
+        <figure class="planta revela">
+            <img src="../../midia/web/midia/uploads/plant/111/6a4eb4e31f9eb6.63819626-1600.webp" srcset="../../midia/web/midia/uploads/plant/111/6a4eb4e31f9eb6.63819626-820.webp 820w, ../../midia/web/midia/uploads/plant/111/6a4eb4e31f9eb6.63819626-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Planta baja — Victoria" loading="lazy" decoding="async">
+            <figcaption><strong>Planta baja</strong></figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../../midia/web/midia/uploads/plant/110/6a4eb49cd58654.19326745-1600.webp" srcset="../../midia/web/midia/uploads/plant/110/6a4eb49cd58654.19326745-820.webp 820w, ../../midia/web/midia/uploads/plant/110/6a4eb49cd58654.19326745-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Lazer — Victoria" loading="lazy" decoding="async">
+            <figcaption><strong>Lazer</strong><br>Quadra Recreativa · Personal Care · Academia · Brinquedoteca · Salão de Festas Nobre · Sala de Jogos · Salão de Festas Gourmet · Sauna · Spas · Lounges Piscinas · Piscina Infantil · Piscina Adulto</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../../midia/web/midia/uploads/plant/112/6a4eb548691659.22399759-1600.webp" srcset="../../midia/web/midia/uploads/plant/112/6a4eb548691659.22399759-820.webp 820w, ../../midia/web/midia/uploads/plant/112/6a4eb548691659.22399759-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Tipos de apartamentos — Victoria" loading="lazy" decoding="async">
+            <figcaption><strong>Tipos de apartamentos</strong></figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../../midia/web/midia/uploads/plant/113/6a4eb57c6bdc71.53702525-1600.webp" srcset="../../midia/web/midia/uploads/plant/113/6a4eb57c6bdc71.53702525-820.webp 820w, ../../midia/web/midia/uploads/plant/113/6a4eb57c6bdc71.53702525-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Áticos — Victoria" loading="lazy" decoding="async">
+            <figcaption><strong>Áticos</strong></figcaption>
+          </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao-escura">
+    <div class="faixa">
+      <div class="cabeca-dupla revela">
+        <div><h2>Trabajar</h2></div>
+        
+      </div>
+      <div class="obra revela">
+        <div class="obra-item">
+          <span class="obra-nome">Evolución Global</span>
+          <span class="obra-valor">2%</span>
+          <span class="obra-barra"><i style="width:2%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Fundaciones</span>
+          <span class="obra-valor">5%</span>
+          <span class="obra-barra"><i style="width:5%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Estructura</span>
+          <span class="obra-valor">0%</span>
+          <span class="obra-barra"><i style="width:0%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Paredes y Divisorias</span>
+          <span class="obra-valor">0%</span>
+          <span class="obra-barra"><i style="width:0%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Instalaciones Eléctricas e Hidrosanitarias</span>
+          <span class="obra-valor">0%</span>
+          <span class="obra-barra"><i style="width:0%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Revestimientos de Mortero</span>
+          <span class="obra-valor">0%</span>
+          <span class="obra-barra"><i style="width:0%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Acabados</span>
+          <span class="obra-valor">0%</span>
+          <span class="obra-barra"><i style="width:0%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Esquadrias</span>
+          <span class="obra-valor">0%</span>
+          <span class="obra-barra"><i style="width:0%"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="faixa">
+      <a class="botao" href="http://google.com/maps/place/R.+Pedro+Ivo,+2402+-+Country,+Cascavel+-+PR,+85813-230/@-24.9403076,-53.4497091,3a,90y,232.05h,113.31t/data=!3m8!1e1!3m6!1sE8TOi-_S-ImN_o86cSo6rQ!2e0!5s20240101T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-23.313664828953875%26panoid%3DE8TOi-_S-ImN_o86cSo6rQ%26yaw%3D232.0469153646546!7i16384!8i8192!4m6!3m5!1s0x94f3d389fafa3ccd:0x12174c9af9a66031!8m2!3d-24.940196!4d-53.449469!16s%2Fg%2F11kqfx40bz?entry=ttu&amp;g_ep=EgoyMDI2MDYyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Ver en el mapa</a>
+    </div>
+  </section>
+
+  <section class="secao torre-nota">
+    <div class="faixa">
+      <p>Registro de constitución de bienes raíces: R-4/M-104.479.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="faixa">
+    <div class="rodape-chamada">
+      <p>Toda dirección empieza con una conversación.</p>
+      <a class="botao botao-vazado" href="../contato.html">Hablar con el equipo</a>
+    </div>
+    <div class="rodape-grade">
+      <div class="rodape-marca">
+        <img src="../../img/logo-dallo.svg" alt="Construtora Dallo" width="128" style="filter:brightness(0) invert(1)">
+        <p class="rodape-assinatura">Constructora y promotora en Itapema, Porto Belo y Cascavel. 45 emprendimientos entregados y en obra desde 2008.</p>
+      </div>
+      <div>
+        <h4>Emprendimientos</h4>
+        <ul>
+          <li><a href="../empreendimentos.html?cidade=Itapema">Itapema</a></li>
+          <li><a href="../empreendimentos.html?cidade=Porto Belo">Porto Belo</a></li>
+          <li><a href="../empreendimentos.html?cidade=Cascavel">Cascavel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>La Dallo</h4>
+        <ul>
+          <li><a href="../sobre.html">Nuestra historia</a></li>
+          <li><a href="../contato.html">Contáctenos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Dallo Itapema SC</h4>
+        <p>Av. Nereu Ramos, 4077, Meia Praia - Ed. Dallo Business Center | 15º e 16º andares</p>
+        <p><a href="tel:4732671111">(47) 3267-1111</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+      <div>
+        <h4>Dallo Cascavel PR</h4>
+        <p>Rua Visconde de Guarapuava, 2342</p>
+        <p><a href="tel:4522210670">(45) 2221-0670</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+    </div>
+    <div class="rodape-fim">
+      <span>Dallo Empreendimentos</span>
+      <span>Todos los derechos reservados</span>
+    </div>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/554732671111" aria-label="Hablar por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.15h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.18 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<script src="../../js/site.js"></script>
+</body>
+</html>

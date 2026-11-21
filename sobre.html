@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sobre - Construtora Dallo</title>
+<meta name="description" content="Nossa história de sucesso inclui a construção dos mais elegantes empreendimentos do litoral catarinense.">
+<link rel="alternate" hreflang="pt-BR" href="sobre.html">
+<link rel="alternate" hreflang="en" href="en/sobre.html">
+<link rel="alternate" hreflang="es" href="es/sobre.html">
+<link rel="alternate" hreflang="x-default" href="sobre.html">
+<link rel="icon" href="img/logo-dallo.svg">
+<link rel="preload" href="fontes/Manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fontes/PlayfairDisplay-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/estilo.css">
+<!-- A classe js no elemento html e o que liga a revelacao na rolagem.
+     Ela precisa valer em TODAS as paginas: enquanto so a home a tinha, o
+     .revela das outras nunca escondia nada e nunca animava, e o efeito
+     nao existia fora da home sem nenhum erro no console para avisar. A
+     classe js no body continua so na home, porque quem usa e o CSS da
+     abertura. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- As frases que o site.js escreve em tempo de execução (contagem da
+     busca, aviso de filtro) não podem ficar dentro do script: ele é um
+     arquivo só para as três línguas. Vêm por aqui. -->
+<script type="application/json" id="i18n">{"verTorre":"Ver {n} torre","verTorres":"Ver {n} torres","torre":"{n} torre","torres":"{n} torres","filtrandoPor":"Filtrando por","limpar":"limpar","ou":"ou","suites":"suítes","faixas":{"ate150":"Até 150 m²","150-250":"150 a 250 m²","250-400":"250 a 400 m²","400+":"Acima de 400 m²"},"pronto":"pronto para morar","obra":"em construção","emp":"{n} empreendimento","emps":"{n} empreendimentos"}</script>
+</head>
+<body>
+
+<header class="topo">
+  <div class="faixa topo-in">
+    <a class="topo-marca" href="index.html" aria-label="Construtora Dallo, página inicial">
+      <img src="img/logo-dallo.svg" alt="Construtora Dallo" width="138" height="35">
+    </a>
+    <button class="topo-abrir" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu">
+      <a href="empreendimentos.html">Empreendimentos</a>
+      <a href="sobre.html">A Dallo</a>
+      <a href="contato.html">Contato</a>
+      <a class="menu-botao" href="contato.html">Falar com a equipe</a>
+    </nav>
+    <div class="idiomas">
+      <button class="idiomas-atual" type="button" aria-expanded="false" aria-controls="idiomas-lista" aria-label="Trocar idioma">
+        <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>
+        <span class="idiomas-sigla">PT</span>
+        <svg class="idiomas-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="idiomas-lista" id="idiomas-lista" hidden>
+        <li><a href="sobre.html" lang="pt-BR" aria-current="true">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>Português
+        </a></li>
+        <li><a href="en/sobre.html" lang="en">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#fff"/><g fill="#b22234"><rect width="24" height="2.4" y="0"/><rect width="24" height="2.4" y="4.8"/><rect width="24" height="2.4" y="9.6"/><rect width="24" height="2.4" y="14.4"/><rect width="24" height="2.4" y="19.2"/></g><rect width="11" height="12" fill="#3c3b6e"/></svg></span>English
+        </a></li>
+        <li><a href="es/sobre.html" lang="es">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#aa151b"/><rect width="24" height="12" y="6" fill="#f1bf00"/></svg></span>Español
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ======================= ABERTURA ========================
+       O texto institucional vem inteiro do CMS. Nada aqui é escrito à
+       mão: os três números saem da contagem dos 34 marcos, e por isso
+       dizem "até 2022" — a prosa fala de 44 empreendimentos até
+       2026, que é outro recorte, e dois números diferentes lado a lado
+       sem o recorte escrito viram contradição na cara do leitor. -->
+  <section class="secao sobre-abertura">
+    <div class="faixa">
+      <div class="sobre-grade">
+        <h1 class="revela">Nossa História</h1>
+        <div class="sobre-prosa revela atraso-1">
+          <p>A trajetória que nos tornou uma das maiores construtoras do sul do país começou em 2008, quando os irmãos Luciano Dallo e Luciel lançaram o primeiro empreendimento em Itapema - SC.</p>
+          <p>Desde então, fortalecemos um negócio voltado à construção civil. Em 2026 chegamos ao número de 44 empreendimentos lançados, sendo 31 entregues, todos dentro do prazo e com habite-se.</p>
+          <p>Atualmente temos 15 empreendimentos de alto padrão em construção simultânea, isso são mais de 1.600 apartamentos padrão Dallo, sendo destes 1.200 com 4 suítes.</p>
+          <p>Conheça o nosso jeito de fazer negócios.</p>
+        </div>
+      </div>
+      <dl class="sobre-dados revela atraso-2">
+        <div><dt>Primeiro lançamento</dt><dd>2009</dd></div>
+        <div><dt>Torres lançadas até 2022</dt><dd>34</dd></div>
+        <div><dt>Andares, da menor à maior</dt><dd>8&thinsp;–&thinsp;54</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ======================= A LINHA DO CÉU ========================
+       Uma barra por lançamento, com a altura proporcional ao número de
+       andares da torre. O eixo de baixo são os anos. Não é enfeite: é o
+       mesmo dado da lista que vem logo abaixo, desenhado. As barras
+       sobem do chão quando a seção entra na tela — com clip-path, não
+       com escala, senão a foto dentro da barra achata. -->
+  <section class="secao horizonte-secao secao-escura">
+    <div class="faixa">
+      <div class="cabeca-dupla revela">
+        <div>
+          <span class="rotulo">34 lançamentos, 2009–2022</span>
+          <h2>A linha do céu</h2>
+        </div>
+        <p class="lead">Cada barra é uma torre, na altura que ela tem. A primeira, em 2009, foi o Hampton Park, de 9. A mais alta do período é o La Rocca, de 54.</p>
+      </div>
+    </div>
+    <div class="trilho-caixa revela" data-trilho>
+      <div class="trilho horizonte" tabindex="0" role="region" aria-label="Lançamentos por ano, pela altura das torres">
+        <div class="horizonte-ano">
+          <div class="horizonte-torres">
+            <a class="barra" href="empreendimento/hampton-park.html" style="--andares:9;--ordem:1"><img src="midia/web/midia/uploads/enterprise/28/61e8817c334cd0.16395672-1600.webp" srcset="midia/web/midia/uploads/enterprise/28/61e8817c334cd0.16395672-820.webp 820w, midia/web/midia/uploads/enterprise/28/61e8817c334cd0.16395672-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Hampton Park</strong><span>9 andares</span></span><span class="barra-leitor">Hampton Park, 9 andares, lançado em 2009</span></a>
+          </div>
+          <span class="horizonte-rotulo">2009</span>
+        </div>
+        <div class="horizonte-ano">
+          <div class="horizonte-torres">
+            <a class="barra" href="empreendimento/villa-florense.html" style="--andares:9;--ordem:2"><img src="midia/web/midia/uploads/enterprise/36/61e889ee692ca2.02467332-1600.webp" srcset="midia/web/midia/uploads/enterprise/36/61e889ee692ca2.02467332-820.webp 820w, midia/web/midia/uploads/enterprise/36/61e889ee692ca2.02467332-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Villa Florense</strong><span>9 andares</span></span><span class="barra-leitor">Villa Florense, 9 andares, lançado em 2010</span></a>
+          </div>
+          <span class="horizonte-rotulo">2010</span>
+        </div>
+        <div class="horizonte-ano">
+          <div class="horizonte-torres">
+            <a class="barra" href="empreendimento/liverpool-house.html" style="--andares:8;--ordem:3"><img src="midia/web/midia/uploads/enterprise/32/61e886158e80c7.72098066-1600.webp" srcset="midia/web/midia/uploads/enterprise/32/61e886158e80c7.72098066-820.webp 820w, midia/web/midia/uploads/enterprise/32/61e886158e80c7.72098066-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Liverpool House</strong><span>8 andares</span></span><span class="barra-leitor">Liverpool House, 8 andares, lançado em 2011</span></a>
+            <a class="barra" href="empreendimento/chateau-blanc.html" style="--andares:13;--ordem:4"><img src="midia/web/midia/uploads/enterprise/25/61e8602ca9e3e9.83826994-1600.webp" srcset="midia/web/midia/uploads/enterprise/25/61e8602ca9e3e9.83826994-820.webp 820w, midia/web/midia/uploads/enterprise/25/61e8602ca9e3e9.83826994-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Château Blanc</strong><span>13 andares</span></span><span class="barra-leitor">Château Blanc, 13 andares, lançado em 2011</span></a>
+            <a class="barra" href="empreendimento/park-lane.html" style="--andares:21;--ordem:5"><img src="midia/web/midia/uploads/enterprise/34/61e8884e382ee2.41474791-1600.webp" srcset="midia/web/midia/uploads/enterprise/34/61e8884e382ee2.41474791-820.webp 820w, midia/web/midia/uploads/enterprise/34/61e8884e382ee2.41474791-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Park Lane</strong><span>21 andares</span></span><span class="barra-leitor">Park Lane, 21 andares, lançado em 2011</span></a>
+          </div>
+          <span class="horizonte-rotulo">2011</span>
+        </div>
+        <div class="horizonte-ano">
+          <div class="horizonte-torres">
+            <a class="barra" href="empreendimento/grand-chateau.html" style="--andares:16;--ordem:6"><img src="midia/web/midia/uploads/enterprise/26/624f2f19ecf979.83692006-1600.webp" srcset="midia/web/midia/uploads/enterprise/26/624f2f19ecf979.83692006-820.webp 820w, midia/web/midia/uploads/enterprise/26/624f2f19ecf979.83692006-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Grand Château</strong><span>16 andares</span></span><span class="barra-leitor">Grand Château, 16 andares, lançado em 2012</span></a>
+            <a class="barra" href="empreendimento/via-veneto.html" style="--andares:17;--ordem:7"><img src="midia/web/midia/uploads/enterprise/35/624f3d145c1605.95684324-1600.webp" srcset="midia/web/midia/uploads/enterprise/35/624f3d145c1605.95684324-820.webp 820w, midia/web/midia/uploads/enterprise/35/624f3d145c1605.95684324-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Via Veneto</strong><span>17 andares</span></span><span class="barra-leitor">Via Veneto, 17 andares, lançado em 2012</span></a>
+          </div>
+          <span class="horizonte-rotulo">2012</span>
+        </div>
+        <div class="horizonte-ano">
+          <div class="horizonte-torres">
+            <a class="barra" href="empreendimento/maison-paris.html" style="--andares:22;--ordem:8"><img src="midia/web/midia/uploads/enterprise/33/624f27af2799b0.46076059-1600.webp" srcset="midia/web/midia/uploads/enterprise/33/624f27af2799b0.46076059-820.webp 820w, midia/web/midia/uploads/enterprise/33/624f27af2799b0.46076059-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Maison Paris</strong><span>22 andares</span></span><span class="barra-leitor">Maison Paris, 22 andares, lançado em 2013</span></a>
+            <a class="barra" href="empreendimento/le-lis-blanc.html" style="--andares:23;--ordem:9"><img src="midia/web/midia/uploads/enterprise/31/624efafc3b6390.97288375-1600.webp" srcset="midia/web/midia/uploads/enterprise/31/624efafc3b6390.97288375-820.webp 820w, midia/web/midia/uploads/enterprise/31/624efafc3b6390.97288375-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Le Lis Blanc</strong><span>23 andares</span></span><span class="barra-leitor">Le Lis Blanc, 23 andares, lançado em 2013</span></a>
+          </div>
+          <span class="horizonte-rotulo">2013</span>
+        </div>
+        <div class="horizonte-ano">
+          <div class="horizonte-torres">
+            <a class="barra" href="empreendimento/dallo-business-center-palazzo-luna.html" style="--andares:16;--ordem:10"><img src="midia/web/midia/uploads/enterprise/27/624ef38f64a0c8.33160418-1600.webp" srcset="midia/web/midia/uploads/enterprise/27/624ef38f64a0c8.33160418-820.webp 820w, midia/web/midia/uploads/enterprise/27/624ef38f64a0c8.33160418-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Dallo Business Center &amp; Palazzo Luna</strong><span>16 andares</span></span><span class="barra-leitor">Dallo Business Center &amp; Palazzo Luna, 16 andares, lançado em 2014</span></a>
+          </div>
+          <span class="horizonte-rotulo">2014</span>
+        </div>
+        <div class="horizonte-ano">
+          <div class="horizonte-torres">
+            <a class="barra" href="empreendimento/vogue-maison.html" style="--andares:22;--ordem:11"><img src="midia/web/midia/uploads/enterprise/37/624ef8ff942556.68550537-1600.webp" srcset="midia/web/midia/uploads/enterprise/37/624ef8ff942556.68550537-820.webp 820w, midia/web/midia/uploads/enterprise/37/624ef8ff942556.68550537-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Vogue Maison</strong><span>22 andares</span></span><span class="barra-leitor">Vogue Maison, 22 andares, lançado em 2015</span></a>
+          </div>
+          <span class="horizonte-rotulo">2015</span>
+        </div>
+        <div class="horizonte-ano">
+          <div class="horizonte-torres">
+            <a class="barra" href="empreendimento/key-west.html" style="--andares:13;--ordem:12"><img src="midia/web/midia/uploads/enterprise/29/624f20f4be2929.08063170-1600.webp" srcset="midia/web/midia/uploads/enterprise/29/624f20f4be2929.08063170-820.webp 820w, midia/web/midia/uploads/enterprise/29/624f20f4be2929.08063170-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Key West</strong><span>13 andares</span></span><span class="barra-leitor">Key West, 13 andares, lançado em 2016</span></a>
+          </div>
+          <span class="horizonte-rotulo">2016</span>
+        </div>
+        <div class="horizonte-ano">
+          <div class="horizonte-torres">
+            <a class="barra" href="empreendimento/petit-chateau.html" style="--andares:8;--ordem:13"><img src="midia/web/midia/uploads/enterprise/20/624eeb3bbfaab8.02979162-1600.webp" srcset="midia/web/midia/uploads/enterprise/20/624eeb3bbfaab8.02979162-820.webp 820w, midia/web/midia/uploads/enterprise/20/624eeb3bbfaab8.02979162-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Petit Château</strong><span>8 andares</span></span><span class="barra-leitor">Petit Château, 8 andares, lançado em 2017</span></a>
+            <a class="barra" href="empreendimento/belvedere.html" style="--andares:8;--ordem:14"><img src="midia/web/midia/uploads/enterprise/17/61e810be0534c3.99253933-1600.webp" srcset="midia/web/midia/uploads/enterprise/17/61e810be0534c3.99253933-820.webp 820w, midia/web/midia/uploads/enterprise/17/61e810be0534c3.99253933-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Belvedere</strong><span>8 andares</span></span><span class="barra-leitor">Belvedere, 8 andares, lançado em 2017</span></a>
+            <a class="barra" href="empreendimento/la-riviere.html" style="--andares:9;--ordem:15"><img src="midia/web/midia/uploads/enterprise/22/624eedfdae8cb1.54543917-1600.webp" srcset="midia/web/midia/uploads/enterprise/22/624eedfdae8cb1.54543917-820.webp 820w, midia/web/midia/uploads/enterprise/22/624eedfdae8cb1.54543917-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>La Rivière</strong><span>9 andares</span></span><span class="barra-leitor">La Rivière, 9 andares, lançado em 2017</span></a>
+            <a class="barra" href="empreendimento/st-andrews.html" style="--andares:12;--ordem:16"><img src="midia/web/midia/uploads/enterprise/19/624eeab0033d48.95539078-1600.webp" srcset="midia/web/midia/uploads/enterprise/19/624eeab0033d48.95539078-820.webp 820w, midia/web/midia/uploads/enterprise/19/624eeab0033d48.95539078-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>St. Andrews</strong><span>12 andares</span></span><span class="barra-leitor">St. Andrews, 12 andares, lançado em 2017</span></a>
+          </div>
+          <span class="horizonte-rotulo">2017</span>
+        </div>
+        <div class="horizonte-ano">
+          <div class="horizonte-torres">
+            <a class="barra" href="empreendimento/la-belle.html" style="--andares:8;--ordem:17"><img src="midia/web/midia/uploads/enterprise/30/6246f78d8578d4.52285698-1600.webp" srcset="midia/web/midia/uploads/enterprise/30/6246f78d8578d4.52285698-820.webp 820w, midia/web/midia/uploads/enterprise/30/6246f78d8578d4.52285698-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>La Belle</strong><span>8 andares</span></span><span class="barra-leitor">La Belle, 8 andares, lançado em 2018</span></a>
+            <a class="barra" href="empreendimento/venice.html" style="--andares:8;--ordem:18"><img src="midia/web/midia/uploads/enterprise/18/624ee65e4548d2.33423107-1600.webp" srcset="midia/web/midia/uploads/enterprise/18/624ee65e4548d2.33423107-820.webp 820w, midia/web/midia/uploads/enterprise/18/624ee65e4548d2.33423107-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Venice</strong><span>8 andares</span></span><span class="barra-leitor">Venice, 8 andares, lançado em 2018</span></a>
+            <a class="barra" href="empreendimento/la-vie.html" style="--andares:8;--ordem:19"><img src="midia/web/midia/uploads/enterprise/23/624ef227acd9a2.81711438-1600.webp" srcset="midia/web/midia/uploads/enterprise/23/624ef227acd9a2.81711438-820.webp 820w, midia/web/midia/uploads/enterprise/23/624ef227acd9a2.81711438-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>La Vie</strong><span>8 andares</span></span><span class="barra-leitor">La Vie, 8 andares, lançado em 2018</span></a>
+            <a class="barra" href="empreendimento/grand-palais.html" style="--andares:14;--ordem:20"><img src="midia/web/midia/uploads/enterprise/21/6246fb12a90f73.50225512-1600.webp" srcset="midia/web/midia/uploads/enterprise/21/6246fb12a90f73.50225512-820.webp 820w, midia/web/midia/uploads/enterprise/21/6246fb12a90f73.50225512-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Grand Palais</strong><span>14 andares</span></span><span class="barra-leitor">Grand Palais, 14 andares, lançado em 2018</span></a>
+            <a class="barra" href="empreendimento/cadenza.html" style="--andares:15;--ordem:21"><img src="midia/web/midia/uploads/enterprise/24/6246f8ef6226b4.12829337-1600.webp" srcset="midia/web/midia/uploads/enterprise/24/6246f8ef6226b4.12829337-820.webp 820w, midia/web/midia/uploads/enterprise/24/6246f8ef6226b4.12829337-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Cadenza</strong><span>15 andares</span></span><span class="barra-leitor">Cadenza, 15 andares, lançado em 2018</span></a>
+          </div>
+          <span class="horizonte-rotulo">2018</span>
+        </div>
+        <div class="horizonte-ano">
+          <div class="horizonte-torres">
+            <a class="barra" href="empreendimento/jardim-europa.html" style="--andares:16;--ordem:22"><img src="midia/web/midia/uploads/enterprise/8/643d5c4fa777f5.45862746-1600.webp" srcset="midia/web/midia/uploads/enterprise/8/643d5c4fa777f5.45862746-820.webp 820w, midia/web/midia/uploads/enterprise/8/643d5c4fa777f5.45862746-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Jardim Europa</strong><span>16 andares</span></span><span class="barra-leitor">Jardim Europa, 16 andares, lançado em 2019</span></a>
+            <a class="barra" href="empreendimento/la-martina.html" style="--andares:32;--ordem:23"><img src="midia/web/midia/uploads/enterprise/9/660d5a068cc860.09650470-1600.webp" srcset="midia/web/midia/uploads/enterprise/9/660d5a068cc860.09650470-820.webp 820w, midia/web/midia/uploads/enterprise/9/660d5a068cc860.09650470-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>La Martina</strong><span>32 andares</span></span><span class="barra-leitor">La Martina, 32 andares, lançado em 2019</span></a>
+            <a class="barra" href="empreendimento/noah.html" style="--andares:42;--ordem:24"><img src="midia/web/midia/uploads/enterprise/10/660d584f9fea84.57450250-1600.webp" srcset="midia/web/midia/uploads/enterprise/10/660d584f9fea84.57450250-820.webp 820w, midia/web/midia/uploads/enterprise/10/660d584f9fea84.57450250-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Noah</strong><span>42 andares</span></span><span class="barra-leitor">Noah, 42 andares, lançado em 2019</span></a>
+          </div>
+          <span class="horizonte-rotulo">2019</span>
+        </div>
+        <div class="horizonte-ano">
+          <div class="horizonte-torres">
+            <a class="barra" href="empreendimento/belissimo.html" style="--andares:28;--ordem:25"><img src="midia/web/midia/uploads/enterprise/6/677d84c6bdd3a8.53117695-1600.webp" srcset="midia/web/midia/uploads/enterprise/6/677d84c6bdd3a8.53117695-820.webp 820w, midia/web/midia/uploads/enterprise/6/677d84c6bdd3a8.53117695-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Belíssimo</strong><span>28 andares</span></span><span class="barra-leitor">Belíssimo, 28 andares, lançado em 2020</span></a>
+            <a class="barra" href="empreendimento/magnolia.html" style="--andares:35;--ordem:26"><img src="midia/web/midia/uploads/enterprise/5/696110887c1a94.45375569-1600.webp" srcset="midia/web/midia/uploads/enterprise/5/696110887c1a94.45375569-820.webp 820w, midia/web/midia/uploads/enterprise/5/696110887c1a94.45375569-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Magnólia</strong><span>35 andares</span></span><span class="barra-leitor">Magnólia, 35 andares, lançado em 2020</span></a>
+            <a class="barra" href="empreendimento/st-clair.html" style="--andares:36;--ordem:27"><img src="midia/web/midia/uploads/enterprise/7/677d7de021c171.62854376-1600.webp" srcset="midia/web/midia/uploads/enterprise/7/677d7de021c171.62854376-820.webp 820w, midia/web/midia/uploads/enterprise/7/677d7de021c171.62854376-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>St. Clair</strong><span>36 andares</span></span><span class="barra-leitor">St. Clair, 36 andares, lançado em 2020</span></a>
+          </div>
+          <span class="horizonte-rotulo">2020</span>
+        </div>
+        <div class="horizonte-ano">
+          <div class="horizonte-torres">
+            <a class="barra" href="empreendimento/san-lorenzo.html" style="--andares:18;--ordem:28"><img src="midia/web/midia/uploads/enterprise/4/677d85ea5644d3.58780567-1600.webp" srcset="midia/web/midia/uploads/enterprise/4/677d85ea5644d3.58780567-820.webp 820w, midia/web/midia/uploads/enterprise/4/677d85ea5644d3.58780567-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>San Lorenzo</strong><span>18 andares</span></span><span class="barra-leitor">San Lorenzo, 18 andares, lançado em 2021</span></a>
+            <a class="barra" href="empreendimento/ristretto.html" style="--andares:37;--ordem:29"><img src="midia/web/midia/uploads/enterprise/3/69610d14750fb2.03307491-1600.webp" srcset="midia/web/midia/uploads/enterprise/3/69610d14750fb2.03307491-820.webp 820w, midia/web/midia/uploads/enterprise/3/69610d14750fb2.03307491-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Ristretto</strong><span>37 andares</span></span><span class="barra-leitor">Ristretto, 37 andares, lançado em 2021</span></a>
+            <a class="barra" href="empreendimento/maison-lafayette.html" style="--andares:38;--ordem:30"><img src="midia/web/midia/uploads/enterprise/2/6960f9bfdf78b3.01951235-1600.webp" srcset="midia/web/midia/uploads/enterprise/2/6960f9bfdf78b3.01951235-820.webp 820w, midia/web/midia/uploads/enterprise/2/6960f9bfdf78b3.01951235-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Maison Lafayette</strong><span>38 andares</span></span><span class="barra-leitor">Maison Lafayette, 38 andares, lançado em 2021</span></a>
+            <a class="barra" href="empreendimento/la-rocca.html" style="--andares:54;--ordem:31"><img src="midia/web/midia/uploads/enterprise/1/62472d8d87c566.49220893-1600.webp" srcset="midia/web/midia/uploads/enterprise/1/62472d8d87c566.49220893-820.webp 820w, midia/web/midia/uploads/enterprise/1/62472d8d87c566.49220893-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>La Rocca</strong><span>54 andares</span></span><span class="barra-leitor">La Rocca, 54 andares, lançado em 2021</span></a>
+          </div>
+          <span class="horizonte-rotulo">2021</span>
+        </div>
+        <div class="horizonte-ano">
+          <div class="horizonte-torres">
+            <a class="barra" href="empreendimento/la-dolce-vita.html" style="--andares:14;--ordem:32"><img src="midia/web/midia/uploads/enterprise/38/69610d4a9bc150.14389201-1600.webp" srcset="midia/web/midia/uploads/enterprise/38/69610d4a9bc150.14389201-820.webp 820w, midia/web/midia/uploads/enterprise/38/69610d4a9bc150.14389201-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>La Dolce Vita</strong><span>14 andares</span></span><span class="barra-leitor">La Dolce Vita, 14 andares, lançado em 2022</span></a>
+            <a class="barra" href="empreendimento/palais-royal.html" style="--andares:24;--ordem:33"><img src="midia/web/midia/uploads/enterprise/39/6aa456016acd49.81793222-1600.webp" srcset="midia/web/midia/uploads/enterprise/39/6aa456016acd49.81793222-820.webp 820w, midia/web/midia/uploads/enterprise/39/6aa456016acd49.81793222-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Palais Royal</strong><span>24 andares</span></span><span class="barra-leitor">Palais Royal, 24 andares, lançado em 2022</span></a>
+            <a class="barra" href="empreendimento/montreux.html" style="--andares:46;--ordem:34"><img src="midia/web/midia/uploads/enterprise/40/62952475688549.32729660-1600.webp" srcset="midia/web/midia/uploads/enterprise/40/62952475688549.32729660-820.webp 820w, midia/web/midia/uploads/enterprise/40/62952475688549.32729660-1600.webp 1600w" sizes="44px" alt="" aria-hidden="true" loading="lazy" decoding="async"><span class="barra-balao" aria-hidden="true"><strong>Montreux</strong><span>46 andares</span></span><span class="barra-leitor">Montreux, 46 andares, lançado em 2022</span></a>
+          </div>
+          <span class="horizonte-rotulo">2022</span>
+        </div>
+      </div>
+      <div class="trilho-leme faixa">
+        <div class="trilho-barra" aria-hidden="true"><span data-trilho-progresso></span></div>
+        <div class="trilho-setas">
+          <button class="trilho-seta" type="button" data-passo="-1" aria-label="Ver os anos anteriores">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8"/></svg>
+          </button>
+          <button class="trilho-seta" type="button" data-passo="1" aria-label="Ver os anos seguintes">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= OS MARCOS ========================
+       A mesma trajetória escrita, com todo o texto do CMS preservado. O
+       ano fica grudado na lateral enquanto o grupo dele passa: é o que
+       diz em que ponto da história o leitor está, sem repetir o número
+       dentro de cada cartão. -->
+  <section class="secao marcos-secao">
+    <div class="faixa">
+      <div class="cabeca-dupla revela">
+        <div>
+          <span class="rotulo">Ano a ano</span>
+          <h2>O que subiu, e quando</h2>
+        </div>
+      </div>
+      <section class="marco-ano revela">
+        <h3 class="marco-rotulo"><span>2022</span></h3>
+        <ol class="marco-lista">
+          <li>
+            <a href="empreendimento/montreux.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/40/62952475688549.32729660-1600.webp" srcset="midia/web/midia/uploads/enterprise/40/62952475688549.32729660-820.webp 820w, midia/web/midia/uploads/enterprise/40/62952475688549.32729660-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Montreux" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Montreux</h4>
+                <span class="marco-andares">46 andares</span>
+                <p>Torre de 46 andares na rua 129, entre as Ruas 129B e 129C no centro de Itapema, que será entregue em 2027.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/palais-royal.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/39/6aa456016acd49.81793222-1600.webp" srcset="midia/web/midia/uploads/enterprise/39/6aa456016acd49.81793222-820.webp 820w, midia/web/midia/uploads/enterprise/39/6aa456016acd49.81793222-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Palais Royal" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Palais Royal</h4>
+                <span class="marco-andares">24 andares</span>
+                <p>Torre frente mar de 24 andares, na Av. Sen. Atílio Fontana em Perequê, que será entregue em 2026.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/la-dolce-vita.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/38/69610d4a9bc150.14389201-1600.webp" srcset="midia/web/midia/uploads/enterprise/38/69610d4a9bc150.14389201-820.webp 820w, midia/web/midia/uploads/enterprise/38/69610d4a9bc150.14389201-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="La Dolce Vita" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>La Dolce Vita</h4>
+                <span class="marco-andares">14 andares</span>
+                <p>Torre frente mar com 14 andares, na Av. Beira mar, esquina com a Rua 163 no centro de Itapema, que será entregue em 2025.</p>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section class="marco-ano revela">
+        <h3 class="marco-rotulo"><span>2021</span></h3>
+        <ol class="marco-lista">
+          <li>
+            <a href="empreendimento/la-rocca.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/1/62472d8d87c566.49220893-1600.webp" srcset="midia/web/midia/uploads/enterprise/1/62472d8d87c566.49220893-820.webp 820w, midia/web/midia/uploads/enterprise/1/62472d8d87c566.49220893-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="La Rocca" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>La Rocca</h4>
+                <span class="marco-andares">54 andares</span>
+                <p>Torre de 54 andares. Frente Av Nereu Ramos no Centro de Itapema, que será entregue em 2028.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/maison-lafayette.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/2/6960f9bfdf78b3.01951235-1600.webp" srcset="midia/web/midia/uploads/enterprise/2/6960f9bfdf78b3.01951235-820.webp 820w, midia/web/midia/uploads/enterprise/2/6960f9bfdf78b3.01951235-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Maison Lafayette" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Maison Lafayette</h4>
+                <span class="marco-andares">38 andares</span>
+                <p>Torre de 38 andares na Rua 254 em Meia Praia, que será entregue em 2025.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/ristretto.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/3/69610d14750fb2.03307491-1600.webp" srcset="midia/web/midia/uploads/enterprise/3/69610d14750fb2.03307491-820.webp 820w, midia/web/midia/uploads/enterprise/3/69610d14750fb2.03307491-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Ristretto" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Ristretto</h4>
+                <span class="marco-andares">37 andares</span>
+                <p>Torre de 37 andares na Rua 119, esquina com a Rua 119 A no Canto da Praia, que será entregue em 2025</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/san-lorenzo.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/4/677d85ea5644d3.58780567-1600.webp" srcset="midia/web/midia/uploads/enterprise/4/677d85ea5644d3.58780567-820.webp 820w, midia/web/midia/uploads/enterprise/4/677d85ea5644d3.58780567-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="San Lorenzo" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>San Lorenzo</h4>
+                <span class="marco-andares">18 andares</span>
+                <p>Torre de 18 andares. Frente Av Nereu Ramos esquina com a Rua 118 no Centro de Itapema, que será entregue em 2024.</p>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section class="marco-ano revela">
+        <h3 class="marco-rotulo"><span>2020</span></h3>
+        <ol class="marco-lista">
+          <li>
+            <a href="empreendimento/st-clair.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/7/677d7de021c171.62854376-1600.webp" srcset="midia/web/midia/uploads/enterprise/7/677d7de021c171.62854376-820.webp 820w, midia/web/midia/uploads/enterprise/7/677d7de021c171.62854376-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="St. Clair" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>St. Clair</h4>
+                <span class="marco-andares">36 andares</span>
+                <p>Torre de 36 andares. Frente Av. Nereu Ramos, esquina com a Rua 161 no Centro de Itapema, que será entregue em 2024.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/magnolia.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/5/696110887c1a94.45375569-1600.webp" srcset="midia/web/midia/uploads/enterprise/5/696110887c1a94.45375569-820.webp 820w, midia/web/midia/uploads/enterprise/5/696110887c1a94.45375569-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Magnólia" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Magnólia</h4>
+                <span class="marco-andares">35 andares</span>
+                <p>Torre de 35 andares na Rua 115-C no Centro de Itapema, que será entregue em 2025.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/belissimo.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/6/677d84c6bdd3a8.53117695-1600.webp" srcset="midia/web/midia/uploads/enterprise/6/677d84c6bdd3a8.53117695-820.webp 820w, midia/web/midia/uploads/enterprise/6/677d84c6bdd3a8.53117695-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Belíssimo" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Belíssimo</h4>
+                <span class="marco-andares">28 andares</span>
+                <p>Torre de 28 andares, quadra mar na Rua 303 em Meia Praia, que será entregue em 2024.</p>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section class="marco-ano revela">
+        <h3 class="marco-rotulo"><span>2019</span></h3>
+        <ol class="marco-lista">
+          <li>
+            <a href="empreendimento/noah.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/10/660d584f9fea84.57450250-1600.webp" srcset="midia/web/midia/uploads/enterprise/10/660d584f9fea84.57450250-820.webp 820w, midia/web/midia/uploads/enterprise/10/660d584f9fea84.57450250-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Noah" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Noah</h4>
+                <span class="marco-andares">42 andares</span>
+                <p>Torre de 42 andares. Frente Av Nereu Ramos, entre as Ruas 296 e 298 em Meia Praia, entregue em dezembro de 2023.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/la-martina.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/9/660d5a068cc860.09650470-1600.webp" srcset="midia/web/midia/uploads/enterprise/9/660d5a068cc860.09650470-820.webp 820w, midia/web/midia/uploads/enterprise/9/660d5a068cc860.09650470-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="La Martina" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>La Martina</h4>
+                <span class="marco-andares">32 andares</span>
+                <p>Torre de 32 andares. Frente Av. Nereu Ramos, esquina com a Rua 236 em Meia Praia, entregue em dezembro de 2023.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/jardim-europa.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/8/643d5c4fa777f5.45862746-1600.webp" srcset="midia/web/midia/uploads/enterprise/8/643d5c4fa777f5.45862746-820.webp 820w, midia/web/midia/uploads/enterprise/8/643d5c4fa777f5.45862746-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Jardim Europa" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Jardim Europa</h4>
+                <span class="marco-andares">16 andares</span>
+                <p>Torre frente mar de 16 andares, na Av. Sen. Atílio Fontana em Perequê, que será entregue em 2022.</p>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section class="marco-ano revela">
+        <h3 class="marco-rotulo"><span>2018</span></h3>
+        <ol class="marco-lista">
+          <li>
+            <a href="empreendimento/cadenza.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/24/6246f8ef6226b4.12829337-1600.webp" srcset="midia/web/midia/uploads/enterprise/24/6246f8ef6226b4.12829337-820.webp 820w, midia/web/midia/uploads/enterprise/24/6246f8ef6226b4.12829337-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Cadenza" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Cadenza</h4>
+                <span class="marco-andares">15 andares</span>
+                <p>Torre frente mar de 15 andares na Av. Senador Atílio Fontana em Perequê, que foi entregue em 2021.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/grand-palais.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/21/6246fb12a90f73.50225512-1600.webp" srcset="midia/web/midia/uploads/enterprise/21/6246fb12a90f73.50225512-820.webp 820w, midia/web/midia/uploads/enterprise/21/6246fb12a90f73.50225512-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Grand Palais" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Grand Palais</h4>
+                <span class="marco-andares">14 andares</span>
+                <p>Torre frente mar de 14 andares na Av. Senador Atílio Fontana em Perequê, que foi entregue em 2020.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/la-vie.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/23/624ef227acd9a2.81711438-1600.webp" srcset="midia/web/midia/uploads/enterprise/23/624ef227acd9a2.81711438-820.webp 820w, midia/web/midia/uploads/enterprise/23/624ef227acd9a2.81711438-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="La Vie" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>La Vie</h4>
+                <span class="marco-andares">8 andares</span>
+                <p>Torre frente mar de 8 andares, na orla de Meia Praia com acesso na Rua 323-B, que foi entregue em 2020.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/venice.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/18/624ee65e4548d2.33423107-1600.webp" srcset="midia/web/midia/uploads/enterprise/18/624ee65e4548d2.33423107-820.webp 820w, midia/web/midia/uploads/enterprise/18/624ee65e4548d2.33423107-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Venice" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Venice</h4>
+                <span class="marco-andares">8 andares</span>
+                <p>Torre frente mar de 8 andares, na orla de Meia Praia, esquina com a Rua 269, que foi entregue em 2020.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/la-belle.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/30/6246f78d8578d4.52285698-1600.webp" srcset="midia/web/midia/uploads/enterprise/30/6246f78d8578d4.52285698-820.webp 820w, midia/web/midia/uploads/enterprise/30/6246f78d8578d4.52285698-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="La Belle" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>La Belle</h4>
+                <span class="marco-andares">8 andares</span>
+                <p>Duas torres frente mar de 8 andares na Rua 323 em Meia Praia, que foi entregue em 2021.</p>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section class="marco-ano revela">
+        <h3 class="marco-rotulo"><span>2017</span></h3>
+        <ol class="marco-lista">
+          <li>
+            <a href="empreendimento/st-andrews.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/19/624eeab0033d48.95539078-1600.webp" srcset="midia/web/midia/uploads/enterprise/19/624eeab0033d48.95539078-820.webp 820w, midia/web/midia/uploads/enterprise/19/624eeab0033d48.95539078-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="St. Andrews" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>St. Andrews</h4>
+                <span class="marco-andares">12 andares</span>
+                <p>Torre de 12 andares, quadra mar na Rua 269 em Meia Praia, que foi entregue em 2019.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/la-riviere.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/22/624eedfdae8cb1.54543917-1600.webp" srcset="midia/web/midia/uploads/enterprise/22/624eedfdae8cb1.54543917-820.webp 820w, midia/web/midia/uploads/enterprise/22/624eedfdae8cb1.54543917-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="La Rivière" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>La Rivière</h4>
+                <span class="marco-andares">9 andares</span>
+                <p>Duas torres frente mar de 9 andares, com acesso na Rua 323-B, que foi entregue em 2020.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/belvedere.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/17/61e810be0534c3.99253933-1600.webp" srcset="midia/web/midia/uploads/enterprise/17/61e810be0534c3.99253933-820.webp 820w, midia/web/midia/uploads/enterprise/17/61e810be0534c3.99253933-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Belvedere" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Belvedere</h4>
+                <span class="marco-andares">8 andares</span>
+                <p>Torre frente mar, pé na areia, de 8 andares no Canto da Praia de Itapema, que foi entregue em 2019.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/petit-chateau.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/20/624eeb3bbfaab8.02979162-1600.webp" srcset="midia/web/midia/uploads/enterprise/20/624eeb3bbfaab8.02979162-820.webp 820w, midia/web/midia/uploads/enterprise/20/624eeb3bbfaab8.02979162-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Petit Château" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Petit Château</h4>
+                <span class="marco-andares">8 andares</span>
+                <p>Torre frente mar, pé na areia, de 8 andares no Canto da Praia de Itapema, que foi entregue em 2019.</p>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section class="marco-ano revela">
+        <h3 class="marco-rotulo"><span>2016</span></h3>
+        <ol class="marco-lista">
+          <li>
+            <a href="empreendimento/key-west.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/29/624f20f4be2929.08063170-1600.webp" srcset="midia/web/midia/uploads/enterprise/29/624f20f4be2929.08063170-820.webp 820w, midia/web/midia/uploads/enterprise/29/624f20f4be2929.08063170-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Key West" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Key West</h4>
+                <span class="marco-andares">13 andares</span>
+                <p>Torre de 13 andares. Frente Av. Nereu Ramos, esquina com a Rua 286 em Meia Praia, que foi entregue em 2018.</p>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section class="marco-ano revela">
+        <h3 class="marco-rotulo"><span>2015</span></h3>
+        <ol class="marco-lista">
+          <li>
+            <a href="empreendimento/vogue-maison.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/37/624ef8ff942556.68550537-1600.webp" srcset="midia/web/midia/uploads/enterprise/37/624ef8ff942556.68550537-820.webp 820w, midia/web/midia/uploads/enterprise/37/624ef8ff942556.68550537-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Vogue Maison" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Vogue Maison</h4>
+                <span class="marco-andares">22 andares</span>
+                <p>Torre de 22 andares. Frente Av. Nereu Ramos, esquina com a Rua 302 em Meia Praia, que foi entregue em 2018.</p>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section class="marco-ano revela">
+        <h3 class="marco-rotulo"><span>2014</span></h3>
+        <ol class="marco-lista">
+          <li>
+            <a href="empreendimento/dallo-business-center-palazzo-luna.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/27/624ef38f64a0c8.33160418-1600.webp" srcset="midia/web/midia/uploads/enterprise/27/624ef38f64a0c8.33160418-820.webp 820w, midia/web/midia/uploads/enterprise/27/624ef38f64a0c8.33160418-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Dallo Business Center &amp; Palazzo Luna" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Dallo Business Center &amp; Palazzo Luna</h4>
+                <span class="marco-andares">16 andares</span>
+                <p>Duas torres, comercial e residencial, com 16 andares. Frente Av. Nereu Ramos esquina com a Rua 241 em Meia Praia, que foi entregue em 2017.</p>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section class="marco-ano revela">
+        <h3 class="marco-rotulo"><span>2013</span></h3>
+        <ol class="marco-lista">
+          <li>
+            <a href="empreendimento/le-lis-blanc.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/31/624efafc3b6390.97288375-1600.webp" srcset="midia/web/midia/uploads/enterprise/31/624efafc3b6390.97288375-820.webp 820w, midia/web/midia/uploads/enterprise/31/624efafc3b6390.97288375-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Le Lis Blanc" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Le Lis Blanc</h4>
+                <span class="marco-andares">23 andares</span>
+                <p>Torre de 23 andares. Frente Av. Nereu Ramos, esquina com a Rua 304 em Meia Praia, que foi entregue em 2016.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/maison-paris.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/33/624f27af2799b0.46076059-1600.webp" srcset="midia/web/midia/uploads/enterprise/33/624f27af2799b0.46076059-820.webp 820w, midia/web/midia/uploads/enterprise/33/624f27af2799b0.46076059-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Maison Paris" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Maison Paris</h4>
+                <span class="marco-andares">22 andares</span>
+                <p>Torre de 22 andares na Rua 254 em Meia Praia, que foi entregue em 2016.</p>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section class="marco-ano revela">
+        <h3 class="marco-rotulo"><span>2012</span></h3>
+        <ol class="marco-lista">
+          <li>
+            <a href="empreendimento/via-veneto.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/35/624f3d145c1605.95684324-1600.webp" srcset="midia/web/midia/uploads/enterprise/35/624f3d145c1605.95684324-820.webp 820w, midia/web/midia/uploads/enterprise/35/624f3d145c1605.95684324-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Via Veneto" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Via Veneto</h4>
+                <span class="marco-andares">17 andares</span>
+                <p>Torre de 17 andares na Rua 226 em Meia Praia, que foi entregue em 2015.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/grand-chateau.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/26/624f2f19ecf979.83692006-1600.webp" srcset="midia/web/midia/uploads/enterprise/26/624f2f19ecf979.83692006-820.webp 820w, midia/web/midia/uploads/enterprise/26/624f2f19ecf979.83692006-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Grand Château" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Grand Château</h4>
+                <span class="marco-andares">16 andares</span>
+                <p>Torre de 16 andares na 2º avenida esquina com a Rua 236 em Meia Praia, que foi entregue em 2015.</p>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section class="marco-ano revela">
+        <h3 class="marco-rotulo"><span>2011</span></h3>
+        <ol class="marco-lista">
+          <li>
+            <a href="empreendimento/park-lane.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/34/61e8884e382ee2.41474791-1600.webp" srcset="midia/web/midia/uploads/enterprise/34/61e8884e382ee2.41474791-820.webp 820w, midia/web/midia/uploads/enterprise/34/61e8884e382ee2.41474791-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Park Lane" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Park Lane</h4>
+                <span class="marco-andares">21 andares</span>
+                <p>Torre de 21 andares na Rua 260 em Meia Praia, que foi entregue em 2011.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/chateau-blanc.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/25/61e8602ca9e3e9.83826994-1600.webp" srcset="midia/web/midia/uploads/enterprise/25/61e8602ca9e3e9.83826994-820.webp 820w, midia/web/midia/uploads/enterprise/25/61e8602ca9e3e9.83826994-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Château Blanc" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Château Blanc</h4>
+                <span class="marco-andares">13 andares</span>
+                <p>Torre de 13 andares na Rua 282 em Meia Praia, que foi entregue em 2014.</p>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="empreendimento/liverpool-house.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/32/61e886158e80c7.72098066-1600.webp" srcset="midia/web/midia/uploads/enterprise/32/61e886158e80c7.72098066-820.webp 820w, midia/web/midia/uploads/enterprise/32/61e886158e80c7.72098066-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Liverpool House" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Liverpool House</h4>
+                <span class="marco-andares">8 andares</span>
+                <p>Torre de 8 andares na Rua 244 em Meia Praia, que foi entregue em 2012.</p>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section class="marco-ano revela">
+        <h3 class="marco-rotulo"><span>2010</span></h3>
+        <ol class="marco-lista">
+          <li>
+            <a href="empreendimento/villa-florense.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/36/61e889ee692ca2.02467332-1600.webp" srcset="midia/web/midia/uploads/enterprise/36/61e889ee692ca2.02467332-820.webp 820w, midia/web/midia/uploads/enterprise/36/61e889ee692ca2.02467332-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Villa Florense" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Villa Florense</h4>
+                <span class="marco-andares">9 andares</span>
+                <p>Torre de 9 andares na Rua 218 no Centro de Itapema, que foi entregue em 2011.</p>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section class="marco-ano revela">
+        <h3 class="marco-rotulo"><span>2009</span></h3>
+        <ol class="marco-lista">
+          <li>
+            <a href="empreendimento/hampton-park.html">
+              <span class="marco-foto"><img src="midia/web/midia/uploads/enterprise/28/61e8817c334cd0.16395672-1600.webp" srcset="midia/web/midia/uploads/enterprise/28/61e8817c334cd0.16395672-820.webp 820w, midia/web/midia/uploads/enterprise/28/61e8817c334cd0.16395672-1600.webp 1600w" sizes="(min-width: 1200px) 30vw, (min-width: 700px) 46vw, 92vw" alt="Hampton Park" loading="lazy" decoding="async"></span>
+              <span class="marco-ficha">
+                <h4>Hampton Park</h4>
+                <span class="marco-andares">9 andares</span>
+                <p>Torre de 9 andares na Rua 218 no Centro de Itapema, que foi entregue em 2010.</p>
+              </span>
+            </a>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </section>
+
+  <!-- ======================= O ESTILO ========================
+       A frase que a Dallo escreveu sobre o próprio jeito de trabalhar,
+       sozinha no escuro. É o fecho da história. -->
+  <section class="secao estilo-secao secao-escura">
+    <div class="faixa">
+      <p class="frase-grande revela">Na nossa história inclui a construção de muitos empreendimentos, mas a nossa busca sempre será pelas relações. Buscamos incentivar um estilo de vida que chamamos de Dallo - aplicando os nossos valores em tudo o que fazemos.</p>
+    </div>
+  </section>
+
+  <!-- ======================= FORA DO CANTEIRO ========================
+       Os quatro programas que a Dallo mantém. As imagens deles moram no
+       CMS e nunca entraram no acervo, então aqui eles são texto e link —
+       o conteúdo não se perde e nenhuma caixa fica vazia esperando foto
+       que não existe. -->
+  <section class="secao programas-secao">
+    <div class="faixa">
+      <div class="cabeca-dupla revela">
+        <div>
+          <span class="rotulo">Fora do canteiro</span>
+          <h2>O jeito Dallo</h2>
+        </div>
+      </div>
+      <ol class="programas">
+        <li class="revela">
+          <span class="programa-ordem" aria-hidden="true">01</span>
+          <h3>Incentivando a leitura</h3>
+          <p>Todos os anos mais de mil livros, entre eles alguns dos best sellers mais vendidos no mundo, são distribuídos de forma gratuita.</p>
+          <a class="elo" href="https://www.dallo.com.br/post/incentivando-a-leitura" target="_blank" rel="noopener">Saiba mais</a>
+        </li>
+        <li class="revela">
+          <span class="programa-ordem" aria-hidden="true">02</span>
+          <h3>Aulas de yoga</h3>
+          <p>Buscando impactar de maneira positiva, a Dallo investe em várias ações, entre elas, a prática do yoga.
+
+Valorizar o capital humano é um dos constantes objetivos da Dallo, uma empresa que entende que para se fazer forte é preciso que seu time esteja preparado e motivado.</p>
+          <a class="elo" href="https://www.dallo.com.br/post/dallo-yoga-um-projeto-que-deu-certo" target="_blank" rel="noopener">Saiba mais</a>
+        </li>
+        <li class="revela">
+          <span class="programa-ordem" aria-hidden="true">03</span>
+          <h3>Projeto viagens</h3>
+          <p>&quot;Viajar é um dos melhores aspectos da vida&quot;
+
+Luciano Dallo
+
+Sempre que viajamos voltamos maiores e melhores. Aqui na Dallo existem diversos projetos dando aos colaboradores a chance de viver essas experiências. Os colaboradores ganham viagens nacionais e internacionais.
+
+Essa é uma dentre tantas outras ações que a empresa coloca em prática para dar reconhecimento aos seus talentos.</p>
+          <a class="elo" href="https://www.dallo.com.br/post/projeto-viagens-dallo" target="_blank" rel="noopener">Saiba mais</a>
+        </li>
+        <li class="revela">
+          <span class="programa-ordem" aria-hidden="true">04</span>
+          <h3>Banda Dallo</h3>
+          <p>&quot;A música é a arte de manifestar os diversos atos da nossa alma mediante o som.&quot;
+
+Elvis Paz
+
+Colaboradores Dallo se reúnem periodicamente para ensaiar músicas que são apresentadas em eventos da empresa. O projeto recebe incentivos da empresa e a participação do CEO Luciano Dallo.</p>
+          <a class="elo" href="https://www.dallo.com.br/post/banda-dallo" target="_blank" rel="noopener">Saiba mais</a>
+        </li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="faixa">
+    <div class="rodape-chamada">
+      <p>Todo endereço começa com uma conversa.</p>
+      <a class="botao botao-vazado" href="contato.html">Falar com a equipe</a>
+    </div>
+    <div class="rodape-grade">
+      <div class="rodape-marca">
+        <img src="img/logo-dallo.svg" alt="Construtora Dallo" width="128" style="filter:brightness(0) invert(1)">
+        <p class="rodape-assinatura">Construtora e incorporadora em Itapema, Porto Belo e Cascavel. 45 empreendimentos entregues e em obra desde 2008.</p>
+      </div>
+      <div>
+        <h4>Empreendimentos</h4>
+        <ul>
+          <li><a href="empreendimentos.html?cidade=Itapema">Itapema</a></li>
+          <li><a href="empreendimentos.html?cidade=Porto Belo">Porto Belo</a></li>
+          <li><a href="empreendimentos.html?cidade=Cascavel">Cascavel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>A Dallo</h4>
+        <ul>
+          <li><a href="sobre.html">Nossa história</a></li>
+          <li><a href="contato.html">Fale conosco</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Dallo Itapema SC</h4>
+        <p>Av. Nereu Ramos, 4077, Meia Praia - Ed. Dallo Business Center | 15º e 16º andares</p>
+        <p><a href="tel:4732671111">(47) 3267-1111</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+      <div>
+        <h4>Dallo Cascavel PR</h4>
+        <p>Rua Visconde de Guarapuava, 2342</p>
+        <p><a href="tel:4522210670">(45) 2221-0670</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+    </div>
+    <div class="rodape-fim">
+      <span>Dallo Empreendimentos</span>
+      <span>Todos os direitos reservados</span>
+    </div>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/554732671111" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.15h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.18 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<script src="js/site.js"></script>
+</body>
+</html>

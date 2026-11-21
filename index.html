@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Construtora Dallo</title>
+<meta name="description" content="Do projeto à entrega: respeito, compromisso, inovação e qualidade são priorizados em cada detalhe. Padrão Dallo. Construção civil levada a sério.">
+<link rel="alternate" hreflang="pt-BR" href="index.html">
+<link rel="alternate" hreflang="en" href="en/index.html">
+<link rel="alternate" hreflang="es" href="es/index.html">
+<link rel="alternate" hreflang="x-default" href="index.html">
+<link rel="icon" href="img/logo-dallo.svg">
+<link rel="preload" href="fontes/Manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fontes/PlayfairDisplay-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/estilo.css">
+<!-- A classe js no elemento html e o que liga a revelacao na rolagem.
+     Ela precisa valer em TODAS as paginas: enquanto so a home a tinha, o
+     .revela das outras nunca escondia nada e nunca animava, e o efeito
+     nao existia fora da home sem nenhum erro no console para avisar. A
+     classe js no body continua so na home, porque quem usa e o CSS da
+     abertura. -->
+<script>document.documentElement.classList.add('js');</script>
+<!-- As duas faces de display da PRIMEIRA DOBRA. Medido: sem isto a
+     Montserrat comecava em 36 ms e a Playfair italica em 40 ms, contra
+     11 ms das que ja vinham no preload — e com font-display: swap o
+     titulo e a linha de apoio nasciam em Arial e trocavam de fonte na
+     frente do leitor. Vao so aqui, dentro do ramo da abertura: as
+     outras paginas nao usam a italica nem a Montserrat no hero e nao
+     devem pagar por estes dois arquivos. -->
+<link rel="preload" href="fontes/PlayfairDisplay-var-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fontes/Montserrat-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/abertura.css">
+<script>document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('js')});</script>
+<!-- As frases que o site.js escreve em tempo de execução (contagem da
+     busca, aviso de filtro) não podem ficar dentro do script: ele é um
+     arquivo só para as três línguas. Vêm por aqui. -->
+<script type="application/json" id="i18n">{"verTorre":"Ver {n} torre","verTorres":"Ver {n} torres","torre":"{n} torre","torres":"{n} torres","filtrandoPor":"Filtrando por","limpar":"limpar","ou":"ou","suites":"suítes","faixas":{"ate150":"Até 150 m²","150-250":"150 a 250 m²","250-400":"250 a 400 m²","400+":"Acima de 400 m²"},"pronto":"pronto para morar","obra":"em construção","emp":"{n} empreendimento","emps":"{n} empreendimentos"}</script>
+</head>
+<body class="js">
+
+<header class="topo">
+  <div class="faixa topo-in">
+    <a class="topo-marca" href="index.html" aria-label="Construtora Dallo, página inicial">
+      <img src="img/logo-dallo.svg" alt="Construtora Dallo" width="138" height="35">
+    </a>
+    <button class="topo-abrir" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu">
+      <a href="empreendimentos.html">Empreendimentos</a>
+      <a href="sobre.html">A Dallo</a>
+      <a href="contato.html">Contato</a>
+      <a class="menu-botao" href="contato.html">Falar com a equipe</a>
+    </nav>
+    <div class="idiomas">
+      <button class="idiomas-atual" type="button" aria-expanded="false" aria-controls="idiomas-lista" aria-label="Trocar idioma">
+        <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>
+        <span class="idiomas-sigla">PT</span>
+        <svg class="idiomas-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="idiomas-lista" id="idiomas-lista" hidden>
+        <li><a href="index.html" lang="pt-BR" aria-current="true">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>Português
+        </a></li>
+        <li><a href="en/index.html" lang="en">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#fff"/><g fill="#b22234"><rect width="24" height="2.4" y="0"/><rect width="24" height="2.4" y="4.8"/><rect width="24" height="2.4" y="9.6"/><rect width="24" height="2.4" y="14.4"/><rect width="24" height="2.4" y="19.2"/></g><rect width="11" height="12" fill="#3c3b6e"/></svg></span>English
+        </a></li>
+        <li><a href="es/index.html" lang="es">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#aa151b"/><rect width="24" height="12" y="6" fill="#f1bf00"/></svg></span>Español
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="abertura-palco">
+    <section class="dobra-itapema">
+      <!-- O vídeo é o travelling aéreo sobre Itapema que a própria Dallo
+           usa na home: a cidade à esquerda, a torre no meio, o mar à
+           direita. Estava no acervo (home.videos) e o gerador ja resolvia
+           o caminho, mas nunca o usava.
+
+           preload="none" e as fontes presas so pelo data-: quem liga o
+           video e o site.js, depois do primeiro quadro pintado. Assim o
+           hero aparece pelo poster, sem esperar 3 MB, e nao ha salto de
+           layout — o poster tem a mesma proporcao do video.
+
+           A foto antiga continua no projeto como poster de reserva para
+           quem recusa movimento (prefers-reduced-motion), caminho em
+           --hero-foto no CSS. -->
+      <video class="dobra-filme" data-proporcao-min="1.4" muted loop playsinline preload="none" tabindex="-1"
+             aria-hidden="true" poster="midia/cenas/hero-poster.webp"
+             data-webm="midia/midia-site/static/video-home-1-e646b889cacd25f15e6698aebf2b1513.webm" data-mp4="midia/midia-site/static/video-home-1-93bc4af7e4c14a7e04b6acd6c9714437.mp4"></video>
+      <span class="dobra-grao" aria-hidden="true"></span>
+      <div class="emenda-nuvens" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="dobra-texto">
+        <div class="faixa">
+          <h1 class="surge">
+            <span class="linha-grotesca">Em Itapema,</span>
+            <span class="linha-serifada">a Dallo mudou a linha do céu</span>
+          </h1>
+          <p class="surge"><span>45 empreendimentos em Itapema, Porto Belo e Cascavel — dos que ainda estão subindo aos que já viraram endereço.</span></p>
+        </div>
+      </div>
+      <form class="busca" action="empreendimentos.html" method="get"
+        aria-label="Empreendimentos">
+        <label class="busca-campo">
+          <span class="busca-rotulo">Onde</span>
+          <select class="busca-seletor" name="cidade">
+            <option value="" data-rotulo="Todas as cidades">Todas as cidades</option>
+            <option value="Itapema" data-rotulo="Itapema">Itapema</option>
+            <option value="Porto Belo" data-rotulo="Porto Belo">Porto Belo</option>
+            <option value="Cascavel" data-rotulo="Cascavel">Cascavel</option>
+          </select>
+        </label>
+
+        <div class="busca-campo busca-campo-suites" role="group" aria-label="Suítes">
+          <span class="busca-rotulo" aria-hidden="true">Suítes</span>
+          <div class="busca-fichas">
+            <label class="busca-ficha">
+              <input type="checkbox" name="suites" value="2">
+              <span>2</span>
+            </label>
+            <label class="busca-ficha">
+              <input type="checkbox" name="suites" value="3">
+              <span>3</span>
+            </label>
+            <label class="busca-ficha">
+              <input type="checkbox" name="suites" value="4">
+              <span>4</span>
+            </label>
+          </div>
+        </div>
+
+        <label class="busca-campo">
+          <span class="busca-rotulo">Metragem</span>
+          <select class="busca-seletor" name="faixa">
+            <option value="" data-rotulo="Qualquer">Qualquer</option>
+            <option value="ate150" data-rotulo="Até 150 m²">Até 150 m²</option>
+            <option value="150-250" data-rotulo="150 a 250 m²">150 a 250 m²</option>
+            <option value="250-400" data-rotulo="250 a 400 m²">250 a 400 m²</option>
+            <option value="400+" data-rotulo="Acima de 400 m²">Acima de 400 m²</option>
+          </select>
+        </label>
+
+        <label class="busca-campo">
+          <span class="busca-rotulo">Estágio</span>
+          <select class="busca-seletor" name="estagio">
+            <option value="" data-rotulo="Todos">Todos</option>
+            <option value="obra" data-rotulo="Em construção">Em construção</option>
+            <option value="pronto" data-rotulo="Pronto para morar">Pronto para morar</option>
+          </select>
+        </label>
+
+        <button class="busca-ir" type="submit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+          <span data-busca-contagem>Ver 45 torres</span>
+        </button>
+      </form>
+      <script type="application/json" id="busca-acervo">[{"c":"Itapema","s":[4],"f":"250-400","e":"pronto"},{"c":"Itapema","s":[4],"f":"150-250","e":"pronto"},{"c":"Porto Belo","s":[3],"f":"ate150","e":"pronto"},{"c":"Cascavel","s":[4],"f":"150-250","e":"obra"},{"c":"Itapema","s":[4],"f":"ate150","e":"obra"},{"c":"Itapema","s":[3],"f":"ate150","e":"pronto"},{"c":"Itapema","s":[3,4],"f":"","e":"pronto"},{"c":"Itapema","s":[3],"f":"ate150","e":"pronto"},{"c":"Porto Belo","s":[3,4],"f":"150-250","e":"pronto"},{"c":"Itapema","s":[3],"f":"","e":"pronto"},{"c":"Porto Belo","s":[4],"f":"250-400","e":"pronto"},{"c":"Porto Belo","s":[2],"f":"ate150","e":""},{"c":"Itapema","s":[3],"f":"","e":"pronto"},{"c":"Itapema","s":[4],"f":"150-250","e":"pronto"},{"c":"Itapema","s":[4],"f":"250-400","e":"pronto"},{"c":"Itapema","s":[4],"f":"250-400","e":""},{"c":"Itapema","s":[3],"f":"ate150","e":"pronto"},{"c":"Itapema","s":[4],"f":"400+","e":"obra"},{"c":"Itapema","s":[4],"f":"250-400","e":"pronto"},{"c":"Itapema","s":[4],"f":"150-250","e":"obra"},{"c":"Itapema","s":[4],"f":"150-250","e":"pronto"},{"c":"Itapema","s":[3],"f":"ate150","e":"pronto"},{"c":"Itapema","s":[3,4],"f":"400+","e":""},{"c":"Itapema","s":[3],"f":"150-250","e":"obra"},{"c":"Itapema","s":[4],"f":"250-400","e":"obra"},{"c":"Itapema","s":[4],"f":"150-250","e":"pronto"},{"c":"Itapema","s":[4],"f":"150-250","e":"pronto"},{"c":"Itapema","s":[4],"f":"250-400","e":"obra"},{"c":"Itapema","s":[4],"f":"400+","e":""},{"c":"Porto Belo","s":[3,4],"f":"250-400","e":"pronto"},{"c":"Cascavel","s":[4],"f":"150-250","e":"obra"},{"c":"Itapema","s":[4],"f":"150-250","e":"pronto"},{"c":"Itapema","s":[3,4],"f":"150-250","e":"pronto"},{"c":"Itapema","s":[4],"f":"150-250","e":"pronto"},{"c":"Porto Belo","s":[4],"f":"150-250","e":"pronto"},{"c":"Itapema","s":[4],"f":"250-400","e":"obra"},{"c":"Itapema","s":[3,4],"f":"150-250","e":"pronto"},{"c":"Itapema","s":[4],"f":"ate150","e":"pronto"},{"c":"Itapema","s":[3,4],"f":"400+","e":""},{"c":"Itapema","s":[4],"f":"400+","e":"obra"},{"c":"Itapema","s":[4],"f":"150-250","e":"pronto"},{"c":"Itapema","s":[4],"f":"150-250","e":"pronto"},{"c":"Cascavel","s":[3,4],"f":"400+","e":"obra"},{"c":"Itapema","s":[3],"f":"","e":"pronto"},{"c":"Itapema","s":[4],"f":"150-250","e":"pronto"}]</script>
+    </section>
+
+    <div class="abertura" aria-hidden="true">
+      <svg class="abertura-cena" viewBox="376.188 189.404 138 34.659" aria-hidden="true">
+        <defs>
+          <clipPath id="abertura-d" clipPathUnits="userSpaceOnUse">
+            <rect x="371" y="184" width="42.86" height="45"/>
+          </clipPath>
+          <clipPath id="abertura-letras" clipPathUnits="userSpaceOnUse">
+            <rect class="abertura-cortina" x="413.86" y="184" width="0" height="45"/>
+          </clipPath>
+        </defs>
+        <path class="abertura-papel" fill-rule="evenodd" d="M0,0Z"/>
+        <path class="abertura-marca" clip-path="url(#abertura-d)" d="M437.616,212.462h0a10.039,10.039,0,0,1-.362,3.242,4.314,4.314,0,0,1-2.041,2.1c-2.265,1.315-7.212,2.4-8.47-.893a2.906,2.906,0,0,1,1.566-3.493,19.926,19.926,0,0,1,4.92-1.175c1.537-.251,3.354-.558,4.387-.754Zm9.924,5.9h0c-.026-.614.031-11.1.031-11.1.11-8.272-7.549-9.727-14.342-9.727h-1.621a21.451,21.451,0,0,0-8.613,1.37c-3.185,1.425-4.639,3.8-5.338,6.932l8.974-.028a5.019,5.019,0,0,1,2.18-2.459,7.559,7.559,0,0,1,3.185-.7,10.124,10.124,0,0,1,4.391.7,2.574,2.574,0,0,1,1.453,2.179c-.083,1.119-1.4,1.623-2.347,1.817-1.679.336-4.417.7-7.157,1.174a45.268,45.268,0,0,0-7.185,1.537,8.95,8.95,0,0,0-3.886,2.573,5.852,5.852,0,0,0-1.37,3.829,6.3,6.3,0,0,0,3.045,5.338c2.015,1.4,4.782,2.124,8.3,2.124.224,0,.447-.028.671-.028.308,0,.616.028.95.028a18.449,18.449,0,0,0,5.619-.838,18.708,18.708,0,0,0,3.664-1.676c.279,1.005.363,1.4.475,1.928h9.533a12.531,12.531,0,0,1-.421-2.069c-.165-1.313-.2-2.907-.2-2.907m4.083,4.975h10.456V189.4H451.623Zm14.873,0h10.454V189.4H466.5Zm-63.488-15.373h0c0,7.66-3.97,9.95-13.727,9.95a3.337,3.337,0,0,1-1.819-.446,1.79,1.79,0,0,1-.67-1.482V194.911h4.837c6.486,0,11.378,1.957,11.378,9.95Zm-9.869-18.474H376.2v26.887a6.922,6.922,0,0,0,1.679,4.891,6.791,6.791,0,0,0,4.837,2.069h8.413c17.78,0,22.757-5.617,22.757-17.1,0-10.957-3.5-16.743-20.743-16.743m110.453,23.086h0c0,3.662-2.154,6.178-6.29,6.372-4.137-.195-6.066-2.626-6.066-6.261v-3.968c0-3.633,2.124-6.149,6.29-6.372,4.137.224,6.066,2.655,6.066,6.288ZM498.2,197.258H497c-11.936,0-16.353,5.283-16.353,13.5,0,8.272,4.109,13.3,16.073,13.3h1.2c11.855,0,16.272-5.283,16.272-13.5,0-8.329-4.109-13.3-15.99-13.3"/>
+        <path class="abertura-marca" clip-path="url(#abertura-letras)" d="M437.616,212.462h0a10.039,10.039,0,0,1-.362,3.242,4.314,4.314,0,0,1-2.041,2.1c-2.265,1.315-7.212,2.4-8.47-.893a2.906,2.906,0,0,1,1.566-3.493,19.926,19.926,0,0,1,4.92-1.175c1.537-.251,3.354-.558,4.387-.754Zm9.924,5.9h0c-.026-.614.031-11.1.031-11.1.11-8.272-7.549-9.727-14.342-9.727h-1.621a21.451,21.451,0,0,0-8.613,1.37c-3.185,1.425-4.639,3.8-5.338,6.932l8.974-.028a5.019,5.019,0,0,1,2.18-2.459,7.559,7.559,0,0,1,3.185-.7,10.124,10.124,0,0,1,4.391.7,2.574,2.574,0,0,1,1.453,2.179c-.083,1.119-1.4,1.623-2.347,1.817-1.679.336-4.417.7-7.157,1.174a45.268,45.268,0,0,0-7.185,1.537,8.95,8.95,0,0,0-3.886,2.573,5.852,5.852,0,0,0-1.37,3.829,6.3,6.3,0,0,0,3.045,5.338c2.015,1.4,4.782,2.124,8.3,2.124.224,0,.447-.028.671-.028.308,0,.616.028.95.028a18.449,18.449,0,0,0,5.619-.838,18.708,18.708,0,0,0,3.664-1.676c.279,1.005.363,1.4.475,1.928h9.533a12.531,12.531,0,0,1-.421-2.069c-.165-1.313-.2-2.907-.2-2.907m4.083,4.975h10.456V189.4H451.623Zm14.873,0h10.454V189.4H466.5Zm-63.488-15.373h0c0,7.66-3.97,9.95-13.727,9.95a3.337,3.337,0,0,1-1.819-.446,1.79,1.79,0,0,1-.67-1.482V194.911h4.837c6.486,0,11.378,1.957,11.378,9.95Zm-9.869-18.474H376.2v26.887a6.922,6.922,0,0,0,1.679,4.891,6.791,6.791,0,0,0,4.837,2.069h8.413c17.78,0,22.757-5.617,22.757-17.1,0-10.957-3.5-16.743-20.743-16.743m110.453,23.086h0c0,3.662-2.154,6.178-6.29,6.372-4.137-.195-6.066-2.626-6.066-6.261v-3.968c0-3.633,2.124-6.149,6.29-6.372,4.137.224,6.066,2.655,6.066,6.288ZM498.2,197.258H497c-11.936,0-16.353,5.283-16.353,13.5,0,8.272,4.109,13.3,16.073,13.3h1.2c11.855,0,16.272-5.283,16.272-13.5,0-8.329-4.109-13.3-15.99-13.3"/>
+      </svg>
+      <span class="abertura-seta"></span>
+    </div>
+  </div>
+
+
+
+    <!-- A marca é uma dobra de tela cheia: a foto cobre a seção e o texto
+         ocupa a cunha vazia do alto à esquerda. -->
+    <!-- ======================= A MARCA ========================
+       Composição editorial: a foto sangra pela borda direita e sobe mais
+       que a coluna de texto, e o número institucional serve de âncora no
+       canto vazio. Os três dados são contados do acervo, não escritos à
+       mão — se entrar um empreendimento, eles mudam sozinhos. -->
+  <section class="secao marca-editorial">
+    <div class="marca-grade">
+      <div class="marca-texto revela">
+        <h2>A marca Dallo</h2>
+        <p class="lead">Ética, responsabilidade, inovação e a gestão integrada dos nossos valores são os pontos fortes que nos tornaram líder de mercado e nos consagraram como uma das construtoras mais reconhecidas de Santa Catarina entre os consumidores de imóveis de luxo.</p>
+        <dl class="marca-dados">
+          <div><dt>Empreendimentos</dt><dd>45</dd></div>
+          <div><dt>Desde</dt><dd>2008</dd></div>
+          <div><dt>Cidades</dt><dd>3</dd></div>
+        </dl>
+        <a class="botao" href="sobre.html">Conheça a Dallo</a>
+      </div>
+      <figure class="marca-foto revela atraso-2">
+        <img src="midia/web/midia-site/static/about-2-eb0088b1778ee27a765edfb7d704e264-1600.webp" srcset="midia/web/midia-site/static/about-2-eb0088b1778ee27a765edfb7d704e264-820.webp 820w, midia/web/midia-site/static/about-2-eb0088b1778ee27a765edfb7d704e264-1600.webp 1600w" sizes="(min-width: 1000px) 52vw, 100vw" alt="Edifício da Dallo com fachada escura e arcadas envidraçadas, ao anoitecer" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======================= EQUIPE ========================
+       A fotografia é a protagonista: retratos altos correndo deitado, com
+       contador e barra de progresso no lugar de pontinhos. O depoimento
+       abre DENTRO da foto no clique — fora dela, cinco depoimentos
+       inteiros empilhados faziam a seção descer meia página. -->
+  <section class="secao equipe-editorial">
+    <div class="faixa">
+      <div class="cabeca-dupla revela">
+        <div>
+          <span class="rotulo">5 vozes</span>
+          <h2>Equipe Dallo</h2>
+        </div>
+        <p class="lead">Somos uma empresa da construção civil completa, formada por equipe que ama o que faz.</p>
+      </div>
+    </div>
+    <div class="trilho-caixa" data-trilho>
+      <div class="trilho trilho-gente" tabindex="0" role="region" aria-label="Quem trabalha na Dallo">
+        <figure class="gente">
+          <div class="gente-foto">
+            <img src="midia/cenas/equipe-1.webp" alt="Breno Bello" loading="lazy">
+            <div class="gente-fala" id="fala-0">
+              <blockquote>Iniciei na Dallo como menor aprendiz e em apenas 4 meses me tornei estagiário. A empresa me trouxe não apenas crescimento profissional, mas também pessoal. Aqui sou rodeado de pessoas sensacionais, sempre dispostas a me ajudar. Destaque para as minhas colegas de setor, sou muito sortudo por tê-las no meu dia a dia.</blockquote>
+            </div>
+            <span class="gente-marca" aria-hidden="true"></span>
+          </div>
+          <figcaption>
+            <span class="gente-ordem" aria-hidden="true">01</span>
+            <button class="gente-nome" type="button" aria-expanded="false" aria-controls="fala-0">Breno Bello</button>
+          </figcaption>
+        </figure><figure class="gente">
+          <div class="gente-foto">
+            <img src="midia/cenas/equipe-2.webp" alt="Leiva Peres" loading="lazy">
+            <div class="gente-fala" id="fala-1">
+              <blockquote>Assumir a diretoria executiva da Dallo e manter o ritmo de trabalho e de crescimento num momento de tantas incertezas por conta da pandemia foi um enorme desafio, porém muito gratificante, principalmente quando temos conosco uma equipe qualificada e comprometida em fazer sempre o melhor. Depois de 02 anos de trabalho, me sinto feliz e realizada por representar esta empresa que é líder de mercado, está entre as Construtoras mais reconhecidas entre os consumidores de imóveis de luxo e que proporciona inúmeras oportunidades para todos que fazem parte da equipe.</blockquote>
+            </div>
+            <span class="gente-marca" aria-hidden="true"></span>
+          </div>
+          <figcaption>
+            <span class="gente-ordem" aria-hidden="true">02</span>
+            <button class="gente-nome" type="button" aria-expanded="false" aria-controls="fala-1">Leiva Peres</button>
+          </figcaption>
+        </figure><figure class="gente">
+          <div class="gente-foto">
+            <img src="midia/cenas/equipe-3.webp" alt="Luiz Fernando" loading="lazy">
+            <div class="gente-fala" id="fala-2">
+              <blockquote>Durante meu tempo na Dallo, tive a oportunidade de crescer profissionalmente e pessoalmente, de maneira incrível. A equipe sempre foi dedicada, talentosa, e sempre disposta a enfrentar desafios. Sou grato pela experiência e pelas pessoas incríveis que conheci. A Dallo é mais do que um local de trabalho; é uma comunidade que inspira e motiva.</blockquote>
+            </div>
+            <span class="gente-marca" aria-hidden="true"></span>
+          </div>
+          <figcaption>
+            <span class="gente-ordem" aria-hidden="true">03</span>
+            <button class="gente-nome" type="button" aria-expanded="false" aria-controls="fala-2">Luiz Fernando</button>
+          </figcaption>
+        </figure><figure class="gente">
+          <div class="gente-foto">
+            <img src="midia/cenas/equipe-4.webp" alt="Ângela de Oliveira" loading="lazy">
+            <div class="gente-fala" id="fala-3">
+              <blockquote>Penso que a empresa deve ser a extensão do nosso LAR, um lugar na qual nos sentimos bem por nele estar, onde encontramos conforto e acolhimento. Na Dallo me sinto feliz e grata, encontro aqui um ambiente de respeito, comprometimento, trabalho em equipe, pessoas felizes, o que é fundamental para nosso sucesso, sendo assim: Dallo também posso chamar de meu LAR.</blockquote>
+            </div>
+            <span class="gente-marca" aria-hidden="true"></span>
+          </div>
+          <figcaption>
+            <span class="gente-ordem" aria-hidden="true">04</span>
+            <button class="gente-nome" type="button" aria-expanded="false" aria-controls="fala-3">Ângela de Oliveira</button>
+          </figcaption>
+        </figure><figure class="gente">
+          <div class="gente-foto">
+            <img src="midia/cenas/equipe-5.webp" alt="Daniel Francisco" loading="lazy">
+            <div class="gente-fala" id="fala-4">
+              <blockquote>Ao longo desses quase 7 anos, na Dallo, tem sido uma experiência de constante crescimento e aprendizado. O que me motiva todos os dias é saber que estou cercado de pessoas que acreditam no que fazem, que se dedicam com paixão e que sonham grande. Fazer parte dessa trajetória é extremamente gratificante e o sentimento de realização, tanto pessoal quanto profissional.</blockquote>
+            </div>
+            <span class="gente-marca" aria-hidden="true"></span>
+          </div>
+          <figcaption>
+            <span class="gente-ordem" aria-hidden="true">05</span>
+            <button class="gente-nome" type="button" aria-expanded="false" aria-controls="fala-4">Daniel Francisco</button>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="trilho-leme faixa">
+        <div class="trilho-barra" aria-hidden="true"><span data-trilho-progresso></span></div>
+        <div class="trilho-setas">
+          <button class="trilho-seta" type="button" data-passo="-1" aria-label="Ver quem vem antes">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8"/></svg>
+          </button>
+          <button class="trilho-seta" type="button" data-passo="1" aria-label="Ver quem vem depois">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= EM CONSTRUÇÃO ========================
+       Grade assimétrica: a primeira torre vale por duas, as outras duas
+       empilham ao lado. Não é enfeite — a primeira é a que a Dallo está
+       lançando, e o tamanho diz isso antes de qualquer etiqueta. -->
+  <section class="secao obras">
+    <div class="faixa">
+      <div class="cabeca-dupla revela">
+        <div>
+          <span class="rotulo">13 subindo agora</span>
+          <h2>Em construção</h2>
+        </div>
+        <a class="elo" href="empreendimentos.html">Ver os 45 empreendimentos</a>
+      </div>
+      <div class="obras-grade">
+        <a class="torre torre-destaque revela" href="empreendimento/catherine.html"
+         data-cidade="Cascavel" data-estado="disponivel"
+         data-suites="4" data-faixa="150-250" data-estagio="obra">
+        <span class="torre-foto">
+          <img src="midia/web/midia/uploads/enterprise/46/664f77b5ceaa83.74052583-1600.webp" srcset="midia/web/midia/uploads/enterprise/46/664f77b5ceaa83.74052583-820.webp 820w, midia/web/midia/uploads/enterprise/46/664f77b5ceaa83.74052583-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Catherine, Bairro Country · Cascavel · Paraná" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Unidades disponíveis</span>
+          <span class="torre-abre" aria-hidden="true">Ver empreendimento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Catherine</h3>
+          <span class="torre-local">Bairro Country · Cascavel · Paraná</span>
+          <span class="torre-specs">4 suítes · 200,4 m² privativos</span>
+        </span>
+      </a><a class="torre revela atraso-1" href="empreendimento/celine.html"
+         data-cidade="Itapema" data-estado="disponivel"
+         data-suites="4" data-faixa="ate150" data-estagio="obra">
+        <span class="torre-foto">
+          <img src="midia/web/midia/uploads/enterprise/41/637cbf1fed4168.01052528-1600.webp" srcset="midia/web/midia/uploads/enterprise/41/637cbf1fed4168.01052528-820.webp 820w, midia/web/midia/uploads/enterprise/41/637cbf1fed4168.01052528-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Celine, Frente Mar - Canto da Praia · Itapema · Santa Catarina" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Última unidade</span>
+          <span class="torre-abre" aria-hidden="true">Ver empreendimento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Celine</h3>
+          <span class="torre-local">Frente Mar - Canto da Praia · Itapema · Santa Catarina</span>
+          <span class="torre-specs">4 suítes · 300 - 1.000m² privativos</span>
+        </span>
+      </a><a class="torre revela atraso-2" href="empreendimento/jardim-moliere.html"
+         data-cidade="Porto Belo" data-estado="disponivel"
+         data-suites="2" data-faixa="ate150" data-estagio="">
+        <span class="torre-foto">
+          <img src="midia/web/midia/uploads/enterprise/49/673601748083c7.51333304-1600.webp" srcset="midia/web/midia/uploads/enterprise/49/673601748083c7.51333304-820.webp 820w, midia/web/midia/uploads/enterprise/49/673601748083c7.51333304-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Jardim Molière, Balneário Perequê · Porto Belo · SC" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="disponivel">Unidades disponíveis</span>
+          <span class="torre-abre" aria-hidden="true">Ver empreendimento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Jardim Molière</h3>
+          <span class="torre-local">Balneário Perequê · Porto Belo · SC</span>
+          <span class="torre-specs">2 suítes · 80m²</span>
+        </span>
+      </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= A PAUSA ========================
+       A frase sobre a torre mais alta do acervo. A imagem não é ilustração
+       solta: é a própria torre de que a frase fala, escolhida pelo número
+       de andares no JSON. -->
+  <section class="secao pausa">
+    <picture>
+      <source media="(max-width: 899px)" srcset="midia/cenas/pausa-sweden-alto.webp">
+      <img class="pausa-foto" src="midia/cenas/pausa-sweden-largo.webp" alt="" aria-hidden="true" loading="lazy">
+    </picture>
+    <div class="faixa pausa-texto">
+      <p class="frase-grande revela">
+        <span><span>Estamos construindo</span></span>
+        <span><span>a melhor torre</span></span>
+        <span><span>do Brasil.</span></span>
+      </p>
+      <p class="pausa-nota revela atraso-2">Sweden · 59 andares · Itapema</p>
+    </div>
+  </section>
+
+  <!-- ======================= ENTREGUES ========================
+       Galeria deitada sobre o escuro: ali as fachadas saltam, e a seção
+       lê como portfólio em vez de vitrine. O trilho sai da faixa e vai
+       até as bordas da tela — o cartão cortado é o que avisa que há mais
+       coisa adiante. -->
+  <section class="secao entregues secao-escura">
+    <div class="faixa">
+      <div class="cabeca-conta revela">
+        <h2>Entregues</h2>
+        <p class="conta-grande"><strong>21</strong> <span>endereços que já são de alguém</span></p>
+      </div>
+    </div>
+    <div class="trilho-caixa" data-trilho>
+      <div class="trilho trilho-largo" tabindex="0" role="region" aria-label="Empreendimentos entregues">
+        <a class="torre torre-larga" href="empreendimento/belvedere.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="midia/web/midia/uploads/enterprise/17/61e810be0534c3.99253933-1600.webp" srcset="midia/web/midia/uploads/enterprise/17/61e810be0534c3.99253933-820.webp 820w, midia/web/midia/uploads/enterprise/17/61e810be0534c3.99253933-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Belvedere, Frente mar - Canto da Praia · Itapema · SC" loading="lazy" decoding="async">
+          <span class="torre-tag" data-estado="entregue">Frente mar - Pronto mara morar</span>
+          <span class="torre-abre" aria-hidden="true">Ver empreendimento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Belvedere</h3>
+          <span class="torre-local">Frente mar - Canto da Praia · Itapema · SC</span>
+          <span class="torre-specs">4 suítes · Até 200m² privativos</span>
+        </span>
+      </a><a class="torre torre-larga" href="empreendimento/cadenza.html"
+         data-cidade="Porto Belo" data-estado="entregue"
+         data-suites="3" data-faixa="ate150" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="midia/web/midia/uploads/enterprise/24/6246f8ef6226b4.12829337-1600.webp" srcset="midia/web/midia/uploads/enterprise/24/6246f8ef6226b4.12829337-820.webp 820w, midia/web/midia/uploads/enterprise/24/6246f8ef6226b4.12829337-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Cadenza, Frente mar - Balneário Perequê · Porto Belo · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver empreendimento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Cadenza</h3>
+          <span class="torre-local">Frente mar - Balneário Perequê · Porto Belo · SC</span>
+          <span class="torre-specs">3 suítes · A partir de 141m² privativos</span>
+        </span>
+      </a><a class="torre torre-larga" href="empreendimento/chateau-blanc.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="3" data-faixa="ate150" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="midia/web/midia/uploads/enterprise/25/61e8602ca9e3e9.83826994-1600.webp" srcset="midia/web/midia/uploads/enterprise/25/61e8602ca9e3e9.83826994-820.webp 820w, midia/web/midia/uploads/enterprise/25/61e8602ca9e3e9.83826994-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Château Blanc, Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver empreendimento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Château Blanc</h3>
+          <span class="torre-local">Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">3 Suítes · 115m² privativos</span>
+        </span>
+      </a><a class="torre torre-larga" href="empreendimento/dallo-business-center-palazzo-luna.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="3,4" data-faixa="" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="midia/web/midia/uploads/enterprise/27/624ef38f64a0c8.33160418-1600.webp" srcset="midia/web/midia/uploads/enterprise/27/624ef38f64a0c8.33160418-820.webp 820w, midia/web/midia/uploads/enterprise/27/624ef38f64a0c8.33160418-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Dallo Business Center &amp; Palazzo Luna, Frente avenida - Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver empreendimento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Dallo Business Center &amp; Palazzo Luna</h3>
+          <span class="torre-local">Frente avenida - Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">3 e 4 suítes</span>
+        </span>
+      </a><a class="torre torre-larga" href="empreendimento/grand-chateau.html"
+         data-cidade="Itapema" data-estado="entregue"
+         data-suites="3" data-faixa="ate150" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="midia/web/midia/uploads/enterprise/26/624f2f19ecf979.83692006-1600.webp" srcset="midia/web/midia/uploads/enterprise/26/624f2f19ecf979.83692006-820.webp 820w, midia/web/midia/uploads/enterprise/26/624f2f19ecf979.83692006-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Grand Château, Meia Praia · Itapema · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver empreendimento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Grand Château</h3>
+          <span class="torre-local">Meia Praia · Itapema · SC</span>
+          <span class="torre-specs">3 Suítes · 128m² privativos</span>
+        </span>
+      </a><a class="torre torre-larga" href="empreendimento/grand-palais.html"
+         data-cidade="Porto Belo" data-estado="entregue"
+         data-suites="3,4" data-faixa="150-250" data-estagio="pronto">
+        <span class="torre-foto">
+          <img src="midia/web/midia/uploads/enterprise/21/6246fb12a90f73.50225512-1600.webp" srcset="midia/web/midia/uploads/enterprise/21/6246fb12a90f73.50225512-820.webp 820w, midia/web/midia/uploads/enterprise/21/6246fb12a90f73.50225512-1600.webp 1600w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="Grand Palais, Frente mar - Balneário Perequê · Porto Belo · SC" loading="lazy" decoding="async">
+          
+          <span class="torre-abre" aria-hidden="true">Ver empreendimento</span>
+        </span>
+        <span class="torre-ficha">
+          <h3>Grand Palais</h3>
+          <span class="torre-local">Frente mar - Balneário Perequê · Porto Belo · SC</span>
+          <span class="torre-specs">3 e 4 suítes · Até 250m² privativos</span>
+        </span>
+      </a>
+      </div>
+      <div class="trilho-leme faixa">
+        <a class="elo elo-leme" href="empreendimentos.html?estagio=pronto">Ver todos os entregues</a>
+        <div class="trilho-barra" aria-hidden="true"><span data-trilho-progresso></span></div>
+        <div class="trilho-setas">
+          <button class="trilho-seta" type="button" data-passo="-1" aria-label="Ver os anteriores">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8"/></svg>
+          </button>
+          <button class="trilho-seta" type="button" data-passo="1" aria-label="Ver os próximos">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= PROJETOS ========================
+       Mosaico com tratamentos diferentes, e não cinco blocos iguais: o
+       primeiro ocupa a largura toda com o texto POR CIMA do filme; os
+       demais se desencontram em larguras distintas, com o texto embaixo.
+
+       Os vídeos não vêm com a página: o site.js só liga a fonte quando o
+       bloco chega perto, e pausa quando sai. São 28 MB ao todo. -->
+  <section class="secao projetos">
+    <div class="faixa">
+      <div class="cabeca-dupla revela">
+        <div>
+          <span class="rotulo">5 projetos</span>
+          <h2>O que torna a Dallo única</h2>
+        </div>
+        <p class="lead">A capacidade de fazer a gestão de seus valores. Tudo que é feito pela Dallo tem a essência da marca. Muito mais que prédios, construímos um estilo de vida Dallo.</p>
+      </div>
+    </div>
+    <div class="mosaico">
+      <article class="projeto revela projeto-capa">
+        <div class="projeto-tela">
+          <video class="dobra-filme" muted loop playsinline preload="none" aria-hidden="true"
+                 poster="midia/posteres/projeto-esporte.webp"
+                 data-webm="midia/midia-site/static/video-dallo-esporte-e5ea54f8a9b048b35a69d66f5b291395.webm" data-mp4="midia/midia-site/static/video-dallo-esporte-60c228e1275534d9632bb5a2d7bbf769.mp4"></video>
+        </div>
+        <div class="projeto-ficha">
+          <span class="projeto-ordem" aria-hidden="true">01</span>
+          <h3>Dallo Esporte</h3>
+          <p class="projeto-chamada">Patrocinamos e incentivamos o esporte em suas diversas formas.</p>
+          <p class="projeto-texto">Fortalecemos o esporte e seguimos juntos promovendo saúde, superação e união. Apoiar essas iniciativas é investir no crescimento das pessoas e valorizar o impacto positivo que o esporte traz para toda a comunidade.</p>
+        </div>
+      </article>
+      <article class="projeto revela ">
+        <div class="projeto-tela">
+          <video class="dobra-filme" muted loop playsinline preload="none" aria-hidden="true"
+                 poster="midia/posteres/projeto-banda.webp"
+                 data-webm="midia/midia-site/static/video-banda-dallo-9ade89c98adaaf287a8acf5d4686fd0f.webm" data-mp4="midia/midia-site/static/video-banda-dallo-9ed04be58d78e0ba567644951dbcdb06.mp4"></video>
+        </div>
+        <div class="projeto-ficha">
+          <span class="projeto-ordem" aria-hidden="true">02</span>
+          <h3>Banda Dallo</h3>
+          <p class="projeto-chamada">&quot;A música é a arte de manifestar os diversos afetos da nossa alma mediante o som.&quot; - Elvis Paz</p>
+          <p class="projeto-texto">Costumamos dizer que nos encontramos na música. O projeto: Banda Dallo recebe incentivos da empresa e a participação do CEO Luciano Dallo.</p>
+        </div>
+      </article>
+      <article class="projeto revela ">
+        <div class="projeto-tela">
+          <video class="dobra-filme" muted loop playsinline preload="none" aria-hidden="true"
+                 poster="midia/posteres/projeto-travel.webp"
+                 data-webm="midia/midia-site/static/video-dallo-travel-2b4cb272b99b0efd869683efa078ea9c.webm" data-mp4="midia/midia-site/static/video-dallo-travel-d6e6a52e04190c9483b3e31af173939e.mp4"></video>
+        </div>
+        <div class="projeto-ficha">
+          <span class="projeto-ordem" aria-hidden="true">03</span>
+          <h3>Dallo Travel</h3>
+          <p class="projeto-chamada">Sempre que viajamos voltamos maiores e melhores.</p>
+          <p class="projeto-texto">Aqui na Dallo existem diversos projetos dando aos colaboradores a chance de viver essas experiências. Os colaboradores ganham viagens nacionais e internacionais.</p>
+        </div>
+      </article>
+      <article class="projeto revela ">
+        <div class="projeto-tela">
+          <video class="dobra-filme" muted loop playsinline preload="none" aria-hidden="true"
+                 poster="midia/posteres/projeto-teatro.webp"
+                 data-webm="midia/midia-site/static/video-dallo-teatro-db9d8ea1a64d12fdb5aaa196c0352df1.webm" data-mp4="midia/midia-site/static/video-dallo-teatro-44ab7d5b15de02bb36f74ad72152304c.mp4"></video>
+        </div>
+        <div class="projeto-ficha">
+          <span class="projeto-ordem" aria-hidden="true">04</span>
+          <h3>Dallo Teatro</h3>
+          <p class="projeto-chamada">O teatro dá forma às nossas emoções e nos leva a viver outras vidas em cada espetáculo.</p>
+          <p class="projeto-texto">No projeto Teatro Dallo, valorizamos a arte como um caminho para sensibilizar, inspirar e aproximar as pessoas.</p>
+        </div>
+      </article>
+      <article class="projeto revela ">
+        <div class="projeto-tela">
+          <video class="dobra-filme" muted loop playsinline preload="none" aria-hidden="true"
+                 poster="midia/posteres/projeto-hipismo.webp"
+                 data-webm="midia/midia-site/static/video-scuderia-dallo-62b8ee2ac5e743b2d4f5d76d54c7695c.webm" data-mp4="midia/midia-site/static/video-scuderia-dallo-2689d123e1ec2e56661d9eb6fe9ac293.mp4"></video>
+        </div>
+        <div class="projeto-ficha">
+          <span class="projeto-ordem" aria-hidden="true">05</span>
+          <h3>Dallo Hipismo</h3>
+          <p class="projeto-chamada">O hipismo une força, técnica e sintonia entre o atleta e o cavalo, criando uma conexão única que inspira a cada salto.</p>
+          <p class="projeto-texto">É com essa mesma paixão, que a Scuderia Dallo incentiva a prática e celebra o espírito e a elegância que esse esporte transmite.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="faixa">
+    <div class="rodape-chamada">
+      <p>Todo endereço começa com uma conversa.</p>
+      <a class="botao botao-vazado" href="contato.html">Falar com a equipe</a>
+    </div>
+    <div class="rodape-grade">
+      <div class="rodape-marca">
+        <img src="img/logo-dallo.svg" alt="Construtora Dallo" width="128" style="filter:brightness(0) invert(1)">
+        <p class="rodape-assinatura">Construtora e incorporadora em Itapema, Porto Belo e Cascavel. 45 empreendimentos entregues e em obra desde 2008.</p>
+      </div>
+      <div>
+        <h4>Empreendimentos</h4>
+        <ul>
+          <li><a href="empreendimentos.html?cidade=Itapema">Itapema</a></li>
+          <li><a href="empreendimentos.html?cidade=Porto Belo">Porto Belo</a></li>
+          <li><a href="empreendimentos.html?cidade=Cascavel">Cascavel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>A Dallo</h4>
+        <ul>
+          <li><a href="sobre.html">Nossa história</a></li>
+          <li><a href="contato.html">Fale conosco</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Dallo Itapema SC</h4>
+        <p>Av. Nereu Ramos, 4077, Meia Praia - Ed. Dallo Business Center | 15º e 16º andares</p>
+        <p><a href="tel:4732671111">(47) 3267-1111</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+      <div>
+        <h4>Dallo Cascavel PR</h4>
+        <p>Rua Visconde de Guarapuava, 2342</p>
+        <p><a href="tel:4522210670">(45) 2221-0670</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+    </div>
+    <div class="rodape-fim">
+      <span>Dallo Empreendimentos</span>
+      <span>Todos os direitos reservados</span>
+    </div>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/554732671111" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.15h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.18 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<script src="js/site.js"></script>
+<script src="js/abertura.js"></script>
+</body>
+</html>

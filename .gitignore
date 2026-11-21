@@ -1,0 +1,18 @@
+# Originais do CMS da Dallo: 1,8 GB que nenhuma pagina referencia desde que
+# o site passou a servir as versoes web (midia/web/, em WebP de 1600 e 820 px).
+# Ficam no disco local como arquivo de origem.
+midia/midia/
+
+# notas internas, caso venham a parar aqui
+NOTAS-DESIGN.md
+PENDENCIAS.md
+_*.txt
+_*.json
+
+# sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# metadados da CLI do Vercel: guardam os IDs do projeto e do time
+.vercel/

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Montreux — Construtora Dallo</title>
+<meta name="description" content="Para o desenvolvimento deste projeto, a Dallo se Inspirou em Montreux, uma deslumbrante cidade na Suíça que é sinônimo de beleza e tranquilidade.">
+<link rel="alternate" hreflang="pt-BR" href="../empreendimento/montreux.html">
+<link rel="alternate" hreflang="en" href="../en/empreendimento/montreux.html">
+<link rel="alternate" hreflang="es" href="../es/empreendimento/montreux.html">
+<link rel="alternate" hreflang="x-default" href="../empreendimento/montreux.html">
+<link rel="icon" href="../img/logo-dallo.svg">
+<link rel="preload" href="../fontes/Manrope-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fontes/PlayfairDisplay-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/estilo.css">
+<!-- A classe js no elemento html e o que liga a revelacao na rolagem.
+     Ela precisa valer em TODAS as paginas: enquanto so a home a tinha, o
+     .revela das outras nunca escondia nada e nunca animava, e o efeito
+     nao existia fora da home sem nenhum erro no console para avisar. A
+     classe js no body continua so na home, porque quem usa e o CSS da
+     abertura. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- As frases que o site.js escreve em tempo de execução (contagem da
+     busca, aviso de filtro) não podem ficar dentro do script: ele é um
+     arquivo só para as três línguas. Vêm por aqui. -->
+<script type="application/json" id="i18n">{"verTorre":"Ver {n} torre","verTorres":"Ver {n} torres","torre":"{n} torre","torres":"{n} torres","filtrandoPor":"Filtrando por","limpar":"limpar","ou":"ou","suites":"suítes","faixas":{"ate150":"Até 150 m²","150-250":"150 a 250 m²","250-400":"250 a 400 m²","400+":"Acima de 400 m²"},"pronto":"pronto para morar","obra":"em construção","emp":"{n} empreendimento","emps":"{n} empreendimentos"}</script>
+</head>
+<body>
+
+<header class="topo">
+  <div class="faixa topo-in">
+    <a class="topo-marca" href="../index.html" aria-label="Construtora Dallo, página inicial">
+      <img src="../img/logo-dallo.svg" alt="Construtora Dallo" width="138" height="35">
+    </a>
+    <button class="topo-abrir" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" id="menu">
+      <a href="../empreendimentos.html">Empreendimentos</a>
+      <a href="../sobre.html">A Dallo</a>
+      <a href="../contato.html">Contato</a>
+      <a class="menu-botao" href="../contato.html">Falar com a equipe</a>
+    </nav>
+    <div class="idiomas">
+      <button class="idiomas-atual" type="button" aria-expanded="false" aria-controls="idiomas-lista" aria-label="Trocar idioma">
+        <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>
+        <span class="idiomas-sigla">PT</span>
+        <svg class="idiomas-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="idiomas-lista" id="idiomas-lista" hidden>
+        <li><a href="../empreendimento/montreux.html" lang="pt-BR" aria-current="true">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009b3a"/><path d="M12 3.6 21.6 12 12 20.4 2.4 12z" fill="#fedf00"/><circle cx="12" cy="12" r="4.2" fill="#002776"/><path d="M8.1 10.4a8 8 0 0 1 7.9 1.6" stroke="#fff" stroke-width="1.1" fill="none"/></svg></span>Português
+        </a></li>
+        <li><a href="../en/empreendimento/montreux.html" lang="en">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#fff"/><g fill="#b22234"><rect width="24" height="2.4" y="0"/><rect width="24" height="2.4" y="4.8"/><rect width="24" height="2.4" y="9.6"/><rect width="24" height="2.4" y="14.4"/><rect width="24" height="2.4" y="19.2"/></g><rect width="11" height="12" fill="#3c3b6e"/></svg></span>English
+        </a></li>
+        <li><a href="../es/empreendimento/montreux.html" lang="es">
+          <span class="bandeira"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#aa151b"/><rect width="24" height="12" y="6" fill="#f1bf00"/></svg></span>Español
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ======================= ABERTURA DA TORRE ========================
+       Tela cheia, com o nome sobre a imagem e a ficha técnica na mesma
+       composição. Antes eram 558 px de altura com um recorte qualquer do
+       render, e a ficha vinha depois, numa seção à parte. -->
+  <section class="torre-abertura">
+    <img class="torre-fundo" src="../midia/web/midia/uploads/enterprise/40/62952475688549.32729660-1600.webp" srcset="../midia/web/midia/uploads/enterprise/40/62952475688549.32729660-820.webp 820w, ../midia/web/midia/uploads/enterprise/40/62952475688549.32729660-1600.webp 1600w" sizes="100vw" alt="Montreux, Centro · Itapema · Santa Catarina" fetchpriority="high" decoding="async">
+    <div class="faixa torre-abertura-texto">
+      <span class="rotulo">Centro · Itapema · Santa Catarina</span>
+      <h1>Montreux</h1>
+      <dl class="torre-chave">
+        <div><dt>Suítes</dt><dd>4 suítes</dd></div>
+        <div><dt>Metragem</dt><dd>163 - 280m²</dd></div>
+        <div><dt>Vagas</dt><dd>3 a 4 vagas de garagens</dd></div>
+        <div><dt>Andares</dt><dd>46</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao torre-prosa">
+    <div class="faixa">
+      <p class="frase-media revela">Para o desenvolvimento deste projeto, a Dallo se Inspirou em Montreux, uma deslumbrante cidade na Suíça que é sinônimo de beleza e tranquilidade.</p>
+      
+    </div>
+  </section>
+
+  <section class="secao torre-ficha-secao">
+    <div class="faixa">
+      <!-- só o que a abertura ainda não mostrou: repetir os quatro
+           primeiros a uma tela de distância não informa nada -->
+      <dl class="torre-chave torre-chave-larga revela">
+        <div><dt>Altura</dt><dd>160 metros de altura</dd></div>
+        <div><dt>Entrega</dt><dd>2027</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Por trás da arquitetura</h2>
+          </div>
+          <p class="lead">Uma torre imponente, localizada próximo ao mar.
+
+Projetado para impactar, essa torre abriga 92 residências de luxo, todas com 4 suítes e ao menos 3 vagas de garagens.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/21/default/original_81a78b8edf444fcda1afe4eff6ee215a-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/21/default/original_81a78b8edf444fcda1afe4eff6ee215a-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/21/default/original_81a78b8edf444fcda1afe4eff6ee215a-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Por trás da arquitetura" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/21/default/original_542f4c3e4099bdbb72633a5bb629cc97-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/21/default/original_542f4c3e4099bdbb72633a5bb629cc97-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/21/default/original_542f4c3e4099bdbb72633a5bb629cc97-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Montreux — Por trás da arquitetura" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/21/default/original_eb6079ca877a093c5d4ce3a6a32ba587-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/21/default/original_eb6079ca877a093c5d4ce3a6a32ba587-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/21/default/original_eb6079ca877a093c5d4ce3a6a32ba587-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Por trás da arquitetura" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/21/default/original_f7d347f389d0a4faf72ad5bf18346b6b-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/21/default/original_f7d347f389d0a4faf72ad5bf18346b6b-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/21/default/original_f7d347f389d0a4faf72ad5bf18346b6b-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Montreux — Por trás da arquitetura" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/21/default/original_b318c0cc65bc0b9b7ac5e7c19ef867c5-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/21/default/original_b318c0cc65bc0b9b7ac5e7c19ef867c5-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/21/default/original_b318c0cc65bc0b9b7ac5e7c19ef867c5-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Por trás da arquitetura" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/21/default/original_f258f27f656b5a522120bd4f94a0f5c9-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/21/default/original_f258f27f656b5a522120bd4f94a0f5c9-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/21/default/original_f258f27f656b5a522120bd4f94a0f5c9-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Por trás da arquitetura" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-panoramica revela"><img src="../midia/web/midia/uploads/enterprisegallery/21/default/original_7b475d3844d1852fbae9f3d544f2c2a6-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/21/default/original_7b475d3844d1852fbae9f3d544f2c2a6-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/21/default/original_7b475d3844d1852fbae9f3d544f2c2a6-1600.webp 1600w" sizes="(min-width: 900px) 92vw, 100vw" alt="Montreux — Por trás da arquitetura" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao secao-escura">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Área de Lazer</h2>
+          </div>
+          <p class="lead">O 5° pavimento da torre foi destinado exclusivamente para uma completa e
+sofisticada área de lazer.
+
+São mais de 2.000m² contemplando: Salões de festas, sala de jogos, brinquedoteca, baby care, pet care, pet play, personal care, fitness center, espaço cross, playground externo, sala de massagem, sauna, espaço teen, quadra recreativa, piscina adulto com raia de 20m, piscina infantil, fire place, espaço zen, além de áreas de estar externa.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/22/default/original_7b75b195725c9de6ec0d3bb68297eef8-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/22/default/original_7b75b195725c9de6ec0d3bb68297eef8-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/22/default/original_7b75b195725c9de6ec0d3bb68297eef8-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Área de Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/22/default/original_b07eb73993192351f10aaed2c49bace0-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/22/default/original_b07eb73993192351f10aaed2c49bace0-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/22/default/original_b07eb73993192351f10aaed2c49bace0-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Montreux — Área de Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/22/default/original_3674c4a8499814ae0abf634d228a77ef-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/22/default/original_3674c4a8499814ae0abf634d228a77ef-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/22/default/original_3674c4a8499814ae0abf634d228a77ef-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Área de Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/22/default/original_5b309a4cdad4f52e739a66b9bb2b722f-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/22/default/original_5b309a4cdad4f52e739a66b9bb2b722f-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/22/default/original_5b309a4cdad4f52e739a66b9bb2b722f-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Montreux — Área de Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/22/default/original_6d91b2724997a6e2306d233f0e832a99-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/22/default/original_6d91b2724997a6e2306d233f0e832a99-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/22/default/original_6d91b2724997a6e2306d233f0e832a99-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Área de Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/22/default/original_c66f683510710b0a4023f358767433b4-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/22/default/original_c66f683510710b0a4023f358767433b4-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/22/default/original_c66f683510710b0a4023f358767433b4-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Área de Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-panoramica revela"><img src="../midia/web/midia/uploads/enterprisegallery/22/default/original_37c05b0114395a0332231c022eb1d208-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/22/default/original_37c05b0114395a0332231c022eb1d208-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/22/default/original_37c05b0114395a0332231c022eb1d208-1600.webp 1600w" sizes="(min-width: 900px) 92vw, 100vw" alt="Montreux — Área de Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/22/default/original_022b4bf70ba7399c7414b5503fbe8512-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/22/default/original_022b4bf70ba7399c7414b5503fbe8512-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/22/default/original_022b4bf70ba7399c7414b5503fbe8512-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Área de Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/22/default/original_b7b1dc351007e348fd7f584341dae469-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/22/default/original_b7b1dc351007e348fd7f584341dae469-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/22/default/original_b7b1dc351007e348fd7f584341dae469-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Montreux — Área de Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/22/default/original_481381fbfc610cc4130b1311f811eb8d-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/22/default/original_481381fbfc610cc4130b1311f811eb8d-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/22/default/original_481381fbfc610cc4130b1311f811eb8d-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Área de Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/22/default/original_bce90794dc53cfcddb7e408746717d67-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/22/default/original_bce90794dc53cfcddb7e408746717d67-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/22/default/original_bce90794dc53cfcddb7e408746717d67-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Montreux — Área de Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/22/default/original_64e602bd4d6adbbf50054d06dcec0743-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/22/default/original_64e602bd4d6adbbf50054d06dcec0743-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/22/default/original_64e602bd4d6adbbf50054d06dcec0743-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Área de Lazer" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/22/default/original_e54b25ea65043af3bec02db1ea89348a-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/22/default/original_e54b25ea65043af3bec02db1ea89348a-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/22/default/original_e54b25ea65043af3bec02db1ea89348a-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Área de Lazer" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Rooftop</h2>
+          </div>
+          <p class="lead">O 46° andar da torre possui um extraordinário rooftop que está a mais de 150 metros de altura, o que proporciona aos residentes do Dallo Montreux, uma vista espetacular do horizonte. Ambiente incluindo confraria, workspace e ainda um amplo living a céu aberto com fireplace.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/23/default/original_531e004d158989fd961ead644bd32fbf-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/23/default/original_531e004d158989fd961ead644bd32fbf-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/23/default/original_531e004d158989fd961ead644bd32fbf-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Rooftop" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/23/default/original_993a143d4d366e52a644b1a44bff07c8-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/23/default/original_993a143d4d366e52a644b1a44bff07c8-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/23/default/original_993a143d4d366e52a644b1a44bff07c8-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Montreux — Rooftop" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao secao-escura">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Penthouses</h2>
+          </div>
+          <p class="lead">As penthouses do Dallo Montreux estão além da exclusividade.
+
+São as 14 residências mais altas da torre e cada uma ocupa um pavimento inteiro. Com espaços amplos e integrados, elas oferecem aos seus residentes o privilégio de contemplar a linha do horizonte.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/24/default/original_01e1d60ef0141b1c2175b3a6955bcdb5-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/24/default/original_01e1d60ef0141b1c2175b3a6955bcdb5-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/24/default/original_01e1d60ef0141b1c2175b3a6955bcdb5-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Penthouses" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/24/default/original_a06a697e1de6a1d6f2ff81b4252ab89a-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/24/default/original_a06a697e1de6a1d6f2ff81b4252ab89a-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/24/default/original_a06a697e1de6a1d6f2ff81b4252ab89a-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Montreux — Penthouses" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/24/default/original_a9657ab5ac9674c5716ceb9996e51256-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/24/default/original_a9657ab5ac9674c5716ceb9996e51256-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/24/default/original_a9657ab5ac9674c5716ceb9996e51256-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Penthouses" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/24/default/original_2340373acd7d8d2a92cb0c6d7ee03dc8-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/24/default/original_2340373acd7d8d2a92cb0c6d7ee03dc8-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/24/default/original_2340373acd7d8d2a92cb0c6d7ee03dc8-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Montreux — Penthouses" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  <section class="secao cenas-secao">
+      <div class="faixa">
+        <div class="cabeca-dupla revela">
+          <div>
+            <h2>Apartamentos</h2>
+          </div>
+          <p class="lead">São 3 apartamentos por andar com layouts diferentes, todos bem pensados pela equipe de arquitetura Dallo.</p>
+        </div>
+      </div>
+      <div class="cenas">
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/25/default/original_b50c4bda4cef0d31561bd20b78d58e14-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/25/default/original_b50c4bda4cef0d31561bd20b78d58e14-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/25/default/original_b50c4bda4cef0d31561bd20b78d58e14-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Apartamentos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/25/default/original_18b66e09febf9d65ec3601d93ef15b10-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/25/default/original_18b66e09febf9d65ec3601d93ef15b10-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/25/default/original_18b66e09febf9d65ec3601d93ef15b10-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Montreux — Apartamentos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/25/default/original_2e42e0a2c11f5945657fd8603c202d1a-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/25/default/original_2e42e0a2c11f5945657fd8603c202d1a-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/25/default/original_2e42e0a2c11f5945657fd8603c202d1a-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Apartamentos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/25/default/original_977150596117bd483012cd030c8b92cd-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/25/default/original_977150596117bd483012cd030c8b92cd-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/25/default/original_977150596117bd483012cd030c8b92cd-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Montreux — Apartamentos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/25/default/original_bfb7bfab5f0d6efcad062177697e149c-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/25/default/original_bfb7bfab5f0d6efcad062177697e149c-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/25/default/original_bfb7bfab5f0d6efcad062177697e149c-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Apartamentos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-quadrada revela"><img src="../midia/web/midia/uploads/enterprisegallery/25/default/original_bb665031c8ef28be26f7019efbd61123-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/25/default/original_bb665031c8ef28be26f7019efbd61123-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/25/default/original_bb665031c8ef28be26f7019efbd61123-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Apartamentos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-panoramica revela"><img src="../midia/web/midia/uploads/enterprisegallery/25/default/original_fe89822dd2aa4d862c99af3e3f2bbdc3-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/25/default/original_fe89822dd2aa4d862c99af3e3f2bbdc3-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/25/default/original_fe89822dd2aa4d862c99af3e3f2bbdc3-1600.webp 1600w" sizes="(min-width: 900px) 92vw, 100vw" alt="Montreux — Apartamentos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-alta revela"><img src="../midia/web/midia/uploads/enterprisegallery/25/default/original_4601f9bd4d5486232d60efc12f65946a-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/25/default/original_4601f9bd4d5486232d60efc12f65946a-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/25/default/original_4601f9bd4d5486232d60efc12f65946a-1600.webp 1600w" sizes="(min-width: 900px) 38vw, 100vw" alt="Montreux — Apartamentos" loading="lazy" decoding="async"></figure>
+          <figure class="cena cena-larga revela"><img src="../midia/web/midia/uploads/enterprisegallery/25/default/original_3e321a3a33539b13769a9d29318f0115-1600.webp" srcset="../midia/web/midia/uploads/enterprisegallery/25/default/original_3e321a3a33539b13769a9d29318f0115-820.webp 820w, ../midia/web/midia/uploads/enterprisegallery/25/default/original_3e321a3a33539b13769a9d29318f0115-1600.webp 1600w" sizes="(min-width: 900px) 58vw, 100vw" alt="Montreux — Apartamentos" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+
+  <section class="secao secao-clara">
+    <div class="faixa">
+      <div class="cabeca-dupla revela"><div><h2>Plantas</h2></div></div>
+      <div class="plantas">
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/64/62bd9aedbbc010.71444227-1600.webp" srcset="../midia/web/midia/uploads/plant/64/62bd9aedbbc010.71444227-820.webp 820w, ../midia/web/midia/uploads/plant/64/62bd9aedbbc010.71444227-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Tipo 1 — Montreux" loading="lazy" decoding="async">
+            <figcaption><strong>Tipo 1</strong><br>4 suítes e 3 vagas de garagem · 163m² privativos · 274m² de área total</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/65/62bd9b082c71a2.47946274-1600.webp" srcset="../midia/web/midia/uploads/plant/65/62bd9b082c71a2.47946274-820.webp 820w, ../midia/web/midia/uploads/plant/65/62bd9b082c71a2.47946274-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Tipo 2 — Montreux" loading="lazy" decoding="async">
+            <figcaption><strong>Tipo 2</strong><br>4 suítes e 3 vagas de garagem · 172m² privativos · 287m² de área total</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/66/62bd9b397f2403.36355923-1600.webp" srcset="../midia/web/midia/uploads/plant/66/62bd9b397f2403.36355923-820.webp 820w, ../midia/web/midia/uploads/plant/66/62bd9b397f2403.36355923-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Tipo 3 — Montreux" loading="lazy" decoding="async">
+            <figcaption><strong>Tipo 3</strong><br>4 suítes e 3 vagas de garagem · 165m² privativos · 276m² de área total</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/69/631a1ee8cd07f5.72261494-1600.webp" srcset="../midia/web/midia/uploads/plant/69/631a1ee8cd07f5.72261494-820.webp 820w, ../midia/web/midia/uploads/plant/69/631a1ee8cd07f5.72261494-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Penthouse — Montreux" loading="lazy" decoding="async">
+            <figcaption><strong>Penthouse</strong><br>4 suítes e 4 vagas de garagem · 280m² privativos · 455m² de área total</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/67/62bd9b4b7c1946.04400492-1600.webp" srcset="../midia/web/midia/uploads/plant/67/62bd9b4b7c1946.04400492-820.webp 820w, ../midia/web/midia/uploads/plant/67/62bd9b4b7c1946.04400492-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Lazer — Montreux" loading="lazy" decoding="async">
+            <figcaption><strong>Lazer</strong><br>01 - Quadra recreativa · 02 - Living Externo · 03 - Playground · 04 - Piscina infantil · 05 - Salão de festas com churrasqueira à carvão · 06 - Fitness center · 07 - Baby care · 08 - Sala de massagem · 09 - Personal care · 10 - Espaço teen · 11 - Pet care · 12 - Pet Park · 13 - Jardim externo · 14 - Salão de festas principal · 15 - Sauna · 16 - Espaço gourmet · 17 - Sala de jogos · 18 - Poker room · 19 - Brinquedoteca · 20 - Terraço externo · 21 - Piscina adulto com spa e espelho d´água · 22 - Lounge · 23 - Fireplace</figcaption>
+          </figure>
+        <figure class="planta revela">
+            <img src="../midia/web/midia/uploads/plant/68/62bd9b62772152.82086834-1600.webp" srcset="../midia/web/midia/uploads/plant/68/62bd9b62772152.82086834-820.webp 820w, ../midia/web/midia/uploads/plant/68/62bd9b62772152.82086834-1600.webp 1600w" sizes="(min-width: 900px) 30vw, 90vw" alt="Plantas Rooftop — Montreux" loading="lazy" decoding="async">
+            <figcaption><strong>Rooftop</strong><br>280m² de área total à 160m do nível do mar · 01 - Confraria · 02 - Workspace · 03 - Sala de reuniões · 04 - Sala de yoga · 05 - Terraço · 06 - Fireplace</figcaption>
+          </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao-escura">
+    <div class="faixa">
+      <div class="cabeca-dupla revela">
+        <div><h2>Obra</h2></div>
+        <p class="lead">Início de obra: Agosto de 2022 • Entrega em: Dezembro de 2027</p>
+      </div>
+      <div class="obra revela">
+        <div class="obra-item">
+          <span class="obra-nome">Evolução Global</span>
+          <span class="obra-valor">72%</span>
+          <span class="obra-barra"><i style="width:72%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Fundações</span>
+          <span class="obra-valor">100%</span>
+          <span class="obra-barra"><i style="width:100%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Estrutura</span>
+          <span class="obra-valor">97%</span>
+          <span class="obra-barra"><i style="width:97%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Paredes e Divisórias</span>
+          <span class="obra-valor">93%</span>
+          <span class="obra-barra"><i style="width:93%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Instalações Elétricas e Hidrossanitárias</span>
+          <span class="obra-valor">69%</span>
+          <span class="obra-barra"><i style="width:69%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Revestimentos de Argamassa</span>
+          <span class="obra-valor">91%</span>
+          <span class="obra-barra"><i style="width:91%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Acabamentos</span>
+          <span class="obra-valor">47%</span>
+          <span class="obra-barra"><i style="width:47%"></i></span>
+        </div>
+        <div class="obra-item">
+          <span class="obra-nome">Esquadrias</span>
+          <span class="obra-valor">43%</span>
+          <span class="obra-barra"><i style="width:43%"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="faixa">
+      <a class="botao" href="http://www.google.com.br/maps/place/R.+129+C,+59+-+Centro,+Itapema+-+SC,+88220-000/@-27.0944939,-48.6153673,312m/data=!3m1!1e3!4m5!3m4!1s0x94d8b1a11fb43285:0x61d793889a6b17be!8m2!3d-27.0946961!4d-48.6151824?shorturl=1" target="_blank" rel="noopener">Ver no mapa</a>
+    </div>
+  </section>
+
+  <section class="secao torre-nota">
+    <div class="faixa">
+      <p>Registro de incorporação imobiliária: R-10-72940. 
+Imagens meramente ilustrativas</p>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="faixa">
+    <div class="rodape-chamada">
+      <p>Todo endereço começa com uma conversa.</p>
+      <a class="botao botao-vazado" href="../contato.html">Falar com a equipe</a>
+    </div>
+    <div class="rodape-grade">
+      <div class="rodape-marca">
+        <img src="../img/logo-dallo.svg" alt="Construtora Dallo" width="128" style="filter:brightness(0) invert(1)">
+        <p class="rodape-assinatura">Construtora e incorporadora em Itapema, Porto Belo e Cascavel. 45 empreendimentos entregues e em obra desde 2008.</p>
+      </div>
+      <div>
+        <h4>Empreendimentos</h4>
+        <ul>
+          <li><a href="../empreendimentos.html?cidade=Itapema">Itapema</a></li>
+          <li><a href="../empreendimentos.html?cidade=Porto Belo">Porto Belo</a></li>
+          <li><a href="../empreendimentos.html?cidade=Cascavel">Cascavel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>A Dallo</h4>
+        <ul>
+          <li><a href="../sobre.html">Nossa história</a></li>
+          <li><a href="../contato.html">Fale conosco</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Dallo Itapema SC</h4>
+        <p>Av. Nereu Ramos, 4077, Meia Praia - Ed. Dallo Business Center | 15º e 16º andares</p>
+        <p><a href="tel:4732671111">(47) 3267-1111</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+      <div>
+        <h4>Dallo Cascavel PR</h4>
+        <p>Rua Visconde de Guarapuava, 2342</p>
+        <p><a href="tel:4522210670">(45) 2221-0670</a><br>08h30 às 12h / 13h30 às 18h</p>
+      </div>
+    </div>
+    <div class="rodape-fim">
+      <span>Dallo Empreendimentos</span>
+      <span>Todos os direitos reservados</span>
+    </div>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/554732671111" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.15h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.18 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+</a>
+
+<script src="../js/site.js"></script>
+</body>
+</html>
